@@ -1,9 +1,73 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
+
+import app from '../firebase';
 import { phone } from 'responsive';
+import { registerUser } from 'redux/apiCalls/authApiCalls';
 
 const NewUser = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState(null);
+  const [file, setFile] = useState(null);
+
+  const handleChange = ({ target: input }) => {
+    const { name, value } = input;
+    setUser({ ...user, [name]: value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const fileName = new Date().getTime() + file.name;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, fileName);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+          case 'paused':
+            console.log('Upload is paused');
+            break;
+          case 'running':
+            console.log('Upload is running');
+            break;
+          default:
+        }
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          const userData = {
+            ...user,
+            img: downloadURL,
+          };
+
+          if (user) {
+            registerUser({ ...userData }, dispatch);
+            navigate('/users');
+          }
+        });
+      }
+    );
   };
 
   return (
@@ -12,69 +76,62 @@ const NewUser = () => {
       <Form onSubmit={handleSubmit}>
         <FormContainer>
           <FormGroup>
-            <FormInput type='text' placeholder='Username' required />
+            <FormInput
+              type='text'
+              name='username'
+              placeholder='Username'
+              required
+              onChange={handleChange}
+            />
             <FormLabel>Username</FormLabel>
           </FormGroup>
           <FormGroup>
-            <FormInput type='text' placeholder='Full Name' required />
+            <FormInput
+              type='text'
+              name='name'
+              placeholder='Full Name'
+              required
+              onChange={handleChange}
+            />
             <FormLabel>Full Name</FormLabel>
           </FormGroup>
           <FormGroup>
-            <FormInput type='email' placeholder='Email' required />
+            <FormInput
+              type='email'
+              name='email'
+              placeholder='Email'
+              required
+              onChange={handleChange}
+            />
             <FormLabel>Email</FormLabel>
           </FormGroup>
           <FormGroup>
-            <FormInput type='password' placeholder='Password' required />
+            <FormInput
+              type='password'
+              name='password'
+              placeholder='Password'
+              required
+              onChange={handleChange}
+            />
             <FormLabel>Password</FormLabel>
           </FormGroup>
           <FormGroup>
             <FormInput
               type='password'
+              name='passwordConfirm'
               placeholder='Confirm Password'
               required
+              onChange={handleChange}
             />
             <FormLabel>Confirm password</FormLabel>
           </FormGroup>
           <FormGroup>
-            <FormInput type='tel' placeholder='Phone' required />
-            <FormLabel>Phone</FormLabel>
-          </FormGroup>
-          <FormGroup>
-            <FormInput type='text' placeholder='Address' required />
-            <FormLabel>Address</FormLabel>
-          </FormGroup>
-          <FormGroup>
-            <FormGroupRadio>
-              <FormRadioInput
-                type='radio'
-                name='gender'
-                id='male'
-                value='Male'
-              />
-              <FormRadioLabel htmlFor='male'>Male</FormRadioLabel>
-              <FormRadioInput
-                type='radio'
-                name='gender'
-                id='female'
-                value='Female'
-              />
-              <FormRadioLabel htmlFor='female'>Female</FormRadioLabel>
-              <FormRadioInput
-                type='radio'
-                name='gender'
-                id='other'
-                value='Other'
-              />
-              <FormRadioLabel htmlFor='other'>Other</FormRadioLabel>
-            </FormGroupRadio>
-            <FormLabel>Gender</FormLabel>
-          </FormGroup>
-          <FormGroup>
-            <Select name='active' id='active'>
-              <Option value='yes'>Yes</Option>
-              <Option value='no'>No</Option>
-            </Select>
-            <FormSelectLabel htmlFor='active'>Active</FormSelectLabel>
+            <FormInput
+              type='file'
+              id='img'
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+            <FormLabel htmlFor='img'>Image</FormLabel>
           </FormGroup>
         </FormContainer>
         <Button>Create</Button>
@@ -121,24 +178,6 @@ const FormLabel = styled.label`
   color: rgb(151, 150, 150);
 `;
 
-const FormSelectLabel = styled.label`
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-left: 2rem;
-  margin-top: 0.7rem;
-  color: rgb(151, 150, 150);
-`;
-
-const FormRadioLabel = styled.label`
-  margin: 1rem;
-  font-size: 1.8rem;
-  font-weight: normal;
-  color: #555;
-  cursor: pointer;
-
-  ${phone({ fontSize: '1.5rem' })}
-`;
-
 const FormInput = styled.input`
   border: none;
   width: 100%;
@@ -175,40 +214,6 @@ const FormInput = styled.input`
     transform: translateY(4rem);
   }
 `;
-
-const FormRadioInput = styled.input`
-  cursor: pointer;
-`;
-
-const FormGroupRadio = styled.div`
-  margin-top: 1rem;
-`;
-
-const Select = styled.select`
-  border: none;
-  width: 100%;
-  padding: 1.25rem 1.75rem;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid #bbb;
-  color: #999;
-  user-select: none;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-
-  &:focus {
-    outline: none;
-    border-bottom: 3px solid #008080;
-    -webkit-box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
-    -moz-box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
-    box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
-  }
-
-  &:focus:invalid {
-    border-bottom: 3px solid #ffb952;
-  }
-`;
-
-const Option = styled.option``;
 
 const Button = styled.button`
   border: none;
