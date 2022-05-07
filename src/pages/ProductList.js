@@ -5,7 +5,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchProducts, removeProduct } from 'redux/productApiCalls';
+import { fetchProducts, removeProduct } from 'redux/apiCalls/productApiCalls';
 
 const ProductList = () => {
   const dispatch = useDispatch();

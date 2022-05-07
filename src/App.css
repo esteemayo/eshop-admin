@@ -39,6 +39,8 @@ body {
   align-items: center;
 }
 
+.link:link,
+.link:visited,
 .user__link:link,
 .user__link:visited,
 .product__link:link,
@@ -51,4 +53,17 @@ body {
 
 input[type='file'] {
   border: none;
+}
+
+.icon {
+  font-size: 2rem;
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+
+.active {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgb(240, 240, 255);
 }

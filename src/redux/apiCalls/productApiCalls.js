@@ -1,4 +1,4 @@
-import * as actions from './product';
+import * as actions from '../product';
 import * as productService from 'services/productService';
 
 export const fetchProducts = async (dispatch) => {
@@ -9,7 +9,7 @@ export const fetchProducts = async (dispatch) => {
     dispatch(actions.getProductSuccess(data.products));
   } catch (err) {
     dispatch(actions.getProductFailure());
-    console.log(err);
+    console.log(err.response);
   }
 };
 
@@ -21,7 +21,7 @@ export const addProduct = async (product, dispatch) => {
     dispatch(actions.addProductSuccess(data.product));
   } catch (err) {
     dispatch(actions.addProductFailure());
-    console.log(err);
+    console.log(err.response);
   }
 };
 
@@ -35,6 +35,7 @@ export const editProduct = async (id, newProduct, dispatch) => {
     dispatch(actions.updateProductSuccess({ id, product }));
   } catch (err) {
     dispatch(actions.updateProductFailure());
+    console.log(err.response);
   }
 };
 
@@ -46,6 +47,6 @@ export const removeProduct = async (id, dispatch) => {
     dispatch(actions.deleteProductSuccess(id));
   } catch (err) {
     dispatch(actions.deleteProductFailure());
-    console.log(err);
+    console.log(err.response);
   }
 };

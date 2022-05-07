@@ -1,5 +1,5 @@
-import * as actions from './user';
-import { deleteUser, getAllUsers } from 'services/userService';
+import * as actions from '../user';
+import * as userService from 'services/userService';
 
 export const fetchUsers = async (dispatch) => {
   dispatch(actions.getUserStart());
@@ -7,11 +7,11 @@ export const fetchUsers = async (dispatch) => {
   try {
     const {
       data: { users },
-    } = await getAllUsers();
+    } = await userService.getAllUsers();
     dispatch(actions.getUserSuccess(users));
   } catch (err) {
     dispatch(actions.getUserFailure());
-    console.log(err);
+    console.log(err.response);
   }
 };
 
@@ -19,10 +19,10 @@ export const removeUser = async (userId, dispatch) => {
   dispatch(actions.deleteUserStart());
 
   try {
-    await deleteUser(userId);
+    await userService.deleteUser(userId);
     dispatch(actions.deleteUserSuccess(userId));
   } catch (err) {
     dispatch(actions.deleteUserFailure());
-    console.log(err);
+    console.log(err.response);
   }
 };

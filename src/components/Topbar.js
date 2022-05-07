@@ -1,11 +1,22 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import PersonIcon from '@material-ui/icons/Person';
-import { Language, NotificationsNone, Settings } from '@material-ui/icons';
+import {
+  ArrowDropDown,
+  Language,
+  NotificationsNone,
+  Settings,
+} from '@material-ui/icons';
+
+import { logout } from 'redux/user';
 
 const Topbar = () => {
   const { currentUser } = useSelector((state) => state.user);
+
+  const handleLogout = () => {
+    logout();
+    localStorage.removeItem('jwtToken');
+    window.location.replace('/login');
+  };
 
   return (
     <Container>
@@ -14,31 +25,27 @@ const Topbar = () => {
           <Logo>Dashboard</Logo>
         </TopLeft>
         <TopRight>
-          {currentUser && (
-            <>
-              <IconContainer>
-                <NotificationsNone style={{ fontSize: '2rem' }} />
-                <TopIconBadge>2</TopIconBadge>
-              </IconContainer>
-              <IconContainer>
-                <Language style={{ fontSize: '2rem' }} />
-                <TopIconBadge>2</TopIconBadge>
-              </IconContainer>
-              <IconContainer>
-                <Settings style={{ fontSize: '2rem' }} />
-              </IconContainer>
-              <Image src={currentUser?.img} alt={currentUser?.username} />
-            </>
-          )}
-          <List>
-            {!currentUser && (
-              <ListItem>
-                <Link to='/login'>
-                  <PersonIcon style={{ fontSize: '2rem' }} /> Login
-                </Link>
-              </ListItem>
-            )}
-          </List>
+          <IconContainer>
+            <NotificationsNone style={{ fontSize: '2rem' }} />
+            <TopIconBadge>2</TopIconBadge>
+          </IconContainer>
+          <IconContainer>
+            <Language style={{ fontSize: '2rem' }} />
+            <TopIconBadge>2</TopIconBadge>
+          </IconContainer>
+          <IconContainer>
+            <Settings style={{ fontSize: '2rem' }} />
+          </IconContainer>
+          <Image
+            src={currentUser?.img || 'assets/user-default.jpg'}
+            alt={currentUser?.username}
+          />
+          <Profile>
+            <ArrowDropDown className='icon' />
+            <Options>
+              <Item onClick={handleLogout}>Logout</Item>
+            </Options>
+          </Profile>
         </TopRight>
       </Wrapper>
     </Container>
@@ -108,23 +115,26 @@ const Image = styled.img`
   cursor: pointer;
 `;
 
-const List = styled.ul`
-  list-style: none;
-  color: #555;
-  margin-right: 1rem;
+const Options = styled.div`
+  display: none;
+  background-color: #0b0b0b;
+  color: var(--color-white);
+  border-radius: 0.5rem;
 `;
 
-const ListItem = styled.li`
-  font-size: 1.8rem;
-  font-weight: 300;
-
-  a:link,
-  a:visited {
+const Profile = styled.div`
+  &:hover ${Options} {
     display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
+    flex-direction: column;
+    position: absolute;
   }
+`;
+
+const Item = styled.span`
+  text-transform: capitalize;
+  padding: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
 `;
 
 export default Topbar;

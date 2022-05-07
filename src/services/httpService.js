@@ -2,10 +2,27 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import logger from './logService';
+import { getJwt } from './authService';
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+const authFetch = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  headers: {
+    Accept: 'application/json',
+  },
+});
 
-axios.interceptors.response.use(null, (err) => {
+authFetch.interceptors.request.use(
+  (request) => {
+    request.headers.common['Authorization'] = `Bearer ${getJwt()}`;
+    return request;
+  },
+  (error) => {
+    logger.log(error);
+    return Promise.reject(error);
+  }
+);
+
+authFetch.interceptors.response.use(null, (err) => {
   const expectedError =
     err.response &&
     err.response.status >= 400 &&
@@ -20,16 +37,11 @@ axios.interceptors.response.use(null, (err) => {
   return Promise.reject(err);
 });
 
-const setJWT = (jwtToken) => {
-  axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
-};
-
 const http = {
-  get: axios.get,
-  post: axios.post,
-  patch: axios.patch,
-  delete: axios.delete,
-  setJWT,
+  get: authFetch.get,
+  post: authFetch.post,
+  patch: authFetch.patch,
+  delete: authFetch.delete,
 };
 
 export default http;

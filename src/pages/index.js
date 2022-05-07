@@ -5,6 +5,7 @@ import NewProduct from './NewProduct';
 import NewUser from './NewUser';
 import Product from './Product';
 import ProductList from './ProductList';
+import SharedLayout from './SharedLayout';
 import User from './User';
 import UserList from './UserList';
 
@@ -16,6 +17,7 @@ export {
   NewUser,
   Product,
   ProductList,
+  SharedLayout,
   User,
   UserList,
 };

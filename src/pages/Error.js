@@ -16,7 +16,6 @@ const Error = () => {
 };
 
 const Container = styled.div`
-  flex: 4;
   padding: 2rem;
   font-size: 1.5rem;
 

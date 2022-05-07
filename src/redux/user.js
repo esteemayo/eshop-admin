@@ -13,9 +13,9 @@ const token = localStorage.getItem(tokenKey);
 
 if (token) {
   const decodedToken = jwtDecode(token);
-  const expiredToken = Date.now();
+  const expiryDate = Date.now();
 
-  if (decodedToken.exp * 1000 < expiredToken) {
+  if (expiryDate > decodedToken.exp * 1000) {
     localStorage.removeItem(tokenKey);
   } else {
     initialStateValue.currentUser = decodedToken;
@@ -34,8 +34,19 @@ export const userSlice = createSlice({
       state.currentUser = payload;
     },
     loginFailure: (state) => {
-      state.isLoading = false;
       state.isError = true;
+      state.isLoading = false;
+    },
+    registerUserStart: (state) => {
+      state.isLoading = true;
+    },
+    registerUserSuccess: (state, { payload }) => {
+      state.isLoading = false;
+      state.users.push(payload);
+    },
+    registerUserFailure: (state) => {
+      state.isError = true;
+      state.isLoading = false;
     },
     getUserStart: (state) => {
       state.isLoading = true;
@@ -45,8 +56,8 @@ export const userSlice = createSlice({
       state.users = payload;
     },
     getUserFailure: (state) => {
-      state.isLoading = false;
       state.isError = true;
+      state.isLoading = false;
     },
     deleteUserStart: (state) => {
       state.isLoading = true;
@@ -59,12 +70,11 @@ export const userSlice = createSlice({
       );
     },
     deleteUserFailure: (state) => {
-      state.isLoading = false;
       state.isError = true;
+      state.isLoading = false;
     },
     logout: (state) => {
       state.currentUser = null;
-      localStorage.removeItem(tokenKey);
     },
   },
 });
@@ -80,6 +90,9 @@ export const {
   loginStart,
   loginSuccess,
   logout,
+  registerUserFailure,
+  registerUserStart,
+  registerUserSuccess,
 } = userSlice.actions;
 
 export default userSlice.reducer;

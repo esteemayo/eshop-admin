@@ -13,33 +13,27 @@ import {
   WorkOutline,
 } from '@material-ui/icons';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-
-import { logout } from 'redux/user';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
-  const dispatch = useDispatch();
-  const { currentUser } = useSelector((state) => state.user);
-
-  const handleLogout = () => {
-    dispatch(logout());
-  };
-
   return (
     <Container>
       <Wrapper>
         <SidebarMenu>
           <Title>Dashboard</Title>
           <SidebarList>
-            <SidebarListItem active>
-              <Link to='/' className='sidebar__link'>
+            <SidebarListItem>
+              <NavLink
+                to='/'
+                className={({ isActive }) =>
+                  isActive ? 'sidebar__link active' : 'sidebar__link'
+                }
+              >
                 <LineStyle
                   style={{ fontSize: '2rem', marginRight: '0.5rem' }}
                 />
                 Home
-              </Link>
+              </NavLink>
             </SidebarListItem>
             <SidebarListItem>
               <Timeline style={{ fontSize: '2rem', marginRight: '0.5rem' }} />
@@ -55,20 +49,30 @@ const Sidebar = () => {
           <Title>Quick menu</Title>
           <SidebarList>
             <SidebarListItem>
-              <Link to='/users' className='sidebar__link'>
+              <NavLink
+                to='/users'
+                className={({ isActive }) =>
+                  isActive ? 'sidebar__link active' : 'sidebar__link'
+                }
+              >
                 <PermIdentity
                   style={{ fontSize: '2rem', marginRight: '0.5rem' }}
                 />
                 Users
-              </Link>
+              </NavLink>
             </SidebarListItem>
             <SidebarListItem>
-              <Link to='/products' className='sidebar__link'>
+              <NavLink
+                to='/products'
+                className={({ isActive }) =>
+                  isActive ? 'sidebar__link active' : 'sidebar__link'
+                }
+              >
                 <Storefront
                   style={{ fontSize: '2rem', marginRight: '0.5rem' }}
                 />
                 Products
-              </Link>
+              </NavLink>
             </SidebarListItem>
             <SidebarListItem>
               <AttachMoney
@@ -124,19 +128,6 @@ const Sidebar = () => {
             </SidebarListItem>
           </SidebarList>
         </SidebarMenu>
-        <SidebarMenu>
-          <Title>Accounts</Title>
-          <SidebarList>
-            {currentUser && (
-              <SidebarListItem onClick={handleLogout}>
-                <ExitToAppIcon
-                  style={{ fontSize: '2rem', marginRight: '0.5rem' }}
-                />
-                Logout
-              </SidebarListItem>
-            )}
-          </SidebarList>
-        </SidebarMenu>
       </Wrapper>
     </Container>
   );
@@ -178,7 +169,6 @@ const SidebarListItem = styled.li`
   display: flex;
   align-items: center;
   border-radius: 1rem;
-  background-color: ${(props) => props.active && 'rgb(240, 240, 255)'};
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 

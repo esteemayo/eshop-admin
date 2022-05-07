@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 import { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { loginUser } from 'redux/authApiCalls';
+import { loginUser } from 'redux/apiCalls/authApiCalls';
 
 const Login = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
+
   const dispatch = useDispatch();
+  const location = useLocation();
   const navigate = useNavigate();
   const { isLoading, isError } = useSelector((state) => state.user);
 
@@ -28,7 +30,9 @@ const Login = () => {
     };
 
     loginUser(userData, dispatch);
-    navigate('/', { replace: true });
+
+    const origin = location.state?.from?.pathname || '/';
+    navigate(origin);
   };
 
   return (
@@ -65,14 +69,7 @@ const Login = () => {
 };
 
 const Container = styled.div`
-  flex: 4;
   padding: 2rem;
-
-  // height: 100vh;
-  // display:flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center
 `;
 
 const Wrapper = styled.div`
@@ -154,6 +151,10 @@ const Button = styled.button`
     opacity: 0.7;
     letter-spacing: 3px;
     transform: translateY(-3px);
+  }
+
+  &:focus {
+    outline: none;
   }
 
   &:disabled {
