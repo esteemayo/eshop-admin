@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getStorage,
   ref,
@@ -17,6 +17,7 @@ import { registerUser } from 'redux/user/userSlice';
 const NewUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isLoading } = useSelector((state) => state.user);
 
   const [perc, setPerc] = useState(0);
   const [user, setUser] = useState(null);
@@ -149,7 +150,7 @@ const NewUser = () => {
             )}
           </FormGroup>
         </FormContainer>
-        <Button disabled={perc > 0 && perc < 100}>Create</Button>
+        <Button disabled={isLoading || (perc > 0 && perc < 100)}>Create</Button>
       </Form>
     </Container>
   );
