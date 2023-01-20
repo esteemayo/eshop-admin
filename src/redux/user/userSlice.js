@@ -1,6 +1,8 @@
 import jwtDecode from 'jwt-decode';
 import { createSlice } from '@reduxjs/toolkit';
 
+import { tokenKey } from 'utils';
+
 const initialState = {
   users: [],
   currentUser: null,
@@ -8,7 +10,6 @@ const initialState = {
   isError: false,
 };
 
-const tokenKey = 'jwtToken';
 const token = localStorage.getItem(tokenKey);
 
 if (token) {
