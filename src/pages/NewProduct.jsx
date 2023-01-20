@@ -12,19 +12,21 @@ import {
 import app from '../firebase';
 import { addProduct } from 'redux/products/productSlice';
 
+const initialState = {
+  title: '',
+  price: '',
+  desc: '',
+  inStock: true,
+};
+
 const NewProduct = () => {
   const dispatch = useDispatch();
   const titleInputRef = useRef();
   const [size, setSize] = useState([]);
   const [color, setColor] = useState([]);
   const [file, setFile] = useState(null);
-  const [values, setValues] = useState({
-    title: '',
-    price: '',
-    desc: '',
-    inStock: true,
-  });
   const [categories, setCategories] = useState([]);
+  const [values, setValues] = useState(initialState);
 
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
