@@ -1,4 +1,4 @@
-import * as actions from '../product';
+import * as actions from '../products/product';
 import * as productService from 'services/productService';
 
 export const fetchProducts = async (dispatch) => {
