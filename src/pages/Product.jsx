@@ -8,13 +8,26 @@ import { phone } from 'responsive';
 import Chart from 'components/Chart';
 import { getIncomeStats } from 'services/orderService';
 
+const initialState = {
+  title: '',
+  desc: '',
+  price: '',
+  inStock: true,
+};
+
 const Product = () => {
   const { id } = useParams();
+  const [inputs, setInputs] = useState(initialState);
   const [productStats, setProductStats] = useState([]);
 
   const product = useSelector((state) =>
     state.product.products.find((product) => product._id === id)
   );
+
+  const handleChange = ({ target: input }) => {
+    const { name, value } = input;
+    setInputs((prev) => ({ ...prev, [name]: value }));
+  };
 
   const MONTHS = useMemo(
     () => [
@@ -56,6 +69,11 @@ const Product = () => {
   useEffect(() => {
     fetchIncomeStats();
   }, [fetchIncomeStats]);
+
+  useEffect(() => {
+    setInputs({ title: product.title, desc: product.desc, price: product.price, inStock: product.inStock });
+  }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -102,19 +120,37 @@ const Product = () => {
         <Form onSubmit={handleSubmit}>
           <FormLeft>
             <FormGroup>
-              <Input type='text' placeholder={product.title} />
+              <Input
+                type='text'
+                name='title'
+                value={inputs.title}
+                onChange={handleChange}
+                placeholder={product.title}
+              />
               <Label>Product name</Label>
             </FormGroup>
             <FormGroup>
-              <Input type='text' placeholder={product.desc} />
+              <Input
+                type='text'
+                name='desc'
+                value={inputs.desc}
+                onChange={handleChange}
+                placeholder={product.desc}
+              />
               <Label>Product description</Label>
             </FormGroup>
             <FormGroup>
-              <Input type='text' placeholder={product.price} />
+              <Input
+                type='text'
+                name='price'
+                value={inputs.price}
+                onChange={handleChange}
+                placeholder={product.price}
+              />
               <Label>Price</Label>
             </FormGroup>
             <FormGroup>
-              <Select name='inStock' id='inStock'>
+              <Select name='inStock' id='inStock' onChange={handleChange}>
                 <Option disabled>In Stock</Option>
                 <Option value='true'>Yes</Option>
                 <Option value='false'>No</Option>
@@ -211,7 +247,7 @@ const Image = styled.img`
 
 const ProductName = styled.span`
   text-transform: capitalize;
-  fon-weight: 600;
+  font-weight: 600;
   margin-left: 2rem;
 `;
 
