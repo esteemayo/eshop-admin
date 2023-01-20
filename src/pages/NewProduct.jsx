@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useRef, useState, useEffect } from 'react';
 import {
   getStorage,
   ref,
@@ -22,6 +22,7 @@ const initialState = {
 const NewProduct = () => {
   const dispatch = useDispatch();
   const titleInputRef = useRef();
+  const [perc, setPerc] = useState(0);
   const [size, setSize] = useState([]);
   const [color, setColor] = useState([]);
   const [file, setFile] = useState(null);
@@ -30,7 +31,7 @@ const NewProduct = () => {
 
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
-    setValues({ ...values, [name]: value });
+    setValues((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleCategories = (e) => {
@@ -45,9 +46,7 @@ const NewProduct = () => {
     setColor(e.target.value.split(','));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const uploadFile = (file) => {
     const fileName = new Date().getTime() + file.name;
 
     const storage = getStorage(app);
@@ -59,7 +58,7 @@ const NewProduct = () => {
       (snapshot) => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
+        setPerc(Math.round(progress));
         switch (snapshot.state) {
           case 'paused':
             console.log('Upload is paused');
@@ -68,6 +67,7 @@ const NewProduct = () => {
             console.log('Upload is running');
             break;
           default:
+            break;
         }
       },
       (error) => {
@@ -75,25 +75,34 @@ const NewProduct = () => {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          const newProduct = {
-            ...values,
-            size,
-            color,
-            categories,
-            img: downloadURL,
-          };
-
-          dispatch(addProduct({ product: newProduct, toast }));
-
-          setSize([]);
-          setColor([]);
-          setFile(null);
-          setCategories([]);
-          setValues({ title: '', price: '', desc: '', inStock: true });
+          setValues((prev) => ({ ...prev, img: downloadURL }));
         });
       }
     );
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newProduct = {
+      ...values,
+      size,
+      color,
+      categories,
+    };
+
+    dispatch(addProduct({ product: newProduct, toast }));
+
+    setSize([]);
+    setColor([]);
+    setFile(null);
+    setCategories([]);
+    setValues(initialState);
+  };
+
+  useEffect(() => {
+    file && uploadFile(file);
+  }, [file]);
 
   return (
     <Container>
@@ -180,12 +189,16 @@ const NewProduct = () => {
         </FormGroup>
         <FormGroup>
           <Label htmlFor='file'>Image</Label>
-          <Input
-            id='file'
-            type='file'
-            accept='image/*'
-            onChange={(e) => setFile(e.target.files[0])}
-          />
+          {perc > 0 ? (
+            `Uploading: ${perc}%`
+          ) : (
+            <Input
+              id='file'
+              type='file'
+              accept='image/*'
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          )}
         </FormGroup>
         <Button>Create</Button>
       </Form>
@@ -283,6 +296,11 @@ const Button = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `;
 
