@@ -5,6 +5,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { productColumns } from 'data';
 import { removeProduct } from 'redux/apiCalls/productApiCalls';
 import { fetchProducts } from 'redux/products/productSlice';
 
@@ -20,32 +21,7 @@ const ProductList = () => {
     removeProduct(id, dispatch);
   };
 
-  const columns = [
-    { field: '_id', headerName: 'ID', width: 220 },
-    {
-      field: 'product',
-      headerName: 'Product',
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <ProductListUser>
-            <Image src={params.row.img} />
-            {params.row.title}
-          </ProductListUser>
-        );
-      },
-    },
-    { field: 'img', headerName: 'Image', width: 200 },
-    {
-      field: 'inStock',
-      headerName: 'Stock',
-      width: 200,
-    },
-    {
-      field: 'price',
-      headerName: 'Price',
-      width: 160,
-    },
+  const actionColumn = [
     {
       field: 'action',
       headerName: 'Action',
@@ -74,7 +50,7 @@ const ProductList = () => {
     <Container>
       <DataGrid
         rows={products}
-        columns={columns}
+        columns={productColumns.concat(actionColumn)}
         getRowId={(row) => row._id}
         disableSelectionOnClick
         pageSize={8}
@@ -89,20 +65,6 @@ const ProductList = () => {
 const Container = styled.div`
   flex: 4;
   padding: 2rem;
-`;
-
-const ProductListUser = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Image = styled.img`
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 50%;
-  display: block;
-  object-fit: cover;
-  margin-right: 1rem;
 `;
 
 const EditButton = styled.button`
