@@ -118,9 +118,20 @@ export const userSlice = createSlice({
         setToStorage(tokenKey, payload);
         state.currentUser = payload;
       })
-      .addCase(loginUser.rejected, (state, { payload }) => {
+      .addCase(loginUser.rejected, (state) => {
         state.isLoading = false;
         state.currentUser = null;
+        state.isError = true;
+      })
+      .addCase(registerUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(registerUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.users.push(payload);
+      })
+      .addCase(registerUser.rejected, (state) => {
+        state.isLoading = false;
         state.isError = true;
       })
   },
