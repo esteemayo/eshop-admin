@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -11,7 +12,7 @@ import {
 
 import app from '../firebase';
 import { phone } from 'responsive';
-import { registerUser } from 'redux/apiCalls/authApiCalls';
+import { registerUser } from 'redux/user/userSlice';
 
 const NewUser = () => {
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ const NewUser = () => {
           };
 
           if (user) {
-            registerUser({ ...userData }, dispatch);
+            dispatch(registerUser({ credentials: userData, toast }));
             navigate('/users');
           }
         });
