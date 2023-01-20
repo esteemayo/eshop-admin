@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialStateValue = {
+const initialState = {
   users: [],
   currentUser: null,
   isLoading: false,
@@ -18,13 +18,13 @@ if (token) {
   if (expiryDate > decodedToken.exp * 1000) {
     localStorage.removeItem(tokenKey);
   } else {
-    initialStateValue.currentUser = decodedToken;
+    initialState.currentUser = decodedToken;
   }
 }
 
 export const userSlice = createSlice({
   name: 'user',
-  initialState: initialStateValue,
+  initialState,
   reducers: {
     loginStart: (state) => {
       state.isLoading = true;
