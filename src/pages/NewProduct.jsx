@@ -179,8 +179,9 @@ const NewProduct = () => {
         <FormGroup>
           <Label htmlFor='file'>Image</Label>
           <Input
-            type='file'
             id='file'
+            type='file'
+            accept='image/*'
             onChange={(e) => setFile(e.target.files[0])}
           />
         </FormGroup>
