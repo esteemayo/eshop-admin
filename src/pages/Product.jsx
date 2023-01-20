@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { Publish } from '@material-ui/icons';
-import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   getStorage,
@@ -14,6 +15,7 @@ import app from '../firebase';
 import { phone } from 'responsive';
 import Chart from 'components/Chart';
 import { getIncomeStats } from 'services/orderService';
+import { editProduct } from 'redux/products/productSlice';
 
 const initialState = {
   title: '',
@@ -24,6 +26,8 @@ const initialState = {
 
 const Product = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const product = useSelector((state) =>
     state.product.products.find((product) => product._id === id)
   );
@@ -127,6 +131,15 @@ const Product = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const product = {
+      ...inputs,
+      size,
+      color,
+      categories,
+    };
+
+    dispatch(editProduct({ productId: id, product, navigate, toast }));
   };
 
   useEffect(() => {
