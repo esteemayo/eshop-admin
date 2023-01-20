@@ -161,11 +161,19 @@ const Product = () => {
           </FormLeft>
           <FormRight>
             <FileUpload>
-              <Img src={product.img} />
+              <Img
+                src={file ? URL.createObjectURL(file) : product.img}
+                alt=''
+              />
               <Label htmlFor='file'>
                 <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
               </Label>
-              <Input id='file' type='file' style={{ display: 'none' }} />
+              <Input
+                id='file'
+                type='file'
+                style={{ display: 'none' }}
+                onChange={(e) => setFile(e.target.files[0])}
+              />
             </FileUpload>
             <Button>Update</Button>
           </FormRight>
