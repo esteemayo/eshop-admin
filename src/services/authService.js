@@ -3,14 +3,10 @@ import { getFromStorage, tokenKey } from 'utils';
 
 const apiEndpoint = '/auth';
 
-export function login(userData) {
-  return http.post(`${apiEndpoint}/login`, userData);
-}
+export const login = (userData) =>
+  http.post(`${apiEndpoint}/login`, userData);
 
-export function register(userData) {
-  return http.post(`${apiEndpoint}/register`, userData);
-}
+export const register = (userData) =>
+  http.post(`${apiEndpoint}/ register`, userData);
 
-export function getJwt() {
-  return getFromStorage(tokenKey)?.accessToken;
-}
+export const getJwt = () => getFromStorage(tokenKey)?.accessToken;
