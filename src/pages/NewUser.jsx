@@ -23,7 +23,7 @@ const NewUser = () => {
 
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
-    setUser({ ...user, [name]: value });
+    setUser((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
