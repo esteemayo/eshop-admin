@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Visibility } from '@material-ui/icons';
 
 import { phone } from 'responsive';
+import defaultAvatar from 'img/avatar.png';
 import { getUsers } from 'services/userService';
 
 const WidgetSm = () => {
@@ -32,13 +33,7 @@ const WidgetSm = () => {
           const { _id: id, img, username } = user;
           return (
             <ListItem key={id}>
-              <Image
-                src={
-                  img ||
-                  'https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif'
-                }
-                alt={username}
-              />
+              <Image src={img || defaultAvatar} alt='' />
               <UserContainer>
                 <UserName>{username}</UserName>
               </UserContainer>
