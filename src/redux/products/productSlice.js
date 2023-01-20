@@ -28,9 +28,9 @@ export const addProduct = createAsyncThunk(
 
 export const editProduct = createAsyncThunk(
   'products/updateProduct',
-  async ({ productID, product, toast }, thunkAPI) => {
+  async ({ productId, product, toast }, thunkAPI) => {
     try {
-      const { data } = await productAPI.updateProduct(productID, product);
+      const { data } = await productAPI.updateProduct(productId, product);
       toast.success('Product updated');
       return data.product;
     } catch (err) {
@@ -41,11 +41,11 @@ export const editProduct = createAsyncThunk(
 
 export const removeProduct = createAsyncThunk(
   'products/deleteProduct',
-  async ({ productID, toast }, thunkAPI) => {
+  async ({ productId, toast }, thunkAPI) => {
     try {
-      await productAPI.deleteProduct(productID);
+      await productAPI.deleteProduct(productId);
       toast.success('Product deleted');
-      return productID;
+      return productId;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
