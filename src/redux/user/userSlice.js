@@ -1,16 +1,18 @@
 import jwtDecode from 'jwt-decode';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { tokenKey } from 'utils';
+import { getJwt } from 'services/authService';
+import { getFromStorage, tokenKey } from 'utils';
+
+const token = getJwt();
+const user = getFromStorage(tokenKey);
 
 const initialState = {
   users: [],
-  currentUser: null,
+  currentUser: user ?? null,
   isLoading: false,
   isError: false,
 };
-
-const token = localStorage.getItem(tokenKey);
 
 if (token) {
   const decodedToken = jwtDecode(token);
