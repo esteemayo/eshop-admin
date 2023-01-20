@@ -65,9 +65,9 @@ const Container = styled.div`
   box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
 
   ${phone({
-    marginBottom: '1rem',
-    marginRight: 0,
-  })}
+  marginBottom: '1rem',
+  marginRight: 0,
+})}
 `;
 
 const Title = styled.span`
