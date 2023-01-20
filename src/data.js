@@ -278,6 +278,42 @@ export const productRows = [
   },
 ];
 
+export const productColumns = [
+  {
+    field: '_id',
+    headerName: 'ID',
+    width: 220,
+  },
+  {
+    field: 'product',
+    headerName: 'Product',
+    width: 200,
+    renderCell: (params) => {
+      return (
+        <ProductListUser>
+          <Image src={params.row.img} />
+          {params.row.title}
+        </ProductListUser>
+      );
+    },
+  },
+  {
+    field: 'img',
+    headerName: 'Image',
+    width: 200,
+  },
+  {
+    field: 'inStock',
+    headerName: 'Stock',
+    width: 200,
+  },
+  {
+    field: 'price',
+    headerName: 'Price',
+    width: 160,
+  },
+];
+
 const UserListUser = styled.div`
   display: flex;
   align-items: center;
@@ -290,4 +326,9 @@ const Image = styled.img`
   display: block;
   object-fit: cover;
   margin-right: 1rem;
+`;
+
+const ProductListUser = styled.div`
+  display: flex;
+  align-items: center;
 `;
