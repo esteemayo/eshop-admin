@@ -128,8 +128,9 @@ const NewUser = () => {
           </FormGroup>
           <FormGroup>
             <FormInput
-              type='file'
               id='img'
+              type='file'
+              accept='image/*'
               onChange={(e) => setFile(e.target.files[0])}
             />
             <FormLabel htmlFor='img'>Image</FormLabel>
