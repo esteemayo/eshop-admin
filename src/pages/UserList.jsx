@@ -5,14 +5,15 @@ import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchUsers, removeUser } from 'redux/apiCalls/userApiCalls';
+import { removeUser } from 'redux/apiCalls/userApiCalls';
+import { fetchUsers } from 'redux/user/userSlice';
 
 const UserList = () => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.user);
 
   useEffect(() => {
-    fetchUsers(dispatch);
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   const handleDelete = (id) => {
