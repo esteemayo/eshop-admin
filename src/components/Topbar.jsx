@@ -38,7 +38,7 @@ const Topbar = () => {
           </IconContainer>
           <Image
             src={currentUser?.img || 'assets/user-default.jpg'}
-            alt={currentUser?.username}
+            alt=''
           />
           <Profile>
             <ArrowDropDown className='icon' />
