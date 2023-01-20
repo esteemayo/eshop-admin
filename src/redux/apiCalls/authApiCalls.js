@@ -1,4 +1,4 @@
-import * as actions from '../user/user';
+import * as actions from '../user/userSlice';
 import * as authService from 'services/authService';
 
 const tokenKey = 'jwtToken';
