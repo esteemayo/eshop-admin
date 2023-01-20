@@ -4,8 +4,11 @@ import { toast } from 'react-toastify';
 import logger from './logService';
 import { getJwt } from './authService';
 
+const devEnv = process.env.NODE_ENV !== 'production';
+const { REACT_APP_DEV_API_URL, REACT_APP_PROD_API_URL } = process.env;
+
 const authFetch = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: devEnv ? REACT_APP_DEV_API_URL : REACT_APP_PROD_API_URL,
   headers: {
     Accept: 'application/json',
   },
