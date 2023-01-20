@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
@@ -9,7 +10,7 @@ import {
 } from 'firebase/storage';
 
 import app from '../firebase';
-import { addProduct } from 'redux/apiCalls/productApiCalls';
+import { addProduct } from 'redux/products/productSlice';
 
 const NewProduct = () => {
   const dispatch = useDispatch();
@@ -80,7 +81,7 @@ const NewProduct = () => {
             img: downloadURL,
           };
 
-          addProduct(newProduct, dispatch);
+          dispatch(addProduct({ product: newProduct, toast }));
 
           setSize([]);
           setColor([]);
