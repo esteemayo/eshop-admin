@@ -17,6 +17,7 @@ const initialState = {
 
 const Product = () => {
   const { id } = useParams();
+  const [file, setFile] = useState(null);
   const [inputs, setInputs] = useState(initialState);
   const [productStats, setProductStats] = useState([]);
 
@@ -71,8 +72,8 @@ const Product = () => {
   }, [fetchIncomeStats]);
 
   useEffect(() => {
-    setInputs({ title: product.title, desc: product.desc, price: product.price, inStock: product.inStock });
-  }, []);
+    setInputs({ ...product });
+  }, [product]);
 
 
   const handleSubmit = (e) => {
