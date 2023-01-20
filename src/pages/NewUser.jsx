@@ -18,6 +18,7 @@ const NewUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [perc, setPerc] = useState(0);
   const [user, setUser] = useState(null);
   const [file, setFile] = useState(null);
 
@@ -26,9 +27,7 @@ const NewUser = () => {
     setUser((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const uploadFile = (file) => {
     const fileName = new Date().getTime() + file.name;
 
     const storage = getStorage(app);
@@ -41,7 +40,7 @@ const NewUser = () => {
       (snapshot) => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
+        setPerc(Math.round(progress));
         switch (snapshot.state) {
           case 'paused':
             console.log('Upload is paused');
@@ -57,19 +56,27 @@ const NewUser = () => {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          const userData = {
-            ...user,
-            img: downloadURL,
-          };
-
-          if (user) {
-            dispatch(registerUser({ credentials: userData, toast }));
-            navigate('/users');
-          }
+          setUser((prev) => ({ ...prev, img: downloadURL }));
         });
       }
     );
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      ...user,
+    };
+
+    if (user) {
+      dispatch(registerUser({ credentials: userData, navigate, toast }));
+    }
+  };
+
+  useEffect(() => {
+    file && uploadFile(file);
+  }, [file]);
 
   return (
     <Container>
@@ -127,16 +134,20 @@ const NewUser = () => {
             <FormLabel>Confirm password</FormLabel>
           </FormGroup>
           <FormGroup>
-            <FormInput
-              id='img'
-              type='file'
-              accept='image/*'
-              onChange={(e) => setFile(e.target.files[0])}
-            />
+            {perc > 0 ? (
+              `Uploading: ${perc}%`
+            ) : (
+              <FormInput
+                id='img'
+                type='file'
+                accept='image/*'
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            )}
             <FormLabel htmlFor='img'>Image</FormLabel>
           </FormGroup>
         </FormContainer>
-        <Button>Create</Button>
+        <Button disabled={perc > 0 && perc < 100}>Create</Button>
       </Form>
     </Container>
   );
@@ -244,6 +255,11 @@ const Button = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `;
 
