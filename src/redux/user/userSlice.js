@@ -1,10 +1,38 @@
 import jwtDecode from 'jwt-decode';
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { getJwt } from 'services/authService';
-import { clearFromStorage, getFromStorage, tokenKey } from 'utils';
+import * as authAPI from 'services/authService';
+import { clearFromStorage, getFromStorage, setToStorage, tokenKey } from 'utils';
 
-const token = getJwt();
+export const loginUser = createAsyncThunk(
+  'auth/login',
+  async ({ credentials, toast }, thunkAPI) => {
+    try {
+      const { data } = await authAPI.login({ ...credentials });
+      toast.success('Login successful');
+      return data.details;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
+export const registerUser = createAsyncThunk(
+  'auth/login',
+  async ({ credentials, toast }, thunkAPI) => {
+    try {
+      const { data } = await authAPI.register({ ...credentials });
+      if (data.role === 'admin') {
+        toast.success('Account created successfully');
+        return data.details;
+      }
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
+const token = authAPI.getJwt();
 const user = getFromStorage(tokenKey);
 
 const initialState = {
@@ -76,8 +104,25 @@ export const userSlice = createSlice({
       state.isLoading = false;
     },
     logout: (state) => {
+      clearFromStorage();
       state.currentUser = null;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(loginUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        setToStorage(tokenKey, payload);
+        state.currentUser = payload;
+      })
+      .addCase(loginUser.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.currentUser = null;
+        state.isError = true;
+      })
   },
 });
 
