@@ -135,16 +135,18 @@ const NewUser = () => {
           </FormGroup>
           <FormGroup>
             {perc > 0 ? (
-              `Uploading: ${perc}%`
+              <FormLabel>{`Uploading: ${perc}%`}</FormLabel>
             ) : (
-              <FormInput
-                id='img'
-                type='file'
-                accept='image/*'
-                onChange={(e) => setFile(e.target.files[0])}
-              />
+              <>
+                <FormInput
+                  id='img'
+                  type='file'
+                  accept='image/*'
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+                <FormLabel htmlFor='img'>Image</FormLabel>
+              </>
             )}
-            <FormLabel htmlFor='img'>Image</FormLabel>
           </FormGroup>
         </FormContainer>
         <Button disabled={perc > 0 && perc < 100}>Create</Button>
