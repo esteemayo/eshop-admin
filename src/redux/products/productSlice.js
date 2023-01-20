@@ -1,4 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import * as productAPI from 'services/productService';
+
+export const fetchProducts = createAsyncThunk(
+  'products/getProducts',
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await productAPI.getProducts();
+      return data.products;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
 
 const initialState = {
   products: [],
@@ -60,6 +73,20 @@ export const productSlice = createSlice({
       state.isError = true;
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProducts.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchProducts.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.products = payload;
+      })
+      .addCase(fetchProducts.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+  }
 });
 
 export const {
