@@ -285,6 +285,7 @@ const Product = () => {
               <Input
                 id='file'
                 type='file'
+                accept='image/*'
                 style={{ display: 'none' }}
                 onChange={(e) => setFile(e.target.files[0])}
               />
