@@ -177,7 +177,7 @@ export const userColumns = [
     renderCell: (params) => {
       return (
         <UserListUser>
-          <Image src={params.row.img} />
+          <Image src={params.row.img} alt='' />
           {params.row.username}
         </UserListUser>
       );
