@@ -2,7 +2,7 @@ import jwtDecode from 'jwt-decode';
 import { createSlice } from '@reduxjs/toolkit';
 
 import { getJwt } from 'services/authService';
-import { getFromStorage, tokenKey } from 'utils';
+import { clearFromStorage, getFromStorage, tokenKey } from 'utils';
 
 const token = getJwt();
 const user = getFromStorage(tokenKey);
@@ -19,9 +19,8 @@ if (token) {
   const expiryDate = Date.now();
 
   if (expiryDate > decodedToken.exp * 1000) {
-    localStorage.removeItem(tokenKey);
-  } else {
-    initialState.currentUser = decodedToken;
+    clearFromStorage();
+    initialState.currentUser = null;
   }
 }
 
