@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { productColumns } from 'data';
-import { removeProduct } from 'redux/apiCalls/productApiCalls';
-import { fetchProducts } from 'redux/products/productSlice';
+import { fetchProducts, removeProduct } from 'redux/products/productSlice';
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,9 @@ const ProductList = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  const handleDelete = (id) => {
-    removeProduct(id, dispatch);
+  const handleDelete = (productId) => {
+    if (window.confirm('Are you sure you wanted to delete this product?'))
+      dispatch(removeProduct({ productId, toast }))
   };
 
   const actionColumn = [
