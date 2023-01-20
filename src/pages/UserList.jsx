@@ -5,6 +5,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { userColumns } from 'data';
 import { fetchUsers, removeUser } from 'redux/user/userSlice';
 
 const UserList = () => {
@@ -20,26 +21,7 @@ const UserList = () => {
       dispatch(removeUser(userId));
   };
 
-  const columns = [
-    { field: '_id', headerName: 'ID', width: 220 },
-    {
-      field: 'user',
-      headerName: 'User',
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <UserListUser>
-            <Image src={params.row.img} />
-            {params.row.username}
-          </UserListUser>
-        );
-      },
-    },
-    {
-      field: 'email',
-      headerName: 'Email',
-      width: 200,
-    },
+  const actionColumn = [
     {
       field: 'action',
       headerName: 'Action',
@@ -68,7 +50,7 @@ const UserList = () => {
     <Container>
       <DataGrid
         rows={users}
-        columns={columns}
+        columns={userColumns.concat(actionColumn)}
         getRowId={(row) => row._id}
         disableSelectionOnClick
         pageSize={8}
@@ -82,20 +64,6 @@ const UserList = () => {
 
 const Container = styled.div`
   flex: 4;
-`;
-
-const UserListUser = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Image = styled.img`
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 50%;
-  display: block;
-  object-fit: cover;
-  margin-right: 1rem;
 `;
 
 const EditButton = styled.button`
