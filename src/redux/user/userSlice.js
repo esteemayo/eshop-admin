@@ -9,8 +9,10 @@ export const loginUser = createAsyncThunk(
   async ({ credentials, toast }, thunkAPI) => {
     try {
       const { data } = await authAPI.login({ ...credentials });
-      toast.success('Login successful');
-      return data.details;
+      if (data.role === 'admin') {
+        toast.success('Login successful');
+        return data.details;
+      }
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
