@@ -1,4 +1,4 @@
-const userData = [
+export const userData = [
   {
     name: 'Jan',
     'Active User': 4000,
@@ -49,7 +49,7 @@ const userData = [
   },
 ];
 
-const productData = [
+export const productData = [
   {
     name: 'Jan',
     Sales: 4000,
@@ -64,7 +64,7 @@ const productData = [
   },
 ];
 
-const userRows = [
+export const userRows = [
   {
     id: 1,
     username: 'Jon Snow',
@@ -157,7 +157,7 @@ const userRows = [
   },
 ];
 
-const productRows = [
+export const productRows = [
   {
     id: 1,
     name: 'Apple airpods',
@@ -240,4 +240,3 @@ const productRows = [
   },
 ];
 
-export { userData, productData, userRows, productRows };
