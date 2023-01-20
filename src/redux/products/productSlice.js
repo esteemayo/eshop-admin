@@ -13,6 +13,19 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+export const addProduct = createAsyncThunk(
+  'products/createProduct',
+  async ({ product, toast }, thunkAPI) => {
+    try {
+      const { data } = await productAPI.createProduct({ ...product });
+      toast.success('Product created');
+      return data.product;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
 const initialState = {
   products: [],
   isLoading: false,
@@ -83,6 +96,17 @@ export const productSlice = createSlice({
         state.products = payload;
       })
       .addCase(fetchProducts.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(addProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addProduct.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.products.push(payload);
+      })
+      .addCase(addProduct.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
