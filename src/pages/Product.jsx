@@ -29,11 +29,11 @@ const Product = () => {
   );
 
   const [perc, setPerc] = useState(0);
-  const [file, setFile] = useState(null);
-  const [inputs, setInputs] = useState(initialState);
   const [size, setSize] = useState([]);
+  const [file, setFile] = useState(null);
   const [color, setColor] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [inputs, setInputs] = useState(initialState);
   const [productStats, setProductStats] = useState([]);
 
   const handleChange = ({ target: input }) => {
