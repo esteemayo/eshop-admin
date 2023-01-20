@@ -7,6 +7,6 @@ export const login = (userData) =>
   http.post(`${apiEndpoint}/login`, userData);
 
 export const register = (userData) =>
-  http.post(`${apiEndpoint}/ register`, userData);
+  http.post(`${apiEndpoint}/register`, userData);
 
 export const getJwt = () => getFromStorage(tokenKey)?.accessToken;
