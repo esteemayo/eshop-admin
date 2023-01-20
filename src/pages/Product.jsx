@@ -3,7 +3,14 @@ import { useSelector } from 'react-redux';
 import { Publish } from '@material-ui/icons';
 import { Link, useParams } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
 
+import app from '../firebase';
 import { phone } from 'responsive';
 import Chart from 'components/Chart';
 import { getIncomeStats } from 'services/orderService';
@@ -17,6 +24,11 @@ const initialState = {
 
 const Product = () => {
   const { id } = useParams();
+  const product = useSelector((state) =>
+    state.product.products.find((product) => product._id === id)
+  );
+
+  const [perc, setPerc] = useState(0);
   const [file, setFile] = useState(null);
   const [inputs, setInputs] = useState(initialState);
   const [productStats, setProductStats] = useState([]);
@@ -67,6 +79,45 @@ const Product = () => {
     }
   }, [MONTHS, product.id]);
 
+  const uploadFile = (file) => {
+    const fileName = new Date().getTime() + file.name;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, fileName);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setPerc(Math.round(progress));
+        switch (snapshot.state) {
+          case 'paused':
+            console.log('Upload is paused');
+            break;
+          case 'running':
+            console.log('Upload is running');
+            break;
+          default:
+            break;
+        }
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setInputs((prev) => ({ ...prev, img: downloadURL }));
+        });
+      }
+    );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   useEffect(() => {
     fetchIncomeStats();
   }, [fetchIncomeStats]);
@@ -75,10 +126,9 @@ const Product = () => {
     setInputs({ ...product });
   }, [product]);
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  useEffect(() => {
+    file && uploadFile(file);
+  }, [file]);
 
   return (
     <Container>
@@ -175,7 +225,9 @@ const Product = () => {
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </FileUpload>
-            <Button>Update</Button>
+            <Button disabled={perc > 0 && perc < 100}>
+              Update
+            </Button>
           </FormRight>
         </Form>
       </Bottom>
