@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { loginUser } from 'redux/apiCalls/authApiCalls';
+import { loginUser } from 'redux/user/userSlice';
 
 const Login = () => {
   const usernameRef = useRef();
@@ -29,7 +30,7 @@ const Login = () => {
       password,
     };
 
-    loginUser(userData, dispatch);
+    dispatch(loginUser({ credentials: userData, toast }));
 
     const origin = location.state?.from?.pathname || '/';
     navigate(origin);
