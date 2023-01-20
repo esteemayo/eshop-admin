@@ -18,14 +18,12 @@ export const loginUser = createAsyncThunk(
 );
 
 export const registerUser = createAsyncThunk(
-  'auth/login',
+  'auth/register',
   async ({ credentials, toast }, thunkAPI) => {
     try {
       const { data } = await authAPI.register({ ...credentials });
-      if (data.role === 'admin') {
-        toast.success('Account created successfully');
-        return data.details;
-      }
+      toast.success('Account created successfully');
+      return data.details;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
