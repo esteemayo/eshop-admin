@@ -39,7 +39,7 @@ const WidgetLg = () => {
                 <TableDataUser>
                   <Image
                     src={order.user?.img || order.user?.gravatar}
-                    alt={order.user?.username}
+                    alt=''
                   />
                   <UserName>{order.user?.username}</UserName>
                 </TableDataUser>
