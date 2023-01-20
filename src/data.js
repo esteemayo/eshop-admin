@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultAvatar from 'img/avatar.png';
 
 export const userData = [
   {
@@ -177,7 +178,10 @@ export const userColumns = [
     renderCell: (params) => {
       return (
         <UserListUser>
-          <Image src={params.row.img} alt='' />
+          <Image
+            src={params.row.img ?? defaultAvatar}
+            alt=''
+          />
           {params.row.username}
         </UserListUser>
       );
