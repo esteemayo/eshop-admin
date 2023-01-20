@@ -1,12 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  products: [],
+  isLoading: false,
+  isError: false,
+};
 
 export const productSlice = createSlice({
-  name: 'product',
-  initialState: {
-    products: [],
-    isLoading: false,
-    isError: false,
-  },
+  name: 'products',
+  initialState,
   reducers: {
     getProductStart: (state) => {
       state.isLoading = true;
