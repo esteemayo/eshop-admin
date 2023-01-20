@@ -5,8 +5,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { removeUser } from 'redux/apiCalls/userApiCalls';
-import { fetchUsers } from 'redux/user/userSlice';
+import { fetchUsers, removeUser } from 'redux/user/userSlice';
 
 const UserList = () => {
   const dispatch = useDispatch();
@@ -16,8 +15,9 @@ const UserList = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  const handleDelete = (id) => {
-    removeUser(id, dispatch);
+  const handleDelete = (userId) => {
+    if (window.confirm('Are you sure you wanted to delete this user'))
+      dispatch(removeUser(userId));
   };
 
   const columns = [
