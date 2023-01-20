@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
 import { useRef, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getStorage,
   ref,
@@ -21,6 +21,8 @@ const initialState = {
 
 const NewProduct = () => {
   const dispatch = useDispatch();
+  const { isLoading } = useSelector((state) => state.product);
+
   const titleInputRef = useRef();
   const [perc, setPerc] = useState(0);
   const [size, setSize] = useState([]);
@@ -200,7 +202,9 @@ const NewProduct = () => {
             />
           )}
         </FormGroup>
-        <Button>Create</Button>
+        <Button disabled={isLoading || (perc > 0 && perc < 100)}>
+          Create
+        </Button>
       </Form>
     </Container>
   );
