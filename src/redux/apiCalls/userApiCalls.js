@@ -1,4 +1,4 @@
-import * as actions from '../user/user';
+import * as actions from '../user/userSlice';
 import * as userService from 'services/userService';
 
 export const fetchUsers = async (dispatch) => {
