@@ -2,6 +2,7 @@ import jwtDecode from 'jwt-decode';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import * as authAPI from 'services/authService';
+import * as userAPI from 'services/userService';
 import {
   clearFromStorage,
   getFromStorage,
@@ -31,6 +32,18 @@ export const registerUser = createAsyncThunk(
       const { data } = await authAPI.register({ ...credentials });
       toast.success('Account created successfully');
       return data.details;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
+export const fetchUsers = createAsyncThunk(
+  'auth/getUsers',
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await userAPI.getAllUsers();
+      return data.users
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
@@ -136,6 +149,17 @@ export const userSlice = createSlice({
         state.users.push(payload);
       })
       .addCase(registerUser.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(fetchUsers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchUsers.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.users = payload;
+      })
+      .addCase(fetchUsers.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
