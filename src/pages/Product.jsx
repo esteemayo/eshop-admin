@@ -31,15 +31,26 @@ const Product = () => {
   const [perc, setPerc] = useState(0);
   const [file, setFile] = useState(null);
   const [inputs, setInputs] = useState(initialState);
+  const [size, setSize] = useState([]);
+  const [color, setColor] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [productStats, setProductStats] = useState([]);
-
-  const product = useSelector((state) =>
-    state.product.products.find((product) => product._id === id)
-  );
 
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
     setInputs((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSize = (e) => {
+    setSize(e.target.value.split(','));
+  };
+
+  const handleColor = (e) => {
+    setColor(e.target.value.split(','));
+  };
+
+  const handleCategories = (e) => {
+    setCategories(e.target.value.split(','));
   };
 
   const MONTHS = useMemo(
@@ -123,7 +134,15 @@ const Product = () => {
   }, [fetchIncomeStats]);
 
   useEffect(() => {
-    setInputs({ ...product });
+    setSize(product.size);
+    setColor(product.color);
+    setCategories(product.categories);
+    setInputs({
+      title: product.title,
+      desc: product.desc,
+      price: product.price,
+      inStock: product.inStock,
+    });
   }, [product]);
 
   useEffect(() => {
@@ -199,6 +218,38 @@ const Product = () => {
                 placeholder={product.price}
               />
               <Label>Price</Label>
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor='categories'>Categories</Label>
+              <Input
+                type='text'
+                id='categories'
+                value={categories}
+                placeholder='Categories'
+                onChange={handleCategories}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor='size'>Size</Label>
+              <Input
+                type='text'
+                id='size'
+                name='size'
+                value={size}
+                placeholder='Size'
+                onChange={handleSize}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor='color'>Color</Label>
+              <Input
+                type='text'
+                id='color'
+                name='color'
+                value={color}
+                placeholder='Color'
+                onChange={handleColor}
+              />
             </FormGroup>
             <FormGroup>
               <Select name='inStock' id='inStock' onChange={handleChange}>
@@ -454,6 +505,11 @@ const Button = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `;
 
