@@ -2,6 +2,10 @@ import http from './httpService';
 
 const apiEndpoint = '/users';
 
+function userUrl(userId) {
+  return `${apiEndpoint}/${userId}`;
+}
+
 export function getAllUsers() {
   return http.get(`${apiEndpoint}`);
 }
@@ -15,5 +19,5 @@ export function getUserStats() {
 }
 
 export function deleteUser(userId) {
-  return http.delete(`${apiEndpoint}/${userId}`);
+  return http.delete(userUrl(userId));
 }
