@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 export const userData = [
   {
     name: 'Jan',
@@ -157,6 +159,42 @@ export const userRows = [
   },
 ];
 
+export const userColumns = [
+  {
+    field: '_id',
+    headerName: 'ID',
+    width: 220,
+  },
+  {
+    field: 'name',
+    headerName: 'Name',
+    width: 220,
+  },
+  {
+    field: 'user',
+    headerName: 'User',
+    width: 200,
+    renderCell: (params) => {
+      return (
+        <UserListUser>
+          <Image src={params.row.img} />
+          {params.row.username}
+        </UserListUser>
+      );
+    },
+  },
+  {
+    field: 'email',
+    headerName: 'Email',
+    width: 220,
+  },
+  {
+    field: 'role',
+    headerName: 'Role',
+    width: 120,
+  },
+];
+
 export const productRows = [
   {
     id: 1,
@@ -240,3 +278,16 @@ export const productRows = [
   },
 ];
 
+const UserListUser = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Image = styled.img`
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  margin-right: 1rem;
+`;
