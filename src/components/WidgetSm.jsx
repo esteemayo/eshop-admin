@@ -11,20 +11,18 @@ const WidgetSm = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState();
 
-  const fetchUsers = async () => {
-    try {
-      const {
-        data: { users },
-      } = await getUsers();
-
-      setUsers(users);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
-    fetchUsers();
+    (async () => {
+      try {
+        const {
+          data: { users },
+        } = await getUsers();
+
+        setUsers(users);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
   }, []);
 
   return (
