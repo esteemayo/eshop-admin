@@ -279,7 +279,9 @@ const Product = () => {
                 src={file ? URL.createObjectURL(file) : product.img}
                 alt=''
               />
-              <Overlay>overlay</Overlay>
+              <Overlay>
+                {/*  */}
+              </Overlay>
               <Label htmlFor='file'>
                 <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
               </Label>
@@ -512,6 +514,13 @@ const Overlay = styled.div`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
+`;
+
+const Progress = styled.span`
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #fff;
 `;
 
 const Button = styled.button`
