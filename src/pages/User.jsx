@@ -23,6 +23,11 @@ const User = () => {
 
   const [inputs, setInputs] = useState(initialState);
 
+  const handleChange = ({ target: input }) => {
+    const { name, value } = input;
+    setInputs((prev) => ({ ...prev, [name]: value }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -69,6 +74,7 @@ const User = () => {
                   type='text'
                   name='username'
                   placeholder={user?.username}
+                  onChange={handleChange}
                   required
                 />
                 <FormLabel>Username</FormLabel>
@@ -78,6 +84,7 @@ const User = () => {
                   type='text'
                   name='name'
                   placeholder={user?.name}
+                  onChange={handleChange}
                   required
                 />
                 <FormLabel>Full Name</FormLabel>
@@ -87,6 +94,7 @@ const User = () => {
                   type='email'
                   name='email'
                   placeholder={user?.email}
+                  onChange={handleChange}
                   required
                 />
                 <FormLabel>Email</FormLabel>
@@ -96,6 +104,7 @@ const User = () => {
                   type='text'
                   name='role'
                   placeholder={user?.role}
+                  onChange={handleChange}
                   required
                 />
                 <FormLabel>Role</FormLabel>
