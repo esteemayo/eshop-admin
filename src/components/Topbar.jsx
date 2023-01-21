@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   ArrowDropDown,
@@ -26,7 +26,9 @@ const Topbar = () => {
     <Container>
       <Wrapper>
         <TopLeft>
-          <Logo>Dashboard</Logo>
+          <Link to='/'>
+            <Logo>Dashboard</Logo>
+          </Link>
         </TopLeft>
         <TopRight>
           <IconContainer>
