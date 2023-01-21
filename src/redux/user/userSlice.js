@@ -51,6 +51,18 @@ export const fetchUsers = createAsyncThunk(
   }
 );
 
+export const fetchUser = createAsyncThunk(
+  'users/getUser',
+  async (userId, thunkAPI) => {
+    try {
+      const { data } = await userAPI.getUser(userId);
+      return data.user;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const editUser = createAsyncThunk(
   'users/updateUser',
   async ({ userId, updUser, navigate, toast }, thunkAPI) => {
@@ -82,6 +94,7 @@ const user = getFromStorage(tokenKey);
 
 const initialState = {
   users: [],
+  user: {},
   currentUser: user ?? null,
   isLoading: false,
   isError: false,
@@ -140,6 +153,17 @@ export const userSlice = createSlice({
         state.users = payload;
       })
       .addCase(fetchUsers.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(fetchUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user = payload;
+      })
+      .addCase(fetchUser.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
