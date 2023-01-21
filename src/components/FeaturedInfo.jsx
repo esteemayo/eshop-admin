@@ -14,7 +14,7 @@ const FeaturedInfo = () => {
       setIncome(data.income);
       setPercentage(
         (data.income[1].total / (data.income[0].total + data.income[1].total)) *
-          100
+        100
       );
     } catch (err) {
       console.log(err);
@@ -107,9 +107,9 @@ const FeaturedItem = styled.div`
   padding: 3rem;
   border-radius: 1rem;
   cursor: pointer;
-  -webkit-box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
-  box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: ${({ theme }) => theme.box};
+  -moz-box-shadow: ${({ theme }) => theme.box};
+  box-shadow: ${({ theme }) => theme.box};
 `;
 
 const Title = styled.span`
@@ -135,7 +135,7 @@ const FeaturedMoneyRate = styled.span`
 
 const FeaturedSub = styled.span`
   font-size: 1.5rem;
-  color: gray;
+  color: ${({ theme }) => theme.textSoft};
 `;
 
 export default FeaturedInfo;
