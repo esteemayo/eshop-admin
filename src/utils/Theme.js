@@ -21,6 +21,7 @@ export const darkTheme = {
   textAdd: '#cccccc',
   bgInput: '#2e2d2d',
   borderInput: 'transparent',
+  btnUpd: '#2f3b5a',
 };
 
 export const lightTheme = {
@@ -46,4 +47,5 @@ export const lightTheme = {
   textAdd: 'var(--color-white)',
   bgInput: 'var(--color-white)',
   borderInput: '#bbb',
+  btnUpd: '#00008b',
 };
