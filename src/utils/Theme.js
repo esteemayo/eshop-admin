@@ -17,6 +17,8 @@ export const darkTheme = {
   textPending: '#ebf1fe',
   btnEdit: '#dbfded',
   textEdit: '#3bb077',
+  bgBtnAdd: '#414040',
+  textAdd: '#cccccc',
 };
 
 export const lightTheme = {
@@ -38,4 +40,6 @@ export const lightTheme = {
   textPending: '#2a7ade',
   btnEdit: '#3bb077',
   textEdit: 'var(--color-white)',
+  bgBtnAdd: '#008080',
+  textAdd: 'var(--color-white)',
 };
