@@ -9,6 +9,12 @@ export const darkTheme = {
   bgOption: '#202020',
   toggleBtn: 'rgb(156, 156, 156)',
   box: '2px 4px 10px 1px rgba(201, 201, 201, 0.47)',
+  bgApproved: '#3bb077',
+  bgDeclined: '#d95087',
+  bgPending: '#2a7ade',
+  textApproved: '#e5faf1',
+  textDeclined: '#fff0f1',
+  textPending: '#ebf1fe',
 };
 
 export const lightTheme = {
@@ -22,4 +28,10 @@ export const lightTheme = {
   bgOption: '#0b0b0b',
   toggleBtn: '#7451f8',
   box: '0 0 1.5rem -1rem rgba(0, 0, 0, 0.75)',
+  bgApproved: '#e5faf1',
+  bgDeclined: '#fff0f1',
+  bgPending: '#ebf1fe',
+  textApproved: '#3bb077',
+  textDeclined: '#d95087',
+  textPending: '#2a7ade',
 };
