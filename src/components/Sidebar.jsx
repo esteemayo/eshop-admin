@@ -28,12 +28,7 @@ const Sidebar = () => {
           <Title>Dashboard</Title>
           <SidebarList>
             <SidebarListItem>
-              <NavLink
-                to='/'
-                className={({ isActive }) =>
-                  isActive ? 'sidebar__link active' : 'sidebar__link'
-                }
-              >
+              <NavLink to='/'>
                 <LineStyle
                   style={{ fontSize: '2rem', marginRight: '0.5rem' }}
                 />
@@ -54,12 +49,7 @@ const Sidebar = () => {
           <Title>Quick menu</Title>
           <SidebarList>
             <SidebarListItem>
-              <NavLink
-                to='/users'
-                className={({ isActive }) =>
-                  isActive ? 'sidebar__link active' : 'sidebar__link'
-                }
-              >
+              <NavLink to='/users'>
                 <PermIdentity
                   style={{ fontSize: '2rem', marginRight: '0.5rem' }}
                 />
@@ -67,12 +57,7 @@ const Sidebar = () => {
               </NavLink>
             </SidebarListItem>
             <SidebarListItem>
-              <NavLink
-                to='/products'
-                className={({ isActive }) =>
-                  isActive ? 'sidebar__link active' : 'sidebar__link'
-                }
-              >
+              <NavLink to='/products'>
                 <Storefront
                   style={{ fontSize: '2rem', marginRight: '0.5rem' }}
                 />
