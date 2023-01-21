@@ -159,6 +159,7 @@ const SidebarList = styled.ul`
 
 const SidebarListItem = styled.li`
   padding: 0.5rem;
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
 
   display: flex;
