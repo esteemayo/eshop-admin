@@ -20,6 +20,7 @@ export const darkTheme = {
   bgBtnAdd: '#414040',
   textAdd: '#cccccc',
   bgInput: '#2e2d2d',
+  borderInput: 'rgb(156, 156, 156)',
 };
 
 export const lightTheme = {
@@ -44,4 +45,5 @@ export const lightTheme = {
   bgBtnAdd: '#008080',
   textAdd: 'var(--color-white)',
   bgInput: 'var(--color-white)',
+  borderInput: '#bbb',
 };
