@@ -441,8 +441,8 @@ const Input = styled.input`
   width: 50rem;
   padding: 1rem 2rem;
   background-color: ${({ theme }) => theme.bgInput};
-  color: ${({ theme }) => theme.borderInput};
-  border-bottom: 3px solid #bbb;
+  color: #999;
+  border-bottom: 3px solid ${({ theme }) => theme.borderInput};
   caret-color: #00008b;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
