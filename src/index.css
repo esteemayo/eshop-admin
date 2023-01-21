@@ -100,6 +100,15 @@ input[type='file'] {
   color: rgb(151, 151, 151);
 }
 
+.MuiTablePagination-caption {
+  font-size: 1.3rem !important;
+  color: rgb(151, 151, 151) !important;
+}
+
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+
 /* .active {
   width: 100%;
   padding: 0.5rem;
