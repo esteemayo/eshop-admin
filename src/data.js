@@ -291,7 +291,7 @@ export const productColumns = [
   {
     field: 'product',
     headerName: 'Product',
-    width: 200,
+    width: 250,
     renderCell: (params) => {
       return (
         <ProductListUser>
@@ -309,7 +309,7 @@ export const productColumns = [
   {
     field: 'inStock',
     headerName: 'Stock',
-    width: 200,
+    width: 90,
   },
   {
     field: 'price',
