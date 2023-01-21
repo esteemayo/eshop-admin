@@ -30,10 +30,10 @@ export const editProduct = createAsyncThunk(
   'products/updateProduct',
   async ({ productId, product, navigate, toast }, thunkAPI) => {
     try {
-      const { data } = await productAPI.updateProduct(productId, product);
-      toast.success('Product updated');
-      navigate('/products');
-      return data.product;
+      // const { data } = await productAPI.updateProduct(productId, product);
+      // toast.success('Product updated');
+      // navigate('/products');
+      // return data.product;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
@@ -141,8 +141,9 @@ export const productSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(editProduct.fulfilled, (state, { payload }) => {
+        console.log(payload)
         state.isLoading = false;
-        state.products.map((item) => item._id === payload ? payload : item);
+        // state.products.map((item) => item._id === payload ? payload : item);
       })
       .addCase(editProduct.rejected, (state) => {
         state.isLoading = false;
