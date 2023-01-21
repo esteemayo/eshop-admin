@@ -29,8 +29,8 @@ const Topbar = () => {
         </TopLeft>
         <TopRight>
           <IconContainer>
-            <Mode>{darkMode ? 'light':'dark'} mode</Mode>
-        </IconContainer>
+            <Mode>{darkMode ? 'light' : 'dark'} mode</Mode>
+          </IconContainer>
           <IconContainer>
             <NotificationsNone style={{ fontSize: '2rem' }} />
             <TopIconBadge>2</TopIconBadge>
