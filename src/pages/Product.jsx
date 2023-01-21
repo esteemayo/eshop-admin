@@ -159,7 +159,7 @@ const Product = () => {
   }, [product]);
 
   useEffect(() => {
-    file && uploadFile(file);
+    // file && uploadFile(file);
   }, [file]);
 
   return (
@@ -279,6 +279,7 @@ const Product = () => {
                 src={file ? URL.createObjectURL(file) : product.img}
                 alt=''
               />
+              <Overlay>overlay</Overlay>
               <Label htmlFor='file'>
                 <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
               </Label>
@@ -491,6 +492,7 @@ const FormRight = styled.div`
 const FileUpload = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 const Img = styled.img`
@@ -500,6 +502,15 @@ const Img = styled.img`
   display: block;
   object-fit: cover;
   margin-right: 1rem;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 5rem;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
 `;
 
 const Button = styled.button`
