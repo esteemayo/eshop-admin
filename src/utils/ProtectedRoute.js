@@ -5,10 +5,7 @@ const ProtectedRoute = ({ children }) => {
   const location = useLocation();
   const { currentUser } = useSelector((state) => state.user);
 
-  if (currentUser) {
-    return <Navigate to='/' replace state={{ from: location }} />;
-  }
-  return children;
+  return currentUser ? <Navigate to='/' replace state={{ from: location }} /> : children;
 };
 
 export default ProtectedRoute;
