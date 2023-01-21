@@ -99,7 +99,7 @@ const UserContainer = styled.div`
 `;
 
 const UserName = styled.span`
-  text-transform: capitalize;
+  text-transform: lowercase;
   font-weight: 600;
 `;
 
