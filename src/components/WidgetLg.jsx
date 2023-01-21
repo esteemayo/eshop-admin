@@ -7,17 +7,15 @@ import { getOrders } from 'services/orderService';
 const WidgetLg = () => {
   const [orders, setOrders] = useState([]);
 
-  const fetchOrders = async () => {
-    try {
-      const { data } = await getOrders();
-      setOrders(data.orders);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
-    fetchOrders();
+    (async () => {
+      try {
+        const { data } = await getOrders();
+        setOrders(data.orders);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
   }, []);
 
   return (
