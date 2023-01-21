@@ -443,7 +443,7 @@ const Input = styled.input`
   background-color: ${({ theme }) => theme.bgInput};
   color: #999;
   border-bottom: 3px solid ${({ theme }) => theme.borderInput};
-  caret-color: #00008b;
+  caret-color: ${({ theme }) => theme.crInput};
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 
