@@ -127,12 +127,12 @@ const Button = styled.button`
   padding: 0.5rem 0.7rem;
   text-transform: capitalise;
   border-radius: 1rem;
-  background-color: #${(props) => props.type === 'approved' && 'e5faf1'};
-  background-color: #${(props) => props.type === 'declined' && 'fff0f1'};
-  background-color: #${(props) => props.type === 'pending' && 'ebf1fe'};
-  color: #${(props) => props.type === 'approved' && '3bb077'};
-  color: #${(props) => props.type === 'declined' && 'd95087'};
-  color: #${(props) => props.type === 'pending' && '2a7ade'};
+  background-color: ${(props) => props.type === 'approved' && props.theme.bgApproved};
+  background-color: ${(props) => props.type === 'declined' && props.theme.bgDeclined};
+  background-color: ${(props) => props.type === 'pending' && props.theme.bgPending};
+  color: ${(props) => props.type === 'approved' && props.theme.textApproved};
+  color: ${(props) => props.type === 'declined' && props.theme.textDeclined};
+  color: ${(props) => props.type === 'pending' && props.theme.textPending};
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 
