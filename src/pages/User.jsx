@@ -73,6 +73,14 @@ const User = () => {
                 />
                 <FormLabel>Email</FormLabel>
               </FormGroup>
+              <FormGroup>
+                <FormInput
+                  type='text'
+                  placeholder={user?.role}
+                  required
+                />
+                <FormLabel>Role</FormLabel>
+              </FormGroup>
             </Left>
             <Right>
               <Upload>
