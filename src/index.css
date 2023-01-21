@@ -85,11 +85,11 @@ input[type='file'] {
 }
 
 .delete__dark {
-  color: #fc6767;
+  color: #fc6767 !important;
 }
 
 .delete__light {
-  color: #ff0000;
+  color: #ff0000 !important;
 }
 
 .data__grid {
