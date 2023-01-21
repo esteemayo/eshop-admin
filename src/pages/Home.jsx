@@ -72,6 +72,7 @@ const Home = () => {
 
 const Container = styled.div`
   flex: 4;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const Widget = styled.div`
