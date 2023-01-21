@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -17,6 +18,8 @@ import {
 } from 'pages/index';
 
 function App() {
+  const { darkMode } = useSelector((state) => state.darkMode);
+
   return (
     <Router>
       <Routes>
