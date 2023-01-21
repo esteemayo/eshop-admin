@@ -7,6 +7,13 @@ import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 import { phone } from 'responsive';
 import defaultAvatar from 'img/avatar.png';
 
+const initialState = {
+  name: '',
+  role: '',
+  email: '',
+  username: '',
+};
+
 const User = () => {
   const { pathname } = useLocation();
   const userId = pathname.split('/')[2];
@@ -14,9 +21,15 @@ const User = () => {
     state.user.users.find((user) => user._id === userId)
   );
 
+  const [inputs, setInputs] = useState(initialState);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  useEffect(() => {
+    setInputs({ name: user.name, role: user.role, email: user.email, username: user.username });
+  }, [user]);
 
   return (
     <Container>
