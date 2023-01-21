@@ -312,7 +312,7 @@ const FormInput = styled.input`
   width: 40rem;
   border-radius: 4px;
   border-bottom: 3px solid ${({ theme }) => theme.borderInput};
-  caret-color: #00008b;
+  caret-color: ${({ theme }) => theme.crInput};
   transition: all 0.5s ease;
 
   ${phone({
