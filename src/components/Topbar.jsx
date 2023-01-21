@@ -102,6 +102,7 @@ const IconContainer = styled.div`
 
 const Mode = styled.span`
   text-transform: uppercase;
+  font-size: 1.35rem;
 `;
 
 const TopIconBadge = styled.span`
