@@ -322,6 +322,7 @@ const TitleContainer = styled.div`
 
 const Title = styled.h1`
   text-transform: capitalize;
+  color: ${({ theme }) => theme.textSoft};
 `;
 
 const AddButton = styled.button`
