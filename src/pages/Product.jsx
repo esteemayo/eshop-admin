@@ -361,9 +361,9 @@ const TopRight = styled.div`
   padding: 2rem;
   margin: 2rem;
   font-size: 1.5rem;
-  -webkit-box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
-  box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: ${({ theme }) => theme.box};
+  -moz-box-shadow: ${({ theme }) => theme.box};
+  box-shadow: ${({ theme }) => theme.box};
 `;
 
 const InfoTop = styled.div`
@@ -404,9 +404,9 @@ const InfoValue = styled.span`
 const Bottom = styled.div`
   padding: 2rem;
   margin: 2rem;
-  -webkit-box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
-  box-shadow: 0 0 1.5rem -1rem rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: ${({ theme }) => theme.box};
+  -moz-box-shadow: ${({ theme }) => theme.box};
+  box-shadow: ${({ theme }) => theme.box};
 `;
 
 const Form = styled.form`
