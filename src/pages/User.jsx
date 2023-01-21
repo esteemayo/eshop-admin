@@ -339,6 +339,11 @@ const FormButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 export default User;
