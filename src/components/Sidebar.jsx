@@ -183,7 +183,7 @@ const SidebarListItem = styled.li`
   transition: all 0.5s ease;
 
   &:hover {
-    background-color: rgb(240, 240, 255);
+    background-color: ${({ theme }) => theme.soft};
   }
 `;
 
