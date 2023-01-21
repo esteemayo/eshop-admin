@@ -166,7 +166,9 @@ const TitleContainer = styled.div`
   font-size: 1.5rem;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  color: ${({ theme }) => theme.textSoft};
+`;
 
 const Button = styled.button`
   border: none;
