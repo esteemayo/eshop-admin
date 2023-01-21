@@ -387,8 +387,8 @@ const FormButton = styled.button`
   font-size: 1.4rem;
   font-weight: 600;
   text-transform: capitalize;
-  background-color: #00008b;
-  color: var(--color-white);
+  background-color: ${({ theme }) => theme.btnUpd};
+  color: ${({ theme }) => theme.textUpd};
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.5s ease;
