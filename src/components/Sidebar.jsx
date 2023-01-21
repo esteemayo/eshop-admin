@@ -127,10 +127,12 @@ const Sidebar = () => {
               Reports
             </SidebarListItem>
             <SidebarListItem>
-              <Light />
-              <Dark />
             </SidebarListItem>
           </SidebarList>
+          <Bottom>
+            <Light />
+            <Dark />
+          </Bottom>
         </SidebarMenu>
       </Wrapper>
     </Container>
@@ -181,8 +183,27 @@ const SidebarListItem = styled.li`
   }
 `;
 
-const Light = styled.span``;
+const Bottom = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
-const Dark = styled.span``;
+  & > * {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+    border: 1px solid #7451f8;
+    cursor: pointer;
+  }
+`;
+
+const Light = styled.button`
+  background-color: whitesmoke;
+`;
+
+const Dark = styled.button`
+  background-color: #333;
+`;
 
 export default Sidebar;
