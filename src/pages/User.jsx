@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 
 import { phone } from 'responsive';
@@ -15,6 +15,8 @@ const initialState = {
 };
 
 const User = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const userId = pathname.split('/')[2];
   const user = useSelector((state) =>
