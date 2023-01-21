@@ -30,10 +30,10 @@ export const editProduct = createAsyncThunk(
   'products/updateProduct',
   async ({ productId, product, navigate, toast }, thunkAPI) => {
     try {
-      // const { data } = await productAPI.updateProduct(productId, product);
-      // toast.success('Product updated');
-      // navigate('/products');
-      // return data.product;
+      const { data } = await productAPI.updateProduct(productId, product);
+      toast.success('Product updated');
+      navigate('/products');
+      return data.product;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
