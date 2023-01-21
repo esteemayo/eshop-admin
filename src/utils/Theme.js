@@ -8,6 +8,7 @@ export const darkTheme = {
   option: 'rgb(156, 156, 156)',
   bgOption: '#202020',
   toggleBtn: 'rgb(156, 156, 156)',
+  box: '2px 4px 10px 1px rgba(201, 201, 201, 0.47)',
 };
 
 export const lightTheme = {
@@ -20,4 +21,5 @@ export const lightTheme = {
   option: 'var(--color-white)',
   bgOption: '#0b0b0b',
   toggleBtn: '#7451f8',
+  box: '0 0 1.5rem -1rem rgba(0, 0, 0, 0.75)',
 };
