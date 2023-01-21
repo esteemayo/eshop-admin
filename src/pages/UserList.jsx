@@ -64,6 +64,7 @@ const UserList = () => {
 
 const Container = styled.div`
   flex: 4;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const EditButton = styled.button`
@@ -71,8 +72,8 @@ const EditButton = styled.button`
   display: block;
   padding: 0.5rem 1rem;
   text-transform: capitalize;
-  background-color: #3bb077;
-  color: var(--color-white);
+  background-color: ${({ theme }) => theme.btnEdit};
+  color: ${({ theme }) => theme.textEdit};
   border-radius: 10rem;
   cursor: pointer;
   margin-right: 1rem;
