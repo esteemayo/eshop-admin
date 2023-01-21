@@ -159,7 +159,7 @@ const Product = () => {
   }, [product]);
 
   useEffect(() => {
-    // file && uploadFile(file);
+    file && uploadFile(file);
   }, [file]);
 
   return (
