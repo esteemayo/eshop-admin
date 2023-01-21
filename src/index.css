@@ -84,6 +84,14 @@ input[type='file'] {
   cursor: pointer;
 }
 
+.delete__dark {
+  color: #fc6767;
+}
+
+.delete__light {
+  color: #ff0000;
+}
+
 /* .active {
   width: 100%;
   padding: 0.5rem;
