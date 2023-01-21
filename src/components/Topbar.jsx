@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   ArrowDropDown,
   Language,
@@ -10,6 +11,8 @@ import {
 import { logout } from 'redux/user/userSlice';
 
 const Topbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
 
   const handleLogout = () => {
