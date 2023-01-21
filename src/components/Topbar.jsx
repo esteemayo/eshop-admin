@@ -26,7 +26,7 @@ const Topbar = () => {
     <Container>
       <Wrapper>
         <TopLeft>
-          <Link to='/'>
+          <Link to='/' className='link'>
             <Logo>Dashboard</Logo>
           </Link>
         </TopLeft>
