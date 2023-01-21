@@ -1,3 +1,6 @@
+import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import {
   AttachMoney,
   BarChart,
@@ -12,10 +15,12 @@ import {
   TrendingUp,
   WorkOutline,
 } from '@material-ui/icons';
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+
+import { dark, light } from 'redux/darkMode/darkModeSlice';
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Wrapper>
@@ -130,8 +135,8 @@ const Sidebar = () => {
             </SidebarListItem>
           </SidebarList>
           <Bottom>
-            <Light />
-            <Dark />
+            <Light onClick={() => dispatch(light())} />
+            <Dark onClick={() => dispatch(dark())} />
           </Bottom>
         </SidebarMenu>
       </Wrapper>
