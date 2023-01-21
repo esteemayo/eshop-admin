@@ -19,6 +19,7 @@ export const darkTheme = {
   textEdit: '#3bb077',
   bgBtnAdd: '#414040',
   textAdd: '#cccccc',
+  bgInput: '#2e2d2d',
 };
 
 export const lightTheme = {
@@ -42,4 +43,5 @@ export const lightTheme = {
   textEdit: 'var(--color-white)',
   bgBtnAdd: '#008080',
   textAdd: 'var(--color-white)',
+  bgInput: 'var(--color-white)',
 };
