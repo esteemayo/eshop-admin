@@ -76,6 +76,7 @@ const User = () => {
               <FormGroup>
                 <FormInput
                   type='text'
+                  name='name'
                   placeholder={user?.name}
                   required
                 />
