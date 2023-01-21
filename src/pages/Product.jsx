@@ -516,7 +516,7 @@ const Overlay = styled.div`
   left: 0;
   right: 5rem;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
   display: flex;
   align-items: center;
