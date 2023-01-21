@@ -15,6 +15,8 @@ export const darkTheme = {
   textApproved: '#e5faf1',
   textDeclined: '#fff0f1',
   textPending: '#ebf1fe',
+  btnEdit: '#dbfded',
+  textEdit: '#3bb077',
 };
 
 export const lightTheme = {
@@ -34,4 +36,6 @@ export const lightTheme = {
   textApproved: '#3bb077',
   textDeclined: '#d95087',
   textPending: '#2a7ade',
+  btnEdit: '#3bb077',
+  textEdit: 'var(--color-white)',
 };
