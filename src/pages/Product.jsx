@@ -510,7 +510,8 @@ const Overlay = styled.div`
   left: 0;
   right: 5rem;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
 `;
 
 const Button = styled.button`
