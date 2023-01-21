@@ -16,9 +16,8 @@ const Topbar = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   const handleLogout = () => {
-    logout();
-    localStorage.removeItem('jwtToken');
-    window.location.replace('/login');
+    dispatch(logout());
+    navigate('/login');
   };
 
   return (
