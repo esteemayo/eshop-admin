@@ -87,7 +87,9 @@ const TableHeading = styled.th`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const TableBody = styled.tbody``;
+const TableBody = styled.tbody`
+  color: ${({ theme }) => theme.text};
+`;
 
 const TableDataUser = styled.td`
   display: flex;
@@ -106,6 +108,7 @@ const Image = styled.img`
 
 const UserName = styled.span`
   text-transform: lowercase;
+  font-weight: 550;
 `;
 
 const TableDataDate = styled.td`
