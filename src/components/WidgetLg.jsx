@@ -68,6 +68,7 @@ const Title = styled.h3`
   font-size: 2.2rem;
   font-weight: 600;
   text-transform: capitalize;
+  color: ${({ theme }) => theme.textSoft};
 `;
 
 const Table = styled.table`
