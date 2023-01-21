@@ -102,7 +102,7 @@ const Image = styled.img`
 `;
 
 const UserName = styled.span`
-  text-transform: capitalize;
+  text-transform: lowercase;
 `;
 
 const TableDataDate = styled.td`
