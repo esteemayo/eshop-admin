@@ -181,6 +181,15 @@ const SidebarListItem = styled.li`
   border-radius: 1rem;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+  }
 
   &:hover {
     background-color: ${({ theme }) => theme.soft};
