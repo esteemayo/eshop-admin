@@ -9,6 +9,8 @@ export const getAllUsers = () => http.get(`${apiEndpoint}`);
 export const getUsers = () =>
   http.get(`${apiEndpoint}/?new=true`);
 
+export const getUser = (userId) => http.get(userUrl(userId));
+
 export const getUserStats = () => http.get(`${apiEndpoint}/stats`);
 
 export const updateUser = (userId, user) =>
