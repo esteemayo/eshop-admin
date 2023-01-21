@@ -64,7 +64,7 @@ const Topbar = () => {
 const Container = styled.div`
   width: 100%;
   height: 5rem;
-  background-color: var(--color-white);
+  background-color: ${({ theme }) => theme.bg};
   position: sticky;
   top: 0;
   z-index: 1000;
