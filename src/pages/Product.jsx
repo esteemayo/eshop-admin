@@ -331,8 +331,8 @@ const AddButton = styled.button`
   font-size: 1.6rem;
   padding: 1rem 2rem;
   text-transform: capitalize;
-  background-color: #008080;
-  color: var(--color-white);
+  background-color: ${({ theme }) => theme.bgBtnAdd};
+  color: ${({ theme }) => theme.textAdd};
   border-radius: 0.5rem;
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
