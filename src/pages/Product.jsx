@@ -280,7 +280,11 @@ const Product = () => {
                 alt=''
               />
               <Overlay>
-                {/*  */}
+                {perc > 0 && (
+                  <Progress>
+                    Uploading: {perc}%
+                  </Progress>
+                )}
               </Overlay>
               <Label htmlFor='file'>
                 <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
