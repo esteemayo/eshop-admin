@@ -31,20 +31,21 @@ const WidgetLg = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {orders.map((order) => {
+          {orders?.map((order) => {
+            const { _id: id, user, amount, status, createdAt } = order;
             return (
-              <TableRow key={order._id}>
+              <TableRow key={id}>
                 <TableDataUser>
                   <Image
-                    src={order.user?.img || order.user?.gravatar}
+                    src={user?.img || user?.gravatar}
                     alt=''
                   />
-                  <UserName>{order.user?.username}</UserName>
+                  <UserName>{user?.username}</UserName>
                 </TableDataUser>
-                <TableDataDate>{format(order.createdAt)}</TableDataDate>
-                <TableDataAmount>${order.amount}</TableDataAmount>
+                <TableDataDate>{format(createdAt)}</TableDataDate>
+                <TableDataAmount>${amount}</TableDataAmount>
                 <TableDataStatus>
-                  <Button type={order.status}>{order.status}</Button>
+                  <Button type={status}>{status}</Button>
                 </TableDataStatus>
               </TableRow>
             );
