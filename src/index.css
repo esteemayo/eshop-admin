@@ -92,6 +92,10 @@ input[type='file'] {
   color: #ff0000;
 }
 
+.data__grid {
+  color: rgb(151, 151, 151) !important;
+}
+
 /* .active {
   width: 100%;
   padding: 0.5rem;
