@@ -141,9 +141,10 @@ export const productSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(editProduct.fulfilled, (state, { payload }) => {
-        console.log(payload)
         state.isLoading = false;
-        // state.products.map((item) => item._id === payload ? payload : item);
+        state.products[
+          state.products.findIndex((item) => item._id === payload._id)
+        ] = payload;
       })
       .addCase(editProduct.rejected, (state) => {
         state.isLoading = false;
