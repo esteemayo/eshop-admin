@@ -55,6 +55,7 @@ const UserList = () => {
         rowsPerPageOptions={[8]}
         checkboxSelection
         style={{ fontSize: '1.5rem' }}
+        className={darkMode && 'data__grid'}
       />
     </Container>
   );
