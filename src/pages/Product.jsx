@@ -523,7 +523,6 @@ const Overlay = styled.div`
 const Progress = styled.span`
   font-weight: 400;
   font-size: 1.2rem;
-  text-align: center;
   color: #fff;
 `;
 
