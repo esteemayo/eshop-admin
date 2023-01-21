@@ -11,6 +11,7 @@ import { fetchUsers, removeUser } from 'redux/user/userSlice';
 const UserList = () => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.user);
+  const { darkMode } = useSelector((state) => state.darkMode);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -34,11 +35,8 @@ const UserList = () => {
             </Link>
             <DeleteOutline
               onClick={() => handleDelete(params.row.id)}
-              style={{
-                fontSize: '2rem',
-                color: '#ff0000',
-                cursor: 'pointer',
-              }}
+              className={darkMode ? 'delete__dark' : 'delete__light'}
+              style={{ fontSize: '2rem', cursor: 'pointer' }}
             />
           </>
         );
