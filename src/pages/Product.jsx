@@ -538,7 +538,7 @@ const Button = styled.button`
   font-weight: 600;
   padding: 0.5rem;
   background-color: ${({ theme }) => theme.btnUpd};
-  color: var(--color-white);
+  color: ${({ theme }) => theme.textUpd};
   border-radius: 0.5rem;
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
