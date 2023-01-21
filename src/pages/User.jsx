@@ -27,7 +27,7 @@ const User = () => {
       <UserContainer>
         <ShowUser>
           <Top>
-            <Image src={user?.img || user?.gravatar} alt={user?.username} />
+            <Image src={user?.img || user?.gravatar} alt='' />
             <TopTitle>
               <ShowUserUsername>{user?.name}</ShowUserUsername>
             </TopTitle>
