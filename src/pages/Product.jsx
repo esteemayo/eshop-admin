@@ -518,6 +518,9 @@ const Overlay = styled.div`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Progress = styled.span`
