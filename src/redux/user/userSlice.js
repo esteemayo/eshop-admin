@@ -40,7 +40,7 @@ export const registerUser = createAsyncThunk(
 );
 
 export const fetchUsers = createAsyncThunk(
-  'auth/getUsers',
+  'users/getUsers',
   async (_, thunkAPI) => {
     try {
       const { data } = await userAPI.getAllUsers();
