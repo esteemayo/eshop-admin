@@ -7,7 +7,7 @@ import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 
 import { phone } from 'responsive';
 import defaultAvatar from 'img/avatar.png';
-import { editUser } from 'redux/user/userSlice';
+import { editUser, fetchUser } from 'redux/user/userSlice';
 
 const initialState = {
   name: '',
@@ -21,10 +21,7 @@ const User = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const userId = pathname.split('/')[2];
-  const { isLoading } = useSelector((state) => state.user);
-  const user = useSelector((state) =>
-    state.user.users.find((user) => user._id === userId)
-  );
+  const { user, isLoading } = useSelector((state) => state.user);
 
   const [inputs, setInputs] = useState(initialState);
 
@@ -44,11 +41,15 @@ const User = () => {
   };
 
   useEffect(() => {
+    dispatch(fetchUser(userId));
+  }, [dispatch, userId]);
+
+  useEffect(() => {
     setInputs({
-      name: user.name,
-      role: user.role,
-      email: user.email,
-      username: user.username,
+      name: user?.name,
+      role: user?.role,
+      email: user?.email,
+      username: user?.username,
     });
   }, [user]);
 
