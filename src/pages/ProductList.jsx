@@ -12,6 +12,7 @@ import { fetchProducts, removeProduct } from 'redux/products/productSlice';
 const ProductList = () => {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.product);
+  const { darkMode } = useSelector((state) => state.darkMode);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -35,11 +36,8 @@ const ProductList = () => {
             </Link>
             <DeleteOutline
               onClick={() => handleDelete(params.row._id)}
-              style={{
-                fontSize: '2rem',
-                color: '#ff0000',
-                cursor: 'pointer',
-              }}
+              className={darkMode ? 'delete__dark' : 'delete__light'}
+              style={{ fontSize: '2rem', cursor: 'pointer' }}
             />
           </>
         );
@@ -58,6 +56,7 @@ const ProductList = () => {
         rowsPerPageOptions={[8]}
         checkboxSelection
         style={{ fontSize: '1.5rem' }}
+        className={darkMode && 'data__grid'}
       />
     </Container>
   );
@@ -66,6 +65,7 @@ const ProductList = () => {
 const Container = styled.div`
   flex: 4;
   padding: 2rem;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const EditButton = styled.button`
@@ -73,8 +73,8 @@ const EditButton = styled.button`
   display: block;
   padding: 0.5rem 1rem;
   text-transform: capitalize;
-  background-color: #3bb077;
-  color: var(--color-white);
+  background-color: ${({ theme }) => theme.btnEdit};
+  color: ${({ theme }) => theme.textEdit};
   border-radius: 10rem;
   cursor: pointer;
   margin-right: 1rem;
