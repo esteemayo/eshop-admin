@@ -5,6 +5,7 @@ export const darkTheme = {
   textSoft: '#aaaaaa',
   soft: '#373737',
   logo: 'var(--color-white)',
+  option: 'rgb(156, 156, 156)',
 };
 
 export const lightTheme = {
@@ -14,4 +15,5 @@ export const lightTheme = {
   textSoft: '#606060',
   soft: '#f5f5f5',
   logo: '#00008b',
+  option: 'var(--color-white)',
 };
