@@ -69,6 +69,7 @@ const Title = styled.span`
   text-transform: capitalize;
   font-size: 2.2rem;
   font-weight: 600;
+  color: ${({ theme }) => theme.textSoft};
 `;
 
 const List = styled.ul`
