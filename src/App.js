@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AuthRoute from 'utils/AuthRoute';
 import ProtectedRoute from 'utils/ProtectedRoute';
+import { darkTheme, lightTheme } from 'utils/Theme';
 import {
   Error,
   Home,
@@ -21,77 +22,79 @@ function App() {
   const { darkMode } = useSelector((state) => state.darkMode);
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path='/login'
-          element={
-            <ProtectedRoute>
-              <Login />
-            </ProtectedRoute>
-          }
-        />
-        <Route path='/' element={<SharedLayout />}>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Router>
+        <Routes>
           <Route
-            index
+            path='/login'
             element={
-              <AuthRoute>
-                <Home />
-              </AuthRoute>
+              <ProtectedRoute>
+                <Login />
+              </ProtectedRoute>
             }
           />
-          <Route
-            path='users'
-            element={
-              <AuthRoute>
-                <UserList />
-              </AuthRoute>
-            }
-          />
-          <Route
-            path='user/:id'
-            element={
-              <AuthRoute>
-                <User />
-              </AuthRoute>
-            }
-          />
-          <Route
-            path='new-user'
-            element={
-              <AuthRoute>
-                <NewUser />
-              </AuthRoute>
-            }
-          />
-          <Route
-            path='products'
-            element={
-              <AuthRoute>
-                <ProductList />
-              </AuthRoute>
-            }
-          />
-          <Route
-            path='product/:id'
-            element={
-              <AuthRoute>
-                <Product />
-              </AuthRoute>
-            }
-          />
-          <Route
-            path='new-product'
-            element={
-              <AuthRoute>
-                <NewProduct />
-              </AuthRoute>
-            }
-          />
-        </Route>
-        <Route path='*' element={<Error />} />
-      </Routes>
-    </Router>
+          <Route path='/' element={<SharedLayout />}>
+            <Route
+              index
+              element={
+                <AuthRoute>
+                  <Home />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path='users'
+              element={
+                <AuthRoute>
+                  <UserList />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path='user/:id'
+              element={
+                <AuthRoute>
+                  <User />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path='new-user'
+              element={
+                <AuthRoute>
+                  <NewUser />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path='products'
+              element={
+                <AuthRoute>
+                  <ProductList />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path='product/:id'
+              element={
+                <AuthRoute>
+                  <Product />
+                </AuthRoute>
+              }
+            />
+            <Route
+              path='new-product'
+              element={
+                <AuthRoute>
+                  <NewProduct />
+                </AuthRoute>
+              }
+            />
+          </Route>
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
