@@ -114,6 +114,7 @@ const FeaturedItem = styled.div`
 
 const Title = styled.span`
   font-size: 2rem;
+  color: ${({ theme }) => theme.textSoft};
 `;
 
 const FeaturedMoneyContainer = styled.div`
