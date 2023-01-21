@@ -52,7 +52,7 @@ export const fetchUsers = createAsyncThunk(
 );
 
 export const removeUser = createAsyncThunk(
-  'auth/deleteUser',
+  'users/deleteUser',
   async (userId, thunkAPI) => {
     try {
       await userAPI.deleteUser(userId);
