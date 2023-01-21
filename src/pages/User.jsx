@@ -136,7 +136,11 @@ const User = () => {
                 <FormLabel htmlFor='file'>
                   <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
                 </FormLabel>
-                <FormInput type='file' id='file' style={{ display: 'none' }} />
+                <FormInput
+                  type='file'
+                  id='file'
+                  style={{ display: 'none' }}
+                />
               </Upload>
               <FormButton disabled={isLoading}>Update</FormButton>
             </Right>
