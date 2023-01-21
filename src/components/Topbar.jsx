@@ -14,6 +14,7 @@ const Topbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
+  const { darkMode } = useSelector((state) => state.darkMode);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -27,6 +28,9 @@ const Topbar = () => {
           <Logo>Dashboard</Logo>
         </TopLeft>
         <TopRight>
+          <IconContainer>
+            <Mode>{darkMode ? 'light':'dark'} mode</Mode>
+        </IconContainer>
           <IconContainer>
             <NotificationsNone style={{ fontSize: '2rem' }} />
             <TopIconBadge>2</TopIconBadge>
@@ -91,6 +95,10 @@ const IconContainer = styled.div`
   cursor: pointer;
   margin-right: 1rem;
   color: #555;
+`;
+
+const Mode = styled.span`
+  text-transform: uppercase;
 `;
 
 const TopIconBadge = styled.span`
