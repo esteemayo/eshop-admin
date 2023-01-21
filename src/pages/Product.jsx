@@ -470,7 +470,7 @@ const Select = styled.select`
   display: block;
   padding: 1rem 2rem;
   background-color: ${({ theme }) => theme.bgInput};
-  color: #bbb;
+  color: #999;
   user-select: none;
   border-bottom: 3px solid ${({ theme }) => theme.borderInput};
   -webkit-transition: all 0.5s ease;
