@@ -537,7 +537,7 @@ const Button = styled.button`
   font-size: 1.4rem;
   font-weight: 600;
   padding: 0.5rem;
-  background-color: #00008b;
+  background-color: ${({ theme }) => theme.btnUpd};
   color: var(--color-white);
   border-radius: 0.5rem;
   cursor: pointer;
