@@ -142,7 +142,7 @@ const Sidebar = () => {
 const Container = styled.div`
   flex: 1;
   height: calc(100vh - 5rem);
-  background-color: rgb(251, 251, 255);
+  background-color: ${({ theme }) => theme.bgLight};
   position: sticky;
   top: 5rem;
 `;
