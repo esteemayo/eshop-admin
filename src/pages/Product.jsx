@@ -28,6 +28,7 @@ const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { darkMode } = useSelector((state) => state.darkMode);
   const product = useSelector((state) =>
     state.product.products.find((product) => product._id === id)
   );
@@ -287,7 +288,7 @@ const Product = () => {
                 </Overlay>
               )}
               <Label htmlFor='file'>
-                <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
+                <Publish className={darkMode && 'file__icon'} style={{ fontSize: '2rem', cursor: 'pointer' }} />
               </Label>
               <Input
                 id='file'
