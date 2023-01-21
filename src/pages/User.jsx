@@ -311,7 +311,7 @@ const FormInput = styled.input`
   padding: 1.5rem 2rem;
   width: 40rem;
   border-radius: 4px;
-  border-bottom: 3px solid #bbb;
+  border-bottom: 3px solid ${({ theme }) => theme.borderInput};
   caret-color: #00008b;
   transition: all 0.5s ease;
 
