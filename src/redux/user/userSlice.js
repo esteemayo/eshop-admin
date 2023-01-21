@@ -51,6 +51,20 @@ export const fetchUsers = createAsyncThunk(
   }
 );
 
+export const editUser = createAsyncThunk(
+  'users/updateUser',
+  async ({ userId, updUser, navigate, toast }, thunkAPI) => {
+    try {
+      const { data } = await userAPI.updateUser(userId, updUser);
+      toast.success('User updated');
+      navigate('-1');
+      return data.user;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const removeUser = createAsyncThunk(
   'users/deleteUser',
   async (userId, thunkAPI) => {
@@ -126,6 +140,19 @@ export const userSlice = createSlice({
         state.users = payload;
       })
       .addCase(fetchUsers.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(editUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(editUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.users[
+          state.users.findIndex((item) => item._id === payload._id)
+        ] = payload;
+      })
+      .addCase(editUser.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
