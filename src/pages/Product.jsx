@@ -279,13 +279,13 @@ const Product = () => {
                 src={file ? URL.createObjectURL(file) : product.img}
                 alt=''
               />
-              <Overlay>
-                {perc > 0 && (
+              {perc > 0 && (
+                <Overlay>
                   <Progress>
                     Uploading: {perc}%
                   </Progress>
-                )}
-              </Overlay>
+                </Overlay>
+              )}
               <Label htmlFor='file'>
                 <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
               </Label>
