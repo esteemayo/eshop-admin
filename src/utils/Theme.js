@@ -14,7 +14,7 @@ export const darkTheme = {
 export const lightTheme = {
   bg: 'var(--color-white)',
   bgLight: 'rgb(251, 251, 255)',
-  text: '#333333',
+  text: '#777777',
   textSoft: '#606060',
   soft: '#f5f5f5',
   logo: '#00008b',
