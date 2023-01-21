@@ -23,6 +23,7 @@ export const darkTheme = {
   borderInput: 'transparent',
   btnUpd: '#2f3b5a',
   textUpd: 'rgb(156, 156, 156)',
+  crInput: 'rgb(156, 156, 156)',
 };
 
 export const lightTheme = {
@@ -50,4 +51,5 @@ export const lightTheme = {
   borderInput: '#bbb',
   btnUpd: '#00008b',
   textUpd: 'var(--color-white)',
+  crInput: '#00008b',
 };
