@@ -56,7 +56,7 @@ export const fetchUser = createAsyncThunk(
   async (userId, thunkAPI) => {
     try {
       const { data } = await userAPI.getUser(userId);
-      return data.user;
+      return data.doc;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
@@ -70,7 +70,7 @@ export const editUser = createAsyncThunk(
       const { data } = await userAPI.updateUser(userId, updUser);
       toast.success('User updated');
       navigate(-1);
-      return data.user;
+      return data.doc;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
