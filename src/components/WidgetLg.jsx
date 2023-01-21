@@ -83,7 +83,9 @@ const TableHeader = styled.thead`
   text-align: left;
 `;
 
-const TableHeading = styled.th``;
+const TableHeading = styled.th`
+  color: ${({ theme }) => theme.textSoft};
+`;
 
 const TableBody = styled.tbody``;
 
