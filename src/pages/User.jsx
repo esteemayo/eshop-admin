@@ -44,7 +44,12 @@ const User = () => {
   };
 
   useEffect(() => {
-    setInputs({ name: user.name, role: user.role, email: user.email, username: user.username });
+    setInputs({
+      name: user.name,
+      role: user.role,
+      email: user.email,
+      username: user.username,
+    });
   }, [user]);
 
   return (
