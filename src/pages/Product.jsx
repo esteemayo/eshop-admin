@@ -440,7 +440,7 @@ const Input = styled.input`
   display: block;
   width: 50rem;
   padding: 1rem 2rem;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.bgInput};
   color: #999;
   border-bottom: 3px solid #bbb;
   caret-color: #00008b;
@@ -469,7 +469,7 @@ const Select = styled.select`
   width: 100%;
   display: block;
   padding: 1rem 2rem;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.bgInput};
   color: #bbb;
   user-select: none;
   border-bottom: 3px solid #bbb;
