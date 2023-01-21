@@ -176,8 +176,8 @@ const Button = styled.button`
   text-transform: capitalize;
   font-size: 1.6rem;
   padding: 1rem 2rem;
-  background-color: #008080;
-  color: var(--color-white);
+  background-color: ${({ theme }) => theme.bgBtnAdd};
+  color: ${({ theme }) => theme.textAdd};
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.5s ease;
