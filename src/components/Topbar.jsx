@@ -84,7 +84,7 @@ const Logo = styled.div`
   font-size: 3rem;
   font-weight: bold;
   font-family: 'Great Vibes', cursive;
-  color: #00008b;
+  color: ${({ theme }) => theme.logo};
   cursor: pointer;
 `;
 
