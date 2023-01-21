@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 
 import { phone } from 'responsive';
+import defaultAvatar from 'img/avatar.png';
 
 const User = () => {
   const { pathname } = useLocation();
@@ -27,7 +28,7 @@ const User = () => {
       <UserContainer>
         <ShowUser>
           <Top>
-            <Image src={user?.img || user?.gravatar} alt='' />
+            <Image src={user?.img ?? defaultAvatar} alt='' />
             <TopTitle>
               <ShowUserUsername>{user?.name}</ShowUserUsername>
             </TopTitle>
