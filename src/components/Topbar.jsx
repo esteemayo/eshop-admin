@@ -131,7 +131,7 @@ const Image = styled.img`
 
 const Options = styled.div`
   display: none;
-  background-color: #0b0b0b;
+  background-color: ${({ theme }) => theme.bgOption};
   color: ${({ theme }) => theme.option};
   border-radius: 0.5rem;
 `;
