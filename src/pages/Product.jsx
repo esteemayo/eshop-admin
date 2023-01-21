@@ -527,9 +527,6 @@ const Progress = styled.span`
   font-weight: 400;
   font-size: 1.2rem;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Button = styled.button`
