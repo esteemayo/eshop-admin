@@ -7,6 +7,7 @@ export const darkTheme = {
   logo: 'var(--color-white)',
   option: 'rgb(156, 156, 156)',
   bgOption: '#202020',
+  toggleBtn: 'rgb(156, 156, 156)',
 };
 
 export const lightTheme = {
@@ -18,4 +19,5 @@ export const lightTheme = {
   logo: '#00008b',
   option: 'var(--color-white)',
   bgOption: '#0b0b0b',
+  toggleBtn: '#7451f8',
 };
