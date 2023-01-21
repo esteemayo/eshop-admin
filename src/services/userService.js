@@ -11,4 +11,7 @@ export const getUsers = () =>
 
 export const getUserStats = () => http.get(`${apiEndpoint}/stats`);
 
+export const updateUser = (userId, user) =>
+  http.patch(userUrl(userId), user);
+
 export const deleteUser = (userId) => http.delete(userUrl(userId));
