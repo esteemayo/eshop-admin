@@ -138,7 +138,7 @@ const User = () => {
                 </FormLabel>
                 <FormInput type='file' id='file' style={{ display: 'none' }} />
               </Upload>
-              <FormButton>Update</FormButton>
+              <FormButton disabled={isLoading}>Update</FormButton>
             </Right>
           </Form>
         </UpdateUser>
