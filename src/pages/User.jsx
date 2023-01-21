@@ -50,15 +50,27 @@ const User = () => {
           <Form onSubmit={handleSubmit}>
             <Left>
               <FormGroup>
-                <FormInput type='text' placeholder={user?.username} required />
+                <FormInput
+                  type='text'
+                  placeholder={user?.username}
+                  required
+                />
                 <FormLabel>Username</FormLabel>
               </FormGroup>
               <FormGroup>
-                <FormInput type='text' placeholder={user?.name} required />
+                <FormInput
+                  type='text'
+                  placeholder={user?.name}
+                  required
+                />
                 <FormLabel>Full Name</FormLabel>
               </FormGroup>
               <FormGroup>
-                <FormInput type='email' placeholder={user?.email} required />
+                <FormInput
+                  type='email'
+                  placeholder={user?.email}
+                  required
+                />
                 <FormLabel>Email</FormLabel>
               </FormGroup>
             </Left>
@@ -240,10 +252,10 @@ const FormInput = styled.input`
   transition: all 0.5s ease;
 
   ${phone({
-    width: '100%',
-    padding: '1rem 2rem',
-    borderBottom: '2px solid #bbb',
-  })}
+  width: '100%',
+  padding: '1rem 2rem',
+  borderBottom: '2px solid #bbb',
+})}
 
   @media only screen and (max-width: 23.44em) {
     width: 27rem;
@@ -298,10 +310,10 @@ const UpdateUserImage = styled.img`
   margin-right: 2rem;
 
   ${phone({
-    width: '8rem',
-    height: '8rem',
-    marginRight: '1rem',
-  })}
+  width: '8rem',
+  height: '8rem',
+  marginRight: '1rem',
+})}
 `;
 
 const FormButton = styled.button`
