@@ -155,7 +155,6 @@ const Container = styled.div`
 const Wrapper = styled.div`
   font-size: 1.5rem;
   padding: 2rem;
-  color: #555;
 `;
 
 const SidebarMenu = styled.div`
