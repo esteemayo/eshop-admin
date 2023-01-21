@@ -110,8 +110,8 @@ const Button = styled.button`
   font-size: 1.5rem;
   border-radius: 5px;
   padding: 0.7rem 1rem;
-  background-color: #eeeef7;
-  color: #555;
+  background-color: ${({ theme }) => theme.soft};
+  color: ${({ theme }) => theme.textSoft};
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
