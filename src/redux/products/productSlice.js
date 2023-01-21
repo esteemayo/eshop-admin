@@ -167,19 +167,4 @@ export const productSlice = createSlice({
   }
 });
 
-export const {
-  addProductFailure,
-  addProductStart,
-  addProductSuccess,
-  deleteProductFailure,
-  deleteProductStart,
-  deleteProductSuccess,
-  getProductFailure,
-  getProductStart,
-  getProductSuccess,
-  updateProductFailure,
-  updateProductStart,
-  updateProductSuccess,
-} = productSlice.actions;
-
 export default productSlice.reducer;
