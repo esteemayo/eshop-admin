@@ -126,6 +126,10 @@ const Sidebar = () => {
               <Report style={{ fontSize: '2rem', marginRight: '0.5rem' }} />
               Reports
             </SidebarListItem>
+            <SidebarListItem>
+              <Light />
+              <Dark />
+            </SidebarListItem>
           </SidebarList>
         </SidebarMenu>
       </Wrapper>
@@ -176,5 +180,9 @@ const SidebarListItem = styled.li`
     background-color: rgb(240, 240, 255);
   }
 `;
+
+const Light = styled.span``;
+
+const Dark = styled.span``;
 
 export default Sidebar;
