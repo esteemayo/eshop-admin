@@ -97,7 +97,7 @@ const IconContainer = styled.div`
   position: relative;
   cursor: pointer;
   margin-right: 1rem;
-  color: #555;
+  color: ${({ theme }) => theme.textSoft};
 `;
 
 const Mode = styled.span`
