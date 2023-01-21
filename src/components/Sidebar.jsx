@@ -25,9 +25,7 @@ const Sidebar = () => {
     <Container>
       <Wrapper>
         <SidebarMenu>
-          <NavLink to='/'>
-            <Title>Dashboard</Title>
-          </NavLink>
+          <Title>Dashboard</Title>
           <SidebarList>
             <SidebarListItem>
               <NavLink to='/'>
