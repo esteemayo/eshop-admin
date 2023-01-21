@@ -9,6 +9,7 @@ import {
 } from '@material-ui/icons';
 
 import { logout } from 'redux/user/userSlice';
+import { toggle } from 'redux/darkMode/darkModeSlice';
 
 const Topbar = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,9 @@ const Topbar = () => {
         </TopLeft>
         <TopRight>
           <IconContainer>
-            <Mode>{darkMode ? 'light' : 'dark'} mode</Mode>
+            <Mode onClick={() => dispatch(toggle())}>
+              {darkMode ? 'light' : 'dark'} mode
+            </Mode>
           </IconContainer>
           <IconContainer>
             <NotificationsNone style={{ fontSize: '2rem' }} />
