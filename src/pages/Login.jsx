@@ -65,9 +65,7 @@ const Login = () => {
             />
             <FormLabel>Password</FormLabel>
           </FormGroup>
-          {isError && (
-            <ErrorMessage>{isError}</ErrorMessage>
-          )}
+          {isError && <ErrorMessage>{isError}</ErrorMessage>}
           <Button disabled={isLoading}>
             {isLoading ? '⏳' : 'Login'}
           </Button>
