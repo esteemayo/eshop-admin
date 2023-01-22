@@ -97,6 +97,7 @@ const initialState = {
   user: {},
   currentUser: user ?? null,
   isLoading: false,
+  isSuccess: false,
   isError: false,
 };
 
@@ -118,6 +119,11 @@ export const userSlice = createSlice({
       clearFromStorage();
       state.currentUser = null;
     },
+    reset: (state) => {
+      state.isLoading = false;
+      state.isSuccess = false;
+      state.isError = false;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -126,11 +132,13 @@ export const userSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         setToStorage(tokenKey, payload);
         state.currentUser = payload;
       })
       .addCase(loginUser.rejected, (state) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.currentUser = null;
         state.isError = true;
       })
@@ -139,10 +147,12 @@ export const userSlice = createSlice({
       })
       .addCase(registerUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.users.push(payload);
       })
       .addCase(registerUser.rejected, (state) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
       })
       .addCase(fetchUsers.pending, (state) => {
@@ -150,10 +160,12 @@ export const userSlice = createSlice({
       })
       .addCase(fetchUsers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.users = payload;
       })
       .addCase(fetchUsers.rejected, (state) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
       })
       .addCase(fetchUser.pending, (state) => {
@@ -161,10 +173,12 @@ export const userSlice = createSlice({
       })
       .addCase(fetchUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.user = payload;
       })
       .addCase(fetchUser.rejected, (state) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
       })
       .addCase(editUser.pending, (state) => {
@@ -172,12 +186,14 @@ export const userSlice = createSlice({
       })
       .addCase(editUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.users[
           state.users.findIndex((item) => item._id === payload._id)
         ] = payload;
       })
       .addCase(editUser.rejected, (state) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
       })
       .addCase(removeUser.pending, (state) => {
@@ -185,6 +201,7 @@ export const userSlice = createSlice({
       })
       .addCase(removeUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.users.splice(
           state.users.findIndex((userId) => userId === payload),
           1,
@@ -192,6 +209,7 @@ export const userSlice = createSlice({
       })
       .addCase(removeUser.rejected, (state) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
       })
   },
