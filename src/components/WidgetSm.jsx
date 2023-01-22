@@ -27,7 +27,7 @@ const WidgetSm = () => {
 
   return (
     <Container>
-      <Title>New join members</Title>
+      <Title>Latest users</Title>
       <List>
         {users?.map((user) => {
           const { _id: id, img, username } = user;
