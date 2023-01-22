@@ -404,10 +404,6 @@ const FormButton = styled.button`
     opacity: 0.5;
   }
 
-  &:focus {
-    outline: none;
-  }
-
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
