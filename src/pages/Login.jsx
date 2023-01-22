@@ -75,6 +75,9 @@ const Container = styled.div`
   height: 100vh;
   padding: 2rem;
   background-color: ${({ theme }) => theme.bg};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
