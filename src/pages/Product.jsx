@@ -288,7 +288,10 @@ const Product = () => {
                 </Overlay>
               )}
               <Label htmlFor='file'>
-                <Publish className={darkMode && 'file__icon'} style={{ fontSize: '2rem', cursor: 'pointer' }} />
+                <Publish
+                  className={darkMode && 'file__icon'}
+                  style={{ fontSize: '2rem', cursor: 'pointer' }}
+                />
               </Label>
               <Input
                 id='file'
