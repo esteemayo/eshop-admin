@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   CartesianGrid,
   Tooltip,
@@ -17,13 +17,35 @@ const Chart = ({ title, data, dataKey, grid }) => {
     <Container>
       <Title>{title}</Title>
       <ResponsiveContainer width='100%' aspect={4 / 1}>
-        <LineChart data={data}>
-          <XAxis dataKey='name' stroke={darkMode ? '#aaaaaa' : '#5550bd'} />
-          <Line type='monotone' dataKey={dataKey} stroke={darkMode ? '#aaaaaa' : '#5550bd'} />
+        <AreaChart
+          width={730}
+          height={250}
+          data={data}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        >
+          <defs>
+            <linearGradient id='total' x1='0' y1='0' x2='0' y2='1'>
+              <stop offset='5%' stopColor={darkMode ? '#aaaaaa' : '#5550bd'} stopOpacity={0.8} />
+              <stop offset='95%' stopColor={darkMode ? '#aaaaaa' : '#5550bd'} stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey='name' stroke='gray' />
+          {grid && (
+            <CartesianGrid
+              stroke={darkMode ? '#e0dfdf' : '#5550bd'}
+              strokeDasharray='3 3' className='chart-grid'
+            />
+          )}
           <Tooltip />
-          {grid && <CartesianGrid stroke='#e0dfdf' strokeDasharray='5 5' />}
+          <Area
+            type='monotone'
+            dataKey={dataKey}
+            stroke={darkMode ? '#aaaaaa' : '#5550bd'}
+            fillOpacity={1}
+            fill='url(#total)'
+          />
           <Legend />
-        </LineChart>
+        </AreaChart>
       </ResponsiveContainer>
     </Container>
   );
