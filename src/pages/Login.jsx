@@ -145,8 +145,8 @@ const Button = styled.button`
   border: none;
   display: block;
   padding: 1rem 2rem;
-  background-color: #00008b;
-  color: var(--color-white);
+  background-color: ${({ theme }) => theme.bgBtnAdd};
+  color: ${({ theme }) => theme.textAdd};
   border-radius: 5px;
   font-size: 1.4rem;
   margin-top: 2rem;
