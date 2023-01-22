@@ -2,7 +2,7 @@ import Home from './Home';
 import Login from './Login';
 import NewProduct from './NewProduct';
 import NewUser from './NewUser';
-import NotFound from './NotFoundd';
+import NotFound from './NotFound';
 import Product from './Product';
 import ProductList from './ProductList';
 import SharedLayout from './SharedLayout';
