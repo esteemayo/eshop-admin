@@ -48,6 +48,7 @@ const Login = () => {
           <FormGroup>
             <FormInput
               type='text'
+              name='username'
               placeholder='Username'
               ref={usernameRef}
               required
@@ -57,6 +58,7 @@ const Login = () => {
           <FormGroup>
             <FormInput
               type='password'
+              name='password'
               placeholder='Password'
               ref={passwordRef}
               required
