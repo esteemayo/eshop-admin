@@ -24,6 +24,8 @@ export const darkTheme = {
   btnUpd: '#2f3b5a',
   textUpd: 'rgb(156, 156, 156)',
   crInput: 'rgb(156, 156, 156)',
+  btnNew: '#312d2d',
+  textNew: 'rgb(156, 156, 156)',
 };
 
 export const lightTheme = {
@@ -52,4 +54,6 @@ export const lightTheme = {
   btnUpd: '#00008b',
   textUpd: 'var(--color-white)',
   crInput: '#00008b',
+  btnNew: '#00008b',
+  textNew: 'var(--color-white)',
 };
