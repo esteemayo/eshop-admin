@@ -544,6 +544,7 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.btnUpd};
   color: ${({ theme }) => theme.textUpd};
   border-radius: 0.5rem;
+  outline-color: ${({ theme }) => theme.text};
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
