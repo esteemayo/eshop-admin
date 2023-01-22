@@ -248,7 +248,7 @@ const UserInfo = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem 0;
-  color: #444;
+  color: ${({ theme }) => theme.text};
   font-weight: 500;
 
   ${phone({ padding: '0.8rem 0' })}
