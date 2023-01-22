@@ -394,6 +394,7 @@ const FormButton = styled.button`
   background-color: ${({ theme }) => theme.btnUpd};
   color: ${({ theme }) => theme.textUpd};
   border-radius: 5px;
+  outline-color: ${({ theme }) => theme.text};
   cursor: pointer;
   transition: all 0.5s ease;
 
