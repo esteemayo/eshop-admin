@@ -17,7 +17,7 @@ import { registerUser } from 'redux/user/userSlice';
 const NewUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isLoading } = useSelector((state) => state.user);
+  const { isError, isLoading } = useSelector((state) => state.user);
 
   const [perc, setPerc] = useState(0);
   const [user, setUser] = useState(null);
@@ -79,6 +79,10 @@ const NewUser = () => {
   useEffect(() => {
     file && uploadFile(file);
   }, [file]);
+
+  useEffect(() => {
+    isError && toast.error(isError);
+  }, [isError]);
 
   return (
     <Container>
@@ -151,7 +155,9 @@ const NewUser = () => {
             )}
           </FormGroup>
         </FormContainer>
-        <Button disabled={isLoading || (perc > 0 && perc < 100)}>Create</Button>
+        <Button disabled={isLoading || (perc > 0 && perc < 100)}>
+          Create
+        </Button>
       </Form>
     </Container>
   );
