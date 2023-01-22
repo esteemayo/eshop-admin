@@ -289,8 +289,8 @@ const Button = styled.button`
   display: block;
   padding: 1rem 2rem;
   text-transform: capitalize;
-  background-color: ${({ theme }) => theme.btnUpd};
-  color: ${({ theme }) => theme.textUpd};
+  background-color: ${({ theme }) => theme.btnNew};
+  color: ${({ theme }) => theme.textNew};
   border-radius: 0.5rem;
   margin-top: 2rem;
   cursor: pointer;
