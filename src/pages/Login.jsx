@@ -156,6 +156,7 @@ const Button = styled.button`
   border-radius: 5px;
   font-size: 1.4rem;
   margin-top: 2rem;
+  outline-color: ${({ theme }) => theme.text};
   cursor: pointer;
   transition: all 0.5s ease;
 
