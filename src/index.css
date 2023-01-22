@@ -113,6 +113,10 @@ input[type='file'] {
   color: inherit;
 }
 
+.chart-grid {
+  stroke: rgb(228, 225, 225);
+}
+
 /* .active {
   width: 100%;
   padding: 0.5rem;
