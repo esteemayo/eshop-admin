@@ -6,11 +6,11 @@ import AuthRoute from 'utils/AuthRoute';
 import ProtectedRoute from 'utils/ProtectedRoute';
 import { darkTheme, lightTheme } from 'utils/Theme';
 import {
-  Error,
   Home,
   Login,
   NewProduct,
   NewUser,
+  NotFound,
   Product,
   ProductList,
   SharedLayout,
@@ -91,7 +91,7 @@ function App() {
               }
             />
           </Route>
-          <Route path='*' element={<Error />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </Router>
     </ThemeProvider>
