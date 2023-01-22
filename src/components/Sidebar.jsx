@@ -192,7 +192,8 @@ const Bottom = styled.div`
     height: 2rem;
     display: inline-block;
     border-radius: 0.5rem;
-    border: 1px solid ${({ theme }) => theme.toggleBtn} ;
+    border: 1px solid ${({ theme }) => theme.toggleBtn};
+    outline-color: ${({ theme }) => theme.text};
     cursor: pointer;
   }
 `;
