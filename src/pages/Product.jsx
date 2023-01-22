@@ -553,10 +553,6 @@ const Button = styled.button`
     transform: translateX(3px);
   }
 
-  &:focus {
-    outline: none;
-  }
-
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
