@@ -57,10 +57,10 @@ const Home = () => {
     <Container>
       <FeaturedInfo />
       <Chart
-        data={userStats}
-        title='User Analytics'
         grid
+        data={userStats}
         dataKey='Active User'
+        title='User Analytics'
       />
       <Widget>
         <WidgetSm />
