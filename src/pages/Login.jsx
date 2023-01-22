@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { loginUser } from 'redux/user/userSlice';
+import { loginUser, reset } from 'redux/user/userSlice';
 
 const Login = () => {
   const usernameRef = useRef();
@@ -13,11 +13,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
-  const { isLoading, isError } = useSelector((state) => state.user);
-
-  useEffect(() => {
-    usernameRef.current.focus();
-  });
+  const { isLoading, isSuccess, isError } = useSelector((state) => state.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,8 +29,16 @@ const Login = () => {
     dispatch(loginUser({ credentials: userData, toast }));
 
     const origin = location.state?.from?.pathname || '/';
-    navigate(origin);
+    isSuccess && navigate(origin);
   };
+
+  useEffect(() => {
+    usernameRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    dispatch(reset());
+  }, [dispatch]);
 
   return (
     <Container>
