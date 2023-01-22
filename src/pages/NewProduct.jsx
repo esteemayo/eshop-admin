@@ -243,7 +243,7 @@ const Input = styled.input`
   font-family: inherit;
   background-color: transparent;
   color: #999;
-  caret-color: #00008b;
+  caret-color: ${({ theme }) => theme.crInput};
   border: 1px solid gray;
   border-radius: 3px;
   -webkit-transition: all 0.5s ease;
