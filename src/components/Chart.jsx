@@ -22,17 +22,17 @@ const Chart = ({ title, data, dataKey, grid }) => {
         >
           <defs>
             <linearGradient id='total' x1='0' y1='0' x2='0' y2='1'>
-              <stop offset='5%' stopColor='#5550bd' stopOpacity={0.8} />
-              <stop offset='95%' stopColor='#5550bd' stopOpacity={0} />
+              <stop offset='5%' stopColor='#8884d8' stopOpacity={0.8} />
+              <stop offset='95%' stopColor='#8884d8' stopOpacity={0} />
             </linearGradient>
           </defs>
           <XAxis dataKey='name' stroke='gray' />
-          {grid && <CartesianGrid stroke='#5550bd' strokeDasharray='3 3' className='chart-grid' />}
+          {grid && <CartesianGrid stroke='#8884d8' strokeDasharray='3 3' className='chart-grid' />}
           <Tooltip />
           <Area
             type='monotone'
             dataKey={dataKey}
-            stroke='#5550bd'
+            stroke='#8884d8'
             fillOpacity={1}
             fill='url(#total)'
           />
