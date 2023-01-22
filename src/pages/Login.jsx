@@ -84,6 +84,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-size: 3.2rem;
   font-weight: 600;
+  color: ${({ theme }) => theme.text};
   margin-bottom: 2rem;
 `;
 
