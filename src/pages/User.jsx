@@ -21,6 +21,7 @@ const User = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const userId = pathname.split('/')[2];
+  const { darkMode } = useSelector((state) => state.darkMode);
   const { user, isLoading } = useSelector((state) => state.user);
 
   const [inputs, setInputs] = useState(initialState);
@@ -135,7 +136,10 @@ const User = () => {
               <Upload>
                 <UpdateUserImage src={user?.img} alt='' />
                 <FormLabel htmlFor='file'>
-                  <Publish style={{ fontSize: '2rem', cursor: 'pointer' }} />
+                  <Publish
+                    className={darkMode && 'file__icon'}
+                    style={{ fontSize: '2rem', cursor: 'pointer' }}
+                  />
                 </FormLabel>
                 <FormInput
                   type='file'
