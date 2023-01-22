@@ -71,6 +71,7 @@ const Login = () => {
 
 const Container = styled.div`
   padding: 2rem;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const Wrapper = styled.div`
