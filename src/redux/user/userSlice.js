@@ -99,7 +99,7 @@ const initialState = {
   currentUser: user ?? null,
   isLoading: false,
   isSuccess: false,
-  isError: '',
+  isError: null,
 };
 
 if (token) {
