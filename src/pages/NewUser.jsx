@@ -204,6 +204,7 @@ const FormInput = styled.input`
   border-bottom: 3px solid #bbb;
   font-family: inherit;
   font-size: 1.4rem;
+  background-color: transparent;
   color: #999;
   border-radius: 4px;
   caret-color: ${({ theme }) => theme.crInput};
@@ -213,9 +214,9 @@ const FormInput = styled.input`
   &:focus {
     outline: none;
     border-bottom: 3px solid #008080;
-    -webkit-box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
-    -moz-box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
-    box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
+    -webkit-box-shadow: ${({ theme }) => theme.box};
+    -moz-box-shadow: ${({ theme }) => theme.box};
+    box-shadow: ${({ theme }) => theme.box};
   }
 
   &:focus:invalid {
