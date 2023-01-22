@@ -108,11 +108,13 @@ const FormInput = styled.input`
   width: 40rem;
   padding: 1rem 2rem;
   border-bottom: 3px solid transparent;
+  background-color: ${({ theme }) => theme.bgInput};
   color: #999;
   border-radius: 3px;
   -webkit-box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
   -moz-box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
   box-shadow: 0 1rem 2rem rgba(00, 00, 00, 0.1);
+  caret-color: ${({ theme }) => theme.crInput};
   transition: all 0.5s ease;
 
   &:focus {
