@@ -62,7 +62,9 @@ const Login = () => {
           {isError && (
             <ErrorMessage>Oops! Something went wrong...</ErrorMessage>
           )}
-          <Button disabled={isLoading}>{isLoading ? '⏳' : 'Login'}</Button>
+          <Button disabled={isLoading}>
+            {isLoading ? '⏳' : 'Login'}
+          </Button>
         </Form>
       </Wrapper>
     </Container>
