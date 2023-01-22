@@ -19,6 +19,7 @@ export const loginUser = createAsyncThunk(
         toast.success('Login successful');
         return data.details;
       }
+      return thunkAPI.rejectWithValue({ message: 'Access denied' });
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
