@@ -18,6 +18,7 @@ const NotFound = () => {
 const Container = styled.div`
   padding: 2rem;
   font-size: 1.5rem;
+  background-color: ${({ theme }) => theme.bg};
 
   display: flex;
   flex-direction: column;
