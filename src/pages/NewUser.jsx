@@ -243,8 +243,8 @@ const Button = styled.button`
   padding: 0.7rem 1rem;
   font-weight: 600;
   font-size: 1.5rem;
-  background-color: ${({ theme }) => theme.btnUpd};
-  color: ${({ theme }) => theme.textUpd};
+  background-color: ${({ theme }) => theme.btnNew};
+  color: ${({ theme }) => theme.textNew};
   border-radius: 1rem;
   margin-top: 3rem;
   cursor: pointer;
