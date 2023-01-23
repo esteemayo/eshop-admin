@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import {
   ArrowDropDown,
   Language,
@@ -33,7 +34,11 @@ const Topbar = () => {
         <TopRight>
           <IconContainer>
             <Mode onClick={() => dispatch(toggle())}>
-              {darkMode ? 'light' : 'dark'} mode
+              {darkMode ? (
+                <LightModeOutlined style={{ fontSize: '2rem' }} />
+              ) : (
+                <DarkModeOutlined style={{ fontSize: '2rem' }} />
+              )}
             </Mode>
           </IconContainer>
           <IconContainer>
