@@ -336,7 +336,7 @@ const FormInput = styled.input`
     -moz-box-shadow: ${({ theme }) => theme.box};
     box-shadow: ${({ theme }) => theme.box};
 
-    ${phone({ borderBottom: '2px solod #008080' })}
+    ${phone({ borderBottom: '2px solid #008080' })}
   }
 
   &:focus:invalid {
