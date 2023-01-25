@@ -144,7 +144,7 @@ const Options = styled.div`
 `;
 
 const Profile = styled.div`
-color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.text};
 
   &:hover ${Options} {
     display: flex;
