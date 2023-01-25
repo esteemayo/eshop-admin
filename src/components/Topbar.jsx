@@ -53,7 +53,7 @@ const Topbar = () => {
             <Settings style={{ fontSize: '2rem' }} />
           </IconContainer>
           <Image
-            src={currentUser?.img || 'assets/user-default.jpg'}
+            src={currentUser?.img ?? 'assets/user-default.jpg'}
             alt=''
           />
           <Profile>
