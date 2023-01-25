@@ -116,8 +116,6 @@ const Sidebar = () => {
               <Report style={{ fontSize: '2rem', marginRight: '0.5rem' }} />
               Reports
             </SidebarListItem>
-            <SidebarListItem>
-            </SidebarListItem>
           </SidebarList>
           <Bottom>
             <Light onClick={() => dispatch(light())} />
