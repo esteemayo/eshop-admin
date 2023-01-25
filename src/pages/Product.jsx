@@ -181,7 +181,7 @@ const Product = () => {
         </TopLeft>
         <TopRight>
           <InfoTop>
-            <Image src={product?.img} />
+            <Image src={product?.img} alt='' />
             <ProductName>{product.title}</ProductName>
           </InfoTop>
           <InfoBottom>
