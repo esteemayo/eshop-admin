@@ -27,7 +27,13 @@ const Chart = ({ title, data, dataKey, grid }) => {
             </linearGradient>
           </defs>
           <XAxis dataKey='name' stroke='gray' />
-          {grid && <CartesianGrid stroke='#8884d8' strokeDasharray='3 3' className='chart-grid' />}
+          {grid && (
+            <CartesianGrid
+              stroke='#8884d8'
+              strokeDasharray='3 3'
+              className='chart-grid'
+            />
+          )}
           <Tooltip />
           <Area
             type='monotone'
