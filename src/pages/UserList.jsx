@@ -63,6 +63,7 @@ const UserList = () => {
 
 const Container = styled.div`
   flex: 4;
+  padding: 2rem;
   background-color: ${({ theme }) => theme.bg};
 `;
 
