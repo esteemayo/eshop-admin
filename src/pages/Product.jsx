@@ -471,7 +471,7 @@ const Input = styled.input`
 const Select = styled.select`
   border: none;
   width: 100%;
-  display: block;
+  display: inline-block;
   padding: 1rem 2rem;
   background-color: ${({ theme }) => theme.bgInput};
   color: #999;
