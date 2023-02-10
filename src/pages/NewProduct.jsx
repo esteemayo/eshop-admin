@@ -276,6 +276,7 @@ const Select = styled.select`
   transition: all 0.5s ease;
 
   &:focus {
+    outline: none;
     -webkit-box-shadow: ${({ theme }) => theme.box};
     -moz-box-shadow: ${({ theme }) => theme.box};
     box-shadow: ${({ theme }) => theme.box};
