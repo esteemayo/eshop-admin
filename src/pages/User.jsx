@@ -183,6 +183,7 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.bgBtnAdd};
   color: ${({ theme }) => theme.textAdd};
   border-radius: 0.5rem;
+  outline-color: ${({ theme }) => theme.text};
   cursor: pointer;
   transition: all 0.5s ease;
 
