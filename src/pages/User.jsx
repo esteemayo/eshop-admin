@@ -88,17 +88,21 @@ const User = () => {
           <UpdateUserTitle>Edit</UpdateUserTitle>
           <Form onSubmit={handleSubmit}>
             <Left>
-              <FormGroup>
-                <FormInput
-                  type='text'
-                  name='username'
-                  value={inputs.username}
-                  placeholder={user?.username}
-                  onChange={handleChange}
-                  required
-                />
-                <FormLabel>Username</FormLabel>
-              </FormGroup>
+              {updateUserInputs.map((input) => {
+                return (
+                  <FormGroup>
+                    <FormInput
+                      type='text'
+                      name='username'
+                      value={inputs.username}
+                      placeholder={user?.username}
+                      onChange={handleChange}
+                      required
+                    />
+                    <FormLabel>Username</FormLabel>
+                  </FormGroup>
+                )
+              })}
             </Left>
             <Right>
               <Upload>
