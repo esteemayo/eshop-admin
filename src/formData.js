@@ -97,13 +97,6 @@ export const productInputs = [
     placeholder: 'Categories',
   },
   {
-    id: '',
-    type: 'text',
-    name: '',
-    label: '',
-    placeholder: '',
-  },
-  {
     id: 'size',
     type: 'text',
     name: 'size',
