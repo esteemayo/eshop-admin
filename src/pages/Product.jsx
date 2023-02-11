@@ -252,6 +252,7 @@ const Product = () => {
                 placeholder='Size'
                 onChange={handleSize}
               />
+              <Label htmlFor='size'>Size</Label>
             </FormGroup>
             <FormGroup>
               <Label htmlFor='color'>Color</Label>
