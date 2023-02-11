@@ -185,6 +185,7 @@ const Product = () => {
             <ProductName>{product.title}</ProductName>
           </InfoTop>
           <InfoBottom>
+            <InfoBottonWrapper>
               <InfoItem>
                 <InfoKey>id:</InfoKey>
                 <InfoValue>{product?._id}</InfoValue>
