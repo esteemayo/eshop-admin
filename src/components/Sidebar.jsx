@@ -185,6 +185,7 @@ const Bottom = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 1rem;
 
   & > * {
     width: 2rem;
