@@ -244,7 +244,6 @@ const Product = () => {
               <Label htmlFor='categories'>Categories</Label>
             </FormGroup>
             <FormGroup>
-              <Label htmlFor='size'>Size</Label>
               <Input
                 type='text'
                 id='size'
