@@ -13,6 +13,7 @@ import {
 import app from '../firebase';
 import { phone } from 'responsive';
 import { registerUser } from 'redux/user/userSlice';
+import { userInputs } from 'formData';
 
 const NewUser = () => {
   const dispatch = useDispatch();
@@ -89,16 +90,20 @@ const NewUser = () => {
       <Title>New user</Title>
       <Form onSubmit={handleSubmit}>
         <FormContainer>
-          <FormGroup>
-            <FormInput
-              type='text'
-              name='username'
-              placeholder='Username'
-              required
-              onChange={handleChange}
-            />
-            <FormLabel>Username</FormLabel>
-          </FormGroup>
+          {userInputs.map((input) => {
+            return (
+              <FormGroup>
+                <FormInput
+                  type='text'
+                  name='username'
+                  placeholder='Username'
+                  required
+                  onChange={handleChange}
+                />
+                <FormLabel>Username</FormLabel>
+              </FormGroup>
+            );
+          })}
           <FormGroup>
             {perc > 0 ? (
               <FormLabel>{`Uploading: ${perc}%`}</FormLabel>
