@@ -204,6 +204,7 @@ const FormLabel = styled.label`
 
 const FormInput = styled.input`
   border: none;
+  display: inline-block;
   width: 100%;
   padding: 1.25rem 1.75rem;
   border-top: 3px solid transparent;
