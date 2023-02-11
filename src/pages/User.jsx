@@ -107,7 +107,7 @@ const User = () => {
             </Left>
             <Right>
               <Upload>
-                <UpdateUserImage src={user?.img} alt='' />
+                <UpdateUserImage src={user?.img ?? defaultAvatar} alt='' />
                 <FormLabel htmlFor='file'>
                   <Publish
                     className={darkMode && 'file__icon'}
