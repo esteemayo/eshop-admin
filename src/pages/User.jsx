@@ -89,17 +89,18 @@ const User = () => {
           <Form onSubmit={handleSubmit}>
             <Left>
               {updateUserInputs.map((input) => {
+                const { id, name, type, label } = input;
                 return (
-                  <FormGroup>
+                  <FormGroup key={id}>
                     <FormInput
-                      type='text'
-                      name='username'
-                      value={inputs.username}
-                      placeholder={user?.username}
+                      type={type}
+                      name={name}
+                      value={inputs[name]}
+                      placeholder={user[name]}
                       onChange={handleChange}
                       required
                     />
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel>{label}</FormLabel>
                   </FormGroup>
                 )
               })}
