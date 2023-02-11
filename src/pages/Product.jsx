@@ -338,6 +338,7 @@ const AddButton = styled.button`
   background-color: ${({ theme }) => theme.bgBtnAdd};
   color: ${({ theme }) => theme.textAdd};
   border-radius: 0.5rem;
+  outline-color: ${({ theme }) => theme.text};
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
