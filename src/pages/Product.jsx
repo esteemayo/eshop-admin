@@ -185,18 +185,18 @@ const Product = () => {
             <ProductName>{product.title}</ProductName>
           </InfoTop>
           <InfoBottom>
-            <InfoItem>
-              <InfoKey>id:</InfoKey>
-              <InfoValue>{product?._id}</InfoValue>
-            </InfoItem>
-            <InfoItem>
-              <InfoKey>sales:</InfoKey>
-              <InfoValue>5123</InfoValue>
-            </InfoItem>
-            <InfoItem>
-              <InfoKey>in stock:</InfoKey>
-              <InfoValue>{product?.inStock ? 'yes' : 'no'}</InfoValue>
-            </InfoItem>
+              <InfoItem>
+                <InfoKey>id:</InfoKey>
+                <InfoValue>{product?._id}</InfoValue>
+              </InfoItem>
+              <InfoItem>
+                <InfoKey>sales:</InfoKey>
+                <InfoValue>5123</InfoValue>
+              </InfoItem>
+              <InfoItem>
+                <InfoKey>in stock:</InfoKey>
+                <InfoValue>{product?.inStock ? 'yes' : 'no'}</InfoValue>
+              </InfoItem>
           </InfoBottom>
         </TopRight>
       </Top>
