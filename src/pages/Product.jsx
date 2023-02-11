@@ -405,7 +405,7 @@ const InfoBottonWrapper = styled.div`
 const InfoItem = styled.div`
   width: 15rem;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
 `;
 
 const InfoKey = styled.span``;
