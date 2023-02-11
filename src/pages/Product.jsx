@@ -225,7 +225,7 @@ const Product = () => {
             </FormGroup>
             <FormGroup>
               <Input
-                type='text'
+                type='number'
                 name='price'
                 value={inputs.price}
                 onChange={handleChange}
