@@ -69,18 +69,25 @@ export const updateUserInputs = [
 
 export const productInputs = [
   {
+    id: 'title',
+    type: 'text',
+    name: 'title',
+    label: 'Product title',
+    placeholder: '',
+  },
+  {
     id: 'desc',
     type: 'text',
     name: 'desc',
-    label: 'Description',
-    placeholder: 'Description',
+    label: 'Product description',
+    placeholder: '',
   },
   {
     id: 'price',
     type: 'number',
     name: 'price',
     label: 'Price',
-    placeholder: 'Price',
+    placeholder: '',
   },
   {
     id: 'categories',
@@ -94,13 +101,13 @@ export const productInputs = [
     type: 'text',
     name: 'size',
     label: 'Size',
-    placeholder: 'Size',
+    placeholder: '',
   },
   {
     id: 'color',
     type: 'text',
     name: 'color',
     label: 'Color',
-    placeholder: 'Color',
+    placeholder: '',
   },
 ];
