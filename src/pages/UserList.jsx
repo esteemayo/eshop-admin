@@ -18,7 +18,7 @@ const UserList = () => {
   }, [dispatch]);
 
   const handleDelete = (userId) => {
-    if (window.confirm('Are you sure you wanted to delete this user'))
+    if (window.confirm('Are you sure you wanted to delete this user?'))
       dispatch(removeUser(userId));
   };
 
