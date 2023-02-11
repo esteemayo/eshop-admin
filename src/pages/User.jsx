@@ -98,39 +98,6 @@ const User = () => {
                 />
                 <FormLabel>Username</FormLabel>
               </FormGroup>
-              <FormGroup>
-                <FormInput
-                  type='text'
-                  name='name'
-                  value={inputs.name}
-                  placeholder={user?.name}
-                  onChange={handleChange}
-                  required
-                />
-                <FormLabel>Full Name</FormLabel>
-              </FormGroup>
-              <FormGroup>
-                <FormInput
-                  type='email'
-                  name='email'
-                  value={inputs.email}
-                  placeholder={user?.email}
-                  onChange={handleChange}
-                  required
-                />
-                <FormLabel>Email</FormLabel>
-              </FormGroup>
-              <FormGroup>
-                <FormInput
-                  type='text'
-                  name='role'
-                  value={inputs.role}
-                  placeholder={user?.role}
-                  onChange={handleChange}
-                  required
-                />
-                <FormLabel>Role</FormLabel>
-              </FormGroup>
             </Left>
             <Right>
               <Upload>
