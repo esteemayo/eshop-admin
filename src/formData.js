@@ -35,3 +35,34 @@ export const userInputs = [
     placeholder: 'Confirm Password',
   },
 ];
+
+export const updateUserInputs = [
+  {
+    id: 'username',
+    type: 'text',
+    name: 'username',
+    label: 'Username',
+    placeholder: '',
+  },
+  {
+    id: 'name',
+    type: 'text',
+    name: 'name',
+    label: 'Full Name',
+    placeholder: '',
+  },
+  {
+    id: 'email',
+    type: 'email',
+    name: 'email',
+    label: 'Email',
+    placeholder: '',
+  },
+  {
+    id: 'role',
+    type: 'text',
+    name: 'role',
+    label: 'Role',
+    placeholder: '',
+  },
+];
