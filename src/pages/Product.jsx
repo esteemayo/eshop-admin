@@ -198,6 +198,7 @@ const Product = () => {
                 <InfoKey>in stock:</InfoKey>
                 <InfoValue>{product?.inStock ? 'yes' : 'no'}</InfoValue>
               </InfoItem>
+            </InfoBottonWrapper>
           </InfoBottom>
         </TopRight>
       </Top>
