@@ -395,6 +395,11 @@ const InfoBottom = styled.div`
   margin-top: 1rem;
 `;
 
+const InfoBottonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const InfoItem = styled.div`
   width: 15rem;
   display: flex;
