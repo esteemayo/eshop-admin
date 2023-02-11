@@ -28,10 +28,10 @@ export const userInputs = [
     placeholder: 'Password',
   },
   {
-    id: 'address',
-    type: 'text',
-    name: 'address',
-    label: 'Address',
-    placeholder: 'Address',
+    id: 'passwordConfirm',
+    type: 'password',
+    name: 'passwordConfirm',
+    label: 'Confirm Password',
+    placeholder: 'Confirm Password',
   },
 ];
