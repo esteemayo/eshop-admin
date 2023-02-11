@@ -187,7 +187,7 @@ const Product = () => {
           <InfoBottom>
             <InfoBottonWrapper>
               <InfoItem>
-                <InfoKey>id:</InfoKey>
+                <InfoKey type='id'>id:</InfoKey>
                 <InfoValue>{product?._id}</InfoValue>
               </InfoItem>
               <InfoItem>
