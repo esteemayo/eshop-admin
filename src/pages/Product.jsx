@@ -408,7 +408,9 @@ const InfoItem = styled.div`
   gap: 1rem;
 `;
 
-const InfoKey = styled.span``;
+const InfoKey = styled.span`
+  text-transform: ${({ type }) => type === 'id' ? 'uppercase' : 'capitalize'};
+`;
 
 const InfoValue = styled.span`
   font-weight: 300;
