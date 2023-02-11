@@ -234,7 +234,6 @@ const Product = () => {
               <Label>Price</Label>
             </FormGroup>
             <FormGroup>
-              <Label htmlFor='categories'>Categories</Label>
               <Input
                 type='text'
                 id='categories'
@@ -242,6 +241,7 @@ const Product = () => {
                 placeholder='Categories'
                 onChange={handleCategories}
               />
+              <Label htmlFor='categories'>Categories</Label>
             </FormGroup>
             <FormGroup>
               <Label htmlFor='size'>Size</Label>
