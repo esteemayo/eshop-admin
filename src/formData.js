@@ -66,3 +66,55 @@ export const updateUserInputs = [
     placeholder: '',
   },
 ];
+
+export const productInputs = [
+  {
+    id: 'title',
+    type: 'text',
+    name: 'title',
+    label: 'Title',
+    placeholder: 'Title',
+  },
+  {
+    id: 'desc',
+    type: 'text',
+    name: 'desc',
+    label: 'Description',
+    placeholder: 'Description',
+  },
+  {
+    id: 'price',
+    type: 'number',
+    name: 'price',
+    label: 'Price',
+    placeholder: 'Price',
+  },
+  {
+    id: 'categories',
+    type: 'text',
+    name: 'categories',
+    label: 'Categories',
+    placeholder: 'Categories',
+  },
+  {
+    id: '',
+    type: 'text',
+    name: '',
+    label: '',
+    placeholder: '',
+  },
+  {
+    id: 'size',
+    type: 'text',
+    name: 'size',
+    label: 'Size',
+    placeholder: 'Size',
+  },
+  {
+    id: 'color',
+    type: 'text',
+    name: 'color',
+    label: 'Color',
+    placeholder: 'Color',
+  },
+];
