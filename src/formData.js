@@ -69,13 +69,6 @@ export const updateUserInputs = [
 
 export const productInputs = [
   {
-    id: 'title',
-    type: 'text',
-    name: 'title',
-    label: 'Title',
-    placeholder: 'Title',
-  },
-  {
     id: 'desc',
     type: 'text',
     name: 'desc',
