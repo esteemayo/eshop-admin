@@ -21,11 +21,11 @@ export const userInputs = [
     placeholder: 'Email',
   },
   {
-    id: 'telephone',
-    type: 'tel',
-    name: 'telephone',
-    label: 'Telephone',
-    placeholder: 'Telephone',
+    id: 'password',
+    type: 'password',
+    name: 'password',
+    label: 'Password',
+    placeholder: 'Password',
   },
   {
     id: 'address',
