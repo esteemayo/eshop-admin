@@ -263,6 +263,7 @@ const Product = () => {
                 placeholder='Color'
                 onChange={handleColor}
               />
+              <Label htmlFor='color'>Color</Label>
             </FormGroup>
             <FormGroup>
               <Select name='inStock' id='inStock' onChange={handleChange}>
