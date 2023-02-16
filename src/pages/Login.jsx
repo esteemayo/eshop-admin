@@ -14,7 +14,8 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { darkMode } = useSelector((state) => state.darkMode);
-  const { isLoading, isSuccess, isError } = useSelector((state) => state.user);
+  const { currentUser, isLoading, isSuccess, isError } =
+    useSelector((state) => state.user);
 
   const usernameRef = useRef();
   const passwordRef = useRef();
