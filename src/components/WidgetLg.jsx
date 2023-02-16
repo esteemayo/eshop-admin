@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
 import { getOrders } from 'services/orderService';
-import axios from 'axios';
 
 const WidgetLg = () => {
   const [orders, setOrders] = useState([]);
