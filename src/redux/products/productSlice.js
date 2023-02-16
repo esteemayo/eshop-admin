@@ -119,6 +119,7 @@ export const productSlice = createSlice({
       })
       .addCase(removeProduct.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.products.splice(
           state.products.findIndex((item) => item._id === payload),
           1,
