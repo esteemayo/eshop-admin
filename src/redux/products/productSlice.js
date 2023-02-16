@@ -102,9 +102,9 @@ export const productSlice = createSlice({
           state.products.findIndex((item) => item._id === payload._id)
         ] = payload;
       })
-      .addCase(editProduct.rejected, (state) => {
+      .addCase(editProduct.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.isError = true;
+        state.isError = payload.message;
       })
       .addCase(removeProduct.pending, (state) => {
         state.isLoading = true;
