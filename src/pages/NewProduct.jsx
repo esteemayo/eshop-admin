@@ -104,12 +104,7 @@ const NewProduct = () => {
     };
 
     dispatch(addProduct({ product: newProduct, toast }));
-
-    setSize([]);
-    setColor([]);
-    setFile(null);
-    setCategories([]);
-    setValues(initialState);
+    handleClear();
   };
 
   useEffect(() => {
