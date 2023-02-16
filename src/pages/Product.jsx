@@ -145,7 +145,7 @@ const Product = () => {
       categories,
     };
 
-    dispatch(editProduct({ productId: id, product, navigate, toast }));
+    dispatch(editProduct({ productId, product, navigate, toast }));
   };
 
   useEffect(() => {
