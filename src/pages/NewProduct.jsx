@@ -108,6 +108,11 @@ const NewProduct = () => {
     file && uploadFile(file);
   }, [file, dispatch]);
 
+  useEffect(() => {
+    isError && toast.error(isError);
+    return () => dispatch(reset());
+  }, [isError, dispatch]);
+
   return (
     <Container>
       <Title>New product</Title>
