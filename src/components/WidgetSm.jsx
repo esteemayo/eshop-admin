@@ -15,13 +15,19 @@ const WidgetSm = () => {
   useEffect(() => {
     (async () => {
       try {
+        const { token } = axios.CancelToken.source();
         const {
           data: { users },
-        } = await getUsers();
+        } = await getUsers(token);
 
         setUsers(users);
       } catch (err) {
-        console.log(err);
+        if (axios.isCancel(err)) {
+          console.log('cancelled');
+        } else {
+          // TODO: handle error
+          console.log(err);
+        }
       }
     })();
   }, []);
