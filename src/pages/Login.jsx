@@ -10,10 +10,6 @@ import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import { loginUser, reset } from 'redux/user/userSlice';
 
 const Login = () => {
-  const usernameRef = useRef();
-  const passwordRef = useRef();
-  const [showPassword, setShowPassword] = useState(false);
-
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
