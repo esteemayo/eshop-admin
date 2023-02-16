@@ -85,6 +85,14 @@ const NewProduct = () => {
     );
   };
 
+  const handleClear = () => {
+    setSize([]);
+    setColor([]);
+    setFile(null);
+    setCategories([]);
+    setValues(initialState);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
