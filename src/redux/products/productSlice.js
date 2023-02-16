@@ -89,9 +89,9 @@ export const productSlice = createSlice({
         state.isLoading = false;
         state.products.push(payload);
       })
-      .addCase(addProduct.rejected, (state) => {
+      .addCase(addProduct.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.isError = true;
+        state.isError = payload.message;
       })
       .addCase(editProduct.pending, (state) => {
         state.isLoading = true;
