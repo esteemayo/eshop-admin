@@ -21,6 +21,7 @@ const ProductList = () => {
 
   useEffect(() => {
     dispatch(fetchProducts());
+    return () => dispatch(reset());
   }, [dispatch]);
 
   const actionColumn = [
