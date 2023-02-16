@@ -17,6 +17,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
+  const { darkMode } = useSelector((state) => state.darkMode);
   const { isLoading, isSuccess, isError } = useSelector((state) => state.user);
 
   const handleSubmit = (e) => {
