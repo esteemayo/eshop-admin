@@ -20,7 +20,10 @@ const UserList = () => {
 
   useEffect(() => {
     dispatch(fetchUsers());
-    return () => dispatch(reset());
+
+    return () => {
+      dispatch(reset());
+    }
   }, [dispatch]);
 
   const actionColumn = [
