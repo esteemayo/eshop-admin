@@ -23,7 +23,7 @@ const NewProduct = () => {
   const dispatch = useDispatch();
   const { isError, isLoading } = useSelector((state) => state.product);
 
-  const titleInputRef = useRef();
+  const titleRef = useRef();
   const [perc, setPerc] = useState(0);
   const [size, setSize] = useState([]);
   const [color, setColor] = useState([]);
@@ -125,7 +125,7 @@ const NewProduct = () => {
             name='title'
             placeholder='Title'
             autoFocus
-            ref={titleInputRef}
+            ref={titleRef}
             value={title}
             onChange={handleChange}
           />
