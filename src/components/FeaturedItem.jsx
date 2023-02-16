@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ArrowDownward, ArrowUpward } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const FeaturedItem = ({ type }) => {
   const [income, setIncome] = useState([]);
