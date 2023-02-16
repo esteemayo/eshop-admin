@@ -2,12 +2,12 @@ import http from './httpService';
 
 const apiEndpoint = '/products';
 
-const productUrl = (productID) => `${apiEndpoint}/${productID}`;
+const productUrl = (productId) => `${apiEndpoint}/${productId}`;
 
 export const getProducts = () => http.get(apiEndpoint);
 
-export const getProductById = (productID) =>
-  http.get(productUrl(productID));
+export const getProductById = (productId) =>
+  http.get(productUrl(productId));
 
 
 export const getProductBySlug = (slug) =>
@@ -15,8 +15,8 @@ export const getProductBySlug = (slug) =>
 
 export const createProduct = (data) => http.post(apiEndpoint, data);
 
-export const updateProduct = (productID, data) =>
-  http.patch(productUrl(productID), data);
+export const updateProduct = (productId, data) =>
+  http.patch(productUrl(productId), data);
 
-export const deleteProduct = (productID) =>
-  http.delete(productUrl(productID));
+export const deleteProduct = (productId) =>
+  http.delete(productUrl(productId));
