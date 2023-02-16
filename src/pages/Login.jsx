@@ -36,7 +36,7 @@ const Login = () => {
     dispatch(loginUser({ credentials: userData, toast }));
 
     const origin = location.state?.from?.pathname || '/';
-    isSuccess && navigate(origin);
+    currentUser && isSuccess && navigate(origin);
   };
 
   useEffect(() => {
