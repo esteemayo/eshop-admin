@@ -62,6 +62,13 @@ const initialState = {
 export const productSlice = createSlice({
   name: 'products',
   initialState,
+  reducers: {
+    reset: (state) => {
+      state.products = [];
+      state.isLoading = false;
+      state.isError = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
