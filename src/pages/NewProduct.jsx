@@ -105,6 +105,10 @@ const NewProduct = () => {
   };
 
   useEffect(() => {
+    titleRef.current.focus();
+  }, []);
+
+  useEffect(() => {
     file && uploadFile(file);
   }, [file, dispatch]);
 
