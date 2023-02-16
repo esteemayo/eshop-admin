@@ -79,7 +79,8 @@ const Product = () => {
 
   const fetchIncomeStats = useCallback(async () => {
     try {
-      const { data } = await getIncomeStats(product?.id);
+      const { token } = axios.CancelToken.source();
+      const { data } = await getIncomeStats(product?.id, token);
 
       const list = data.income.sort((a, b) => {
         return a._id - b._id;
@@ -92,7 +93,12 @@ const Product = () => {
         ])
       );
     } catch (err) {
-      console.log(err);
+      if (axios.isCancel(err)) {
+        console.log('cancelled');
+      } else {
+        // TODO: handle error
+        console.log(err);
+      }
     }
   }, [MONTHS, product.id]);
 
