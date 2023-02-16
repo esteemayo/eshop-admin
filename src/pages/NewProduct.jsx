@@ -31,6 +31,8 @@ const NewProduct = () => {
   const [categories, setCategories] = useState([]);
   const [values, setValues] = useState(initialState);
 
+  const { title, price, desc, inStock } = values;
+
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
     setValues((prev) => ({ ...prev, [name]: value }));
