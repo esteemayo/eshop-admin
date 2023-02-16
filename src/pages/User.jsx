@@ -8,7 +8,7 @@ import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 import { phone } from 'responsive';
 import defaultAvatar from 'img/avatar.png';
 import { updateUserInputs } from 'formData';
-import { editUser, fetchUser } from 'redux/user/userSlice';
+import { editUser, fetchUser, reset } from 'redux/user/userSlice';
 
 const initialState = {
   name: '',
