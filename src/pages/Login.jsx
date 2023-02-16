@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Visibility from '@mui/icons-material/Visibility';
 
 import { loginUser, reset } from 'redux/user/userSlice';
 
