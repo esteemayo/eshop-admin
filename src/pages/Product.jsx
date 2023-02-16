@@ -257,6 +257,7 @@ const Product = () => {
               <Input
                 type='text'
                 id='categories'
+                name='categories'
                 value={categories}
                 placeholder='Categories'
                 onChange={handleCategories}
