@@ -234,13 +234,14 @@ const Product = () => {
             </FormGroup>
             <FormGroup>
               <Input
+                id='desc'
                 type='text'
                 name='desc'
                 value={inputs.desc}
                 onChange={handleChange}
                 placeholder={product.desc}
               />
-              <Label>Product description</Label>
+              <Label htmlFor='desc'>Product description</Label>
             </FormGroup>
             <FormGroup>
               <Input
