@@ -6,8 +6,8 @@ const userUrl = (userId) => `${apiEndpoint}/${userId}`;
 
 export const getAllUsers = () => http.get(`${apiEndpoint}`);
 
-export const getUsers = () =>
-  http.get(`${apiEndpoint}/?new=true`);
+export const getUsers = (token) =>
+  http.get(`${apiEndpoint}/?new=true`, { cancelToken: token });
 
 export const getUser = (userId) => http.get(userUrl(userId));
 
