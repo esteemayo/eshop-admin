@@ -2,7 +2,7 @@ import http from './httpService';
 
 const apiEndpoint = '/orders';
 
-export const getOrders = () => http.get(apiEndpoint);
+export const getOrders = (token) => http.get(apiEndpoint, { cancelToken: token });
 
 export const getIncome = () => http.get(`${apiEndpoint}/income`);
 
