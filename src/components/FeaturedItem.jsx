@@ -41,13 +41,23 @@ const FeaturedItem = ({ type }) => {
         money: income[1]?.total,
         rate: Math.floor(percentage),
         icon: (
-          <ArrowDownward
-            style={{
-              fontSize: '1.4rem',
-              marginLeft: '0.5rem',
-              color: 'red',
-            }}
-          />
+          percentage < 0 ? (
+            <ArrowDownward
+              style={{
+                fontSize: '1.4rem',
+                marginLeft: '0.5rem',
+                color: 'red',
+              }}
+            />
+          ) : (
+            <ArrowUpward
+              style={{
+                fontSize: '1.4rem',
+                marginLeft: '0.5rem',
+                color: 'green',
+              }}
+            />
+          )
         ),
       };
       break;
