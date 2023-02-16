@@ -14,10 +14,6 @@ const ProductList = () => {
   const { products } = useSelector((state) => state.product);
   const { darkMode } = useSelector((state) => state.darkMode);
 
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
   const handleDelete = (productId) => {
     if (window.confirm('Are you sure you wanted to delete this product?'))
       dispatch(removeProduct({ productId, toast }))
