@@ -7,7 +7,7 @@ import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { productColumns } from 'data';
-import { fetchProducts, removeProduct } from 'redux/products/productSlice';
+import { fetchProducts, removeProduct, reset } from 'redux/products/productSlice';
 
 const ProductList = () => {
   const dispatch = useDispatch();
