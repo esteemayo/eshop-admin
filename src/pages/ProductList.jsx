@@ -19,6 +19,10 @@ const ProductList = () => {
       dispatch(removeProduct({ productId, toast }))
   };
 
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
   const actionColumn = [
     {
       field: 'action',
