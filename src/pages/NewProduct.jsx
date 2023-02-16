@@ -10,7 +10,7 @@ import {
 } from 'firebase/storage';
 
 import app from '../firebase';
-import { addProduct } from 'redux/products/productSlice';
+import { addProduct, reset } from 'redux/products/productSlice';
 
 const initialState = {
   title: '',
