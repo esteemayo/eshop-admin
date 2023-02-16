@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { ArrowDownward, ArrowUpward } from '@material-ui/icons';
 
 import { getIncome } from 'services/orderService';
-import axios from 'axios';
 
 const FeaturedInfo = () => {
   const [income, setIncome] = useState([]);
