@@ -6,7 +6,7 @@ import { DeleteOutline } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { userColumns } from 'data';
-import { fetchUsers, removeUser } from 'redux/user/userSlice';
+import { fetchUsers, removeUser, reset } from 'redux/user/userSlice';
 
 const UserList = () => {
   const dispatch = useDispatch();
