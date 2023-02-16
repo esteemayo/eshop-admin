@@ -1,6 +1,74 @@
 import styled from 'styled-components';
 import defaultAvatar from 'img/avatar.png';
 
+export const newUsers = [
+  {
+    id: 1,
+    img: '',
+    name: 'Anna keller',
+    occupation: 'Software engineer',
+  },
+  {
+    id: 2,
+    img: '',
+    name: 'Anna keller',
+    occupation: 'Software engineer',
+  },
+  {
+    id: 3,
+    img: '',
+    name: 'Anna keller',
+    occupation: 'Software engineer',
+  },
+  {
+    id: 4,
+    img: '',
+    name: 'Anna keller',
+    occupation: 'Software engineer',
+  },
+  {
+    id: 5,
+    img: '',
+    name: 'Anna keller',
+    occupation: 'Software engineer',
+  },
+];
+
+export const transactions = [
+  {
+    id: 1,
+    customer: 'Susan carol',
+    img: 'https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    total: '122.00',
+    status: 'approved',
+    createdAt: '2 Jun 2021',
+  },
+  {
+    id: 2,
+    customer: 'Susan carol',
+    img: 'https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    total: '122.00',
+    status: 'declined',
+    createdAt: '2 Jun 2021',
+  },
+  {
+    id: 3,
+    customer: 'Susan carol',
+    img: 'https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    total: '122.00',
+    status: 'pending',
+    createdAt: '2 Jun 2021',
+  },
+  {
+    id: 4,
+    customer: 'Susan carol',
+    img: 'https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    total: '122.00',
+    status: 'approved',
+    createdAt: '2 Jun 2021',
+  },
+];
+
 export const userData = [
   {
     name: 'Jan',
