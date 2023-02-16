@@ -104,6 +104,7 @@ export const productSlice = createSlice({
       })
       .addCase(editProduct.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.products[
           state.products.findIndex((item) => item._id === payload._id)
         ] = payload;
