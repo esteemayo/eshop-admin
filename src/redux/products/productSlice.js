@@ -66,7 +66,7 @@ export const productSlice = createSlice({
     reset: (state) => {
       state.products = [];
       state.isLoading = false;
-      state.isError = false;
+      state.isError = null;
     },
   },
   extraReducers: (builder) => {
