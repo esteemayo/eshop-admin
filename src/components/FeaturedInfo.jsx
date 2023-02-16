@@ -11,14 +11,20 @@ const FeaturedInfo = () => {
 
   const fetchIncome = async () => {
     try {
-      const { data } = await getIncome();
+      const { token } = axios.CancelToken.source();
+      const { data } = await getIncome(token);
       setIncome(data.income);
       setPercentage(
         (data.income[1].total / (data.income[0].total + data.income[1].total)) *
         100
       );
     } catch (err) {
-      console.log(err);
+      if (axios.isCancel(err)) {
+        console.log('cancelled');
+      } else {
+        // TODO: handle error
+        console.log(err);
+      }
     }
   };
 
