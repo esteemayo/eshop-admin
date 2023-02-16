@@ -124,7 +124,6 @@ const NewProduct = () => {
             id='title'
             name='title'
             placeholder='Title'
-            autoFocus
             ref={titleRef}
             value={title}
             onChange={handleChange}
