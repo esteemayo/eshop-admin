@@ -16,7 +16,7 @@ import app from '../firebase';
 import { phone } from 'responsive';
 import Chart from 'components/Chart';
 import { getIncomeStats } from 'services/orderService';
-import { editProduct, reset } from 'redux/products/productSlice';
+import { editProduct, fetchProduct, reset } from 'redux/products/productSlice';
 
 const initialState = {
   title: '',
