@@ -175,6 +175,10 @@ const Product = () => {
     file && uploadFile(file);
   }, [file]);
 
+  useEffect(() => {
+    isError && toast.error(isError);
+  }, [isError]);
+
   return (
     <Container>
       <TitleContainer>
