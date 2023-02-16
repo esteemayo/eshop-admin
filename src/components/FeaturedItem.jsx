@@ -3,6 +3,8 @@ import { ArrowDownward, ArrowUpward } from '@material-ui/icons';
 import { useState } from 'react';
 
 const FeaturedItem = ({ type }) => {
+  const [income, setIncome] = useState([]);
+  const [percentage, setPercentage] = useState(0);
   let data;
 
   switch (type) {
