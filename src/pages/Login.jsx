@@ -16,6 +16,11 @@ const Login = () => {
   const { darkMode } = useSelector((state) => state.darkMode);
   const { isLoading, isSuccess, isError } = useSelector((state) => state.user);
 
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+  const [showPassword, setShowPassword] = useState(false);
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
