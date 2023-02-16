@@ -39,7 +39,7 @@ const FeaturedItem = ({ type }) => {
       data = {
         title: 'Revenue',
         money: income[1]?.total,
-        rate: '',
+        rate: Math.floor(percentage),
         icon: (
           <ArrowDownward
             style={{
