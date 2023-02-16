@@ -109,6 +109,8 @@ const Title = styled.h1`
 const Form = styled.form``;
 
 const FormGroup = styled.div`
+  position: relative;
+
   &:not(:last-of-type) {
     margin-bottom: 2rem;
   }
