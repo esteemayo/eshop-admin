@@ -125,7 +125,7 @@ export const userSlice = createSlice({
       state.user = {};
       state.isLoading = false;
       state.isSuccess = false;
-      state.isError = '';
+      state.isError = null;
     },
   },
   extraReducers: (builder) => {
