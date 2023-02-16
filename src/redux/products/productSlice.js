@@ -116,9 +116,9 @@ export const productSlice = createSlice({
           1,
         );
       })
-      .addCase(removeProduct.rejected, (state) => {
+      .addCase(removeProduct.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.isError = true;
+        state.isError = payload.message;
       })
   }
 });
