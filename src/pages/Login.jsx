@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Visibility from '@mui/icons-material/Visibility';
+import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 
 import { loginUser, reset } from 'redux/user/userSlice';
 
