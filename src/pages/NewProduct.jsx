@@ -133,7 +133,7 @@ const NewProduct = () => {
             id='desc'
             name='desc'
             placeholder='Description'
-            value={values.desc}
+            value={desc}
             onChange={handleChange}
           />
         </FormGroup>
