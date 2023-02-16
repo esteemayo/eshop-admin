@@ -1,3 +1,4 @@
+import axios from 'axios';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { Publish } from '@material-ui/icons';
@@ -16,7 +17,6 @@ import { phone } from 'responsive';
 import Chart from 'components/Chart';
 import { getIncomeStats } from 'services/orderService';
 import { editProduct } from 'redux/products/productSlice';
-import axios from 'axios';
 
 const initialState = {
   title: '',
