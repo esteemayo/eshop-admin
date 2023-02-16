@@ -266,8 +266,8 @@ const Product = () => {
             </FormGroup>
             <FormGroup>
               <Input
-                type='text'
                 id='size'
+                type='text'
                 name='size'
                 value={size}
                 placeholder='Size'
