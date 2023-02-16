@@ -18,6 +18,10 @@ const UserList = () => {
       dispatch(removeUser(userId));
   };
 
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
   const actionColumn = [
     {
       field: 'action',
