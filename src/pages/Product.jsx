@@ -30,9 +30,7 @@ const Product = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { darkMode } = useSelector((state) => state.darkMode);
-  const product = useSelector((state) =>
-    state.product.products.find((product) => product._id === id)
-  );
+  const { product } = useSelector((state) => state.product);
 
   const [perc, setPerc] = useState(0);
   const [size, setSize] = useState([]);
