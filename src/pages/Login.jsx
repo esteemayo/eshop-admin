@@ -73,6 +73,19 @@ const Login = () => {
               required
             />
             <FormLabel>Password</FormLabel>
+            {showPassword ? (
+              <VisibilityOff
+                onClick={() => setShowPassword(!showPassword)}
+                className='password__icon'
+                style={{ color: darkMode ? '#999999' : '#008080' }}
+              />
+            ) : (
+              <Visibility
+                onClick={() => setShowPassword(!showPassword)}
+                className='password__icon'
+                style={{ color: darkMode ? '#999999' : '#008080' }}
+              />
+            )}
           </FormGroup>
           {isError && <ErrorMessage>{isError}</ErrorMessage>}
           <Button disabled={isLoading}>
