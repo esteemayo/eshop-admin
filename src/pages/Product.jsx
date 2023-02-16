@@ -152,7 +152,8 @@ const Product = () => {
 
   useEffect(() => {
     fetchIncomeStats();
-  }, [fetchIncomeStats]);
+    return () => dispatch(reset());
+  }, [fetchIncomeStats, dispatch]);
 
   useEffect(() => {
     setSize(product.size);
