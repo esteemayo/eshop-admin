@@ -29,8 +29,8 @@ const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { darkMode } = useSelector((state) => state.darkMode);
   const { product } = useSelector((state) => state.product);
+  const { darkMode } = useSelector((state) => state.darkMode);
 
   const [perc, setPerc] = useState(0);
   const [size, setSize] = useState([]);
@@ -158,8 +158,6 @@ const Product = () => {
   useEffect(() => {
     fetchIncomeStats();
   }, [fetchIncomeStats]);
-
-  console.log(product)
 
   useEffect(() => {
     setSize(product.size);
