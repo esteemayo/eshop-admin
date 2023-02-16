@@ -40,8 +40,6 @@ const Product = () => {
   const [inputs, setInputs] = useState(initialState);
   const [productStats, setProductStats] = useState([]);
 
-  const productId = id;
-
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
     setInputs((prev) => ({ ...prev, [name]: value }));
