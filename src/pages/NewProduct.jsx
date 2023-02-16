@@ -185,7 +185,7 @@ const NewProduct = () => {
           <Select
             id='inStock'
             name='inStock'
-            value={values.inStock}
+            value={inStock}
             onChange={handleChange}
           >
             <Option value='true'>Yes</Option>
