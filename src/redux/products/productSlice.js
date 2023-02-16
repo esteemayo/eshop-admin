@@ -67,6 +67,7 @@ export const productSlice = createSlice({
     reset: (state) => {
       state.products = [];
       state.isLoading = false;
+      state.isSuccess = false;
       state.isError = null;
     },
   },
