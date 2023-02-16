@@ -122,7 +122,7 @@ const NewProduct = () => {
             placeholder='Title'
             autoFocus
             ref={titleInputRef}
-            value={values.title}
+            value={title}
             onChange={handleChange}
           />
         </FormGroup>
