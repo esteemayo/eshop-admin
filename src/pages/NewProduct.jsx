@@ -144,7 +144,7 @@ const NewProduct = () => {
             id='price'
             name='price'
             placeholder='Price'
-            value={values.price}
+            value={price}
             onChange={handleChange}
           />
         </FormGroup>
