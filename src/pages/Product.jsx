@@ -149,6 +149,10 @@ const Product = () => {
   };
 
   useEffect(() => {
+    dispatch(fetchProduct());
+  }, [dispatch]);
+
+  useEffect(() => {
     fetchIncomeStats();
     return () => dispatch(reset());
   }, [fetchIncomeStats, dispatch]);
