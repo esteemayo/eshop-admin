@@ -112,6 +112,7 @@ const Button = styled.button`
   padding: 0.7rem 1rem;
   background-color: ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.textSoft};
+  outline-color: ${({ theme }) => theme.text};
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
