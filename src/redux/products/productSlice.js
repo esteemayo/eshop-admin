@@ -55,6 +55,7 @@ export const removeProduct = createAsyncThunk(
 
 const initialState = {
   products: [],
+  product: {},
   isLoading: false,
   isSuccess: false,
   isError: null,
