@@ -11,10 +11,16 @@ const WidgetLg = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await getOrders();
+        const { token } = axios.CancelToken.source();
+        const { data } = await getOrders(token);
         setOrders(data.orders);
       } catch (err) {
-        console.log(err);
+        if (axios.isCancel(err)) {
+          console.log('cancelled');
+        } else {
+          // TODO: handle error
+          console.log(err);
+        }
       }
     })();
   }, []);
