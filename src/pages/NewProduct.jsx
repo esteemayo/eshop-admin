@@ -21,7 +21,7 @@ const initialState = {
 
 const NewProduct = () => {
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.product);
+  const { isError, isLoading } = useSelector((state) => state.product);
 
   const titleInputRef = useRef();
   const [perc, setPerc] = useState(0);
