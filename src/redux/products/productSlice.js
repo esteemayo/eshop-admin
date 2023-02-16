@@ -13,6 +13,18 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+export const fetchProduct = createAsyncThunk(
+  'products/getProduct',
+  async (productId, thunkAPI) => {
+    try {
+      const { data } = await productAPI.getProductById(productId);
+      return data.product;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const addProduct = createAsyncThunk(
   'products/createProduct',
   async ({ product, toast }, thunkAPI) => {
