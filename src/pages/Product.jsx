@@ -29,8 +29,8 @@ const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { product } = useSelector((state) => state.product);
   const { darkMode } = useSelector((state) => state.darkMode);
+  const { product, isError } = useSelector((state) => state.product);
 
   const [perc, setPerc] = useState(0);
   const [size, setSize] = useState([]);
