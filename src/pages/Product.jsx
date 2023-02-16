@@ -151,13 +151,15 @@ const Product = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchProduct());
+    dispatch(fetchProduct(productId));
     return () => dispatch(reset());
-  }, [dispatch]);
+  }, [productId, dispatch]);
 
   useEffect(() => {
     fetchIncomeStats();
   }, [fetchIncomeStats]);
+
+  console.log(product)
 
   useEffect(() => {
     setSize(product.size);
