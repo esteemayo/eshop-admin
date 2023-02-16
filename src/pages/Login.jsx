@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Visibility from '@mui/icons-material/Visibility';
 import { useLocation, useNavigate } from 'react-router-dom';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
