@@ -12,7 +12,7 @@ import {
 
 import app from '../firebase';
 import { phone } from 'responsive';
-import { registerUser } from 'redux/user/userSlice';
+import { registerUser, reset } from 'redux/user/userSlice';
 import { userInputs } from 'formData';
 
 const NewUser = () => {
