@@ -13,10 +13,6 @@ const UserList = () => {
   const { users } = useSelector((state) => state.user);
   const { darkMode } = useSelector((state) => state.darkMode);
 
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
-
   const handleDelete = (userId) => {
     if (window.confirm('Are you sure you wanted to delete this user?'))
       dispatch(removeUser(userId));
