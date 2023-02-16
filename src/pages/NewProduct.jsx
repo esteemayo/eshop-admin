@@ -106,7 +106,6 @@ const NewProduct = () => {
 
   useEffect(() => {
     file && uploadFile(file);
-    return () => dispatch(reset());
   }, [file, dispatch]);
 
   return (
