@@ -83,6 +83,7 @@ export const productSlice = createSlice({
       })
       .addCase(fetchProducts.rejected, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = payload.message;
       })
       .addCase(addProduct.pending, (state) => {
