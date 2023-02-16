@@ -78,9 +78,9 @@ export const productSlice = createSlice({
         state.isLoading = false;
         state.products = payload;
       })
-      .addCase(fetchProducts.rejected, (state) => {
+      .addCase(fetchProducts.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.isError = true;
+        state.isError = payload.message;
       })
       .addCase(addProduct.pending, (state) => {
         state.isLoading = true;
