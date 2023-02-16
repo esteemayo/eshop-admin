@@ -116,10 +116,3 @@ input[type='file'] {
 .chart-grid {
   stroke: rgb(228, 225, 225);
 }
-
-/* .active {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  background-color: rgb(240, 240, 255);
-} */
