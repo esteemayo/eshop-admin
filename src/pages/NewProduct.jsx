@@ -233,6 +233,7 @@ const FormGroup = styled.div`
 const Label = styled.label`
   text-transform: capitalize;
   font-size: 1.2rem;
+  padding-left: 1rem;
   color: gray;
 `;
 
