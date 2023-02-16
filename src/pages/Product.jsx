@@ -80,7 +80,7 @@ const Product = () => {
   const fetchIncomeStats = useCallback(async () => {
     try {
       const { token } = axios.CancelToken.source();
-      const { data } = await getIncomeStats(product?.id, token);
+      const { data } = await getIncomeStats(productId, token);
 
       const list = data.income.sort((a, b) => {
         return a._id - b._id;
@@ -100,7 +100,7 @@ const Product = () => {
         console.log(err);
       }
     }
-  }, [MONTHS, product.id]);
+  }, [MONTHS, productId]);
 
   const uploadFile = (file) => {
     const fileName = new Date().getTime() + file.name;
