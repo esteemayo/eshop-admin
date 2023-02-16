@@ -292,7 +292,7 @@ const Product = () => {
                 <Option value='true'>Yes</Option>
                 <Option value='false'>No</Option>
               </Select>
-              <Label>In stock</Label>
+              <Label htmlFor='inStock'>In stock</Label>
             </FormGroup>
           </FormLeft>
           <FormRight>
