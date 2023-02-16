@@ -9,7 +9,6 @@ export const getProducts = () => http.get(apiEndpoint);
 export const getProductById = (productId) =>
   http.get(productUrl(productId));
 
-
 export const getProductBySlug = (slug) =>
   http.get(`${apiEndpoint}/details/${slug}`);
 
