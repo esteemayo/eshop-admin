@@ -66,7 +66,7 @@ const Login = () => {
           </FormGroup>
           <FormGroup>
             <FormInput
-              type='password'
+              type={showPassword ? 'text' : 'password'}
               name='password'
               placeholder='Password'
               ref={passwordRef}
