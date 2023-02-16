@@ -150,6 +150,7 @@ const Product = () => {
 
   useEffect(() => {
     dispatch(fetchProduct());
+    return () => dispatch(reset());
   }, [dispatch]);
 
   useEffect(() => {
