@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import FeaturedItem from './FeaturedItem';
 
 const FeaturedInfo = () => {
