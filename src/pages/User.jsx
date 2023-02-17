@@ -94,6 +94,7 @@ const User = () => {
                 return (
                   <FormGroup key={id}>
                     <FormInput
+                      id={id}
                       type={type}
                       name={name}
                       value={inputs[name]}
