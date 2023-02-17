@@ -117,8 +117,8 @@ const User = () => {
                   />
                 </FormLabel>
                 <FormInput
-                  type='file'
                   id='file'
+                  type='file'
                   style={{ display: 'none' }}
                 />
               </Upload>
