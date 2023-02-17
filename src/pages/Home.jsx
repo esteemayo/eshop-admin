@@ -2,11 +2,11 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { phone } from 'responsive';
 import Chart from 'components/Chart';
+import { phone } from 'responsive';
 import WidgetSm from 'components/WidgetSm';
-import WidgetLg from 'components/WidgetLg';
 import FeaturedInfo from 'components/FeaturedInfo';
+import WidgetLg from 'components/WidgetLg';
 import { getUserStats } from 'services/userService';
 
 const Home = () => {
