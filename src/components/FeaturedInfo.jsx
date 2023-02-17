@@ -34,67 +34,7 @@ const FeaturedInfo = () => {
 
   return (
     <Container>
-      <FeaturedItem>
-        <Title>Revenue</Title>
-        <FeaturedMoneyContainer>
-          <FeaturedMoney>${income[1]?.total}</FeaturedMoney>
-          <FeaturedMoneyRate>
-            %{Math.floor(percentage)}{' '}
-            {percentage < 0 ? (
-              <ArrowDownward
-                style={{
-                  fontSize: '1.4rem',
-                  marginLeft: '0.5rem',
-                  color: 'red',
-                }}
-              />
-            ) : (
-              <ArrowUpward
-                style={{
-                  fontSize: '1.4rem',
-                  marginLeft: '0.5rem',
-                  color: 'green',
-                }}
-              />
-            )}
-          </FeaturedMoneyRate>
-        </FeaturedMoneyContainer>
-        <FeaturedSub>Compared to last month</FeaturedSub>
-      </FeaturedItem>
-      <FeaturedItem>
-        <Title>Sales</Title>
-        <FeaturedMoneyContainer>
-          <FeaturedMoney>$4,415</FeaturedMoney>
-          <FeaturedMoneyRate>
-            %-1.4{' '}
-            <ArrowDownward
-              style={{
-                fontSize: '1.4rem',
-                marginLeft: '0.5rem',
-                color: 'red',
-              }}
-            />{' '}
-          </FeaturedMoneyRate>
-        </FeaturedMoneyContainer>
-        <FeaturedSub>Compared to last month</FeaturedSub>
-      </FeaturedItem>
-      <FeaturedItem>
-        <Title>Cost</Title>
-        <FeaturedMoneyContainer>
-          <FeaturedMoney>$2,415</FeaturedMoney>
-          <FeaturedMoneyRate>
-            %2.4{' '}
-            <ArrowUpward
-              style={{
-                fontSize: '1.4rem',
-                marginLeft: '0.5rem',
-                color: 'green',
-              }}
-            />{' '}
-          </FeaturedMoneyRate>
-        </FeaturedMoneyContainer>
-        <FeaturedSub>Compared to last month</FeaturedSub>
-      </FeaturedItem>
+
     </Container>
   );
 };
