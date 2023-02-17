@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -8,7 +9,6 @@ import WidgetSm from 'components/WidgetSm';
 import FeaturedInfo from 'components/FeaturedInfo';
 import WidgetLg from 'components/WidgetLg';
 import { getUserStats } from 'services/userService';
-import axios from 'axios';
 
 const Home = () => {
   const [userStats, setUserStats] = useState([]);
