@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Visibility } from '@material-ui/icons';
 
 import defaultAvatar from 'img/avatar.png';
+import { phone } from 'responsive';
 import { getUsers } from 'services/userService';
 
 const WidgetSm = () => {
