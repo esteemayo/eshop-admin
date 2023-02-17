@@ -1,7 +1,6 @@
 import axios from 'axios';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
-import { ArrowDownward, ArrowUpward } from '@material-ui/icons';
 
 import { getIncome } from 'services/orderService';
 
@@ -34,7 +33,7 @@ const FeaturedInfo = () => {
 
   return (
     <Container>
-
+      {/*  */}
     </Container>
   );
 };
