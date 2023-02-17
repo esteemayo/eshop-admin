@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { DeleteOutline } from '@material-ui/icons';
 
 import { userColumns } from 'data';
 import { fetchUsers, removeUser, reset } from 'redux/user/userSlice';
