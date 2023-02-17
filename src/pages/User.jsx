@@ -100,6 +100,7 @@ const User = () => {
                       value={inputs[name]}
                       placeholder={user[name]}
                       onChange={handleChange}
+                      autoFocus={name === 'username' ? true : false}
                       required
                     />
                     <FormLabel htmlFor={id}>{label}</FormLabel>
