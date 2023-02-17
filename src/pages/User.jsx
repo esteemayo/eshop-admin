@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 
 import defaultAvatar from 'img/avatar.png';
-import { updateUserInputs } from 'formData';
+import { phone } from 'responsive';
 import { editUser, fetchUser, reset } from 'redux/user/userSlice';
 
 const initialState = {
