@@ -12,7 +12,6 @@ import {
   getDownloadURL,
 } from 'firebase/storage';
 
-import app from '../firebase';
 import { phone } from 'responsive';
 import Chart from 'components/Chart';
 import { getIncomeStats } from 'services/orderService';
