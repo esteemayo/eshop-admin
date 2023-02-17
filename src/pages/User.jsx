@@ -102,7 +102,7 @@ const User = () => {
                       onChange={handleChange}
                       required
                     />
-                    <FormLabel>{label}</FormLabel>
+                    <FormLabel htmlFor={id}>{label}</FormLabel>
                   </FormGroup>
                 )
               })}
