@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
 
