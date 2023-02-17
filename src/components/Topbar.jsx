@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import {
