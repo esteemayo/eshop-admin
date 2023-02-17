@@ -51,7 +51,7 @@ const Home = () => {
           console.log(err);
         }
       }
-    }, [MONTHS])();
+    })();
   }, [MONTHS]);
 
   if (!currentUser) {
