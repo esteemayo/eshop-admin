@@ -6,32 +6,6 @@ import FeaturedItem from './FeaturedItem';
 import { getIncome } from 'services/orderService';
 
 const FeaturedInfo = () => {
-  const [income, setIncome] = useState([]);
-  const [percentage, setPercentage] = useState(0);
-
-  const fetchIncome = async () => {
-    try {
-      const { token } = axios.CancelToken.source();
-      const { data } = await getIncome(token);
-      setIncome(data.income);
-      setPercentage(
-        (data.income[1].total / (data.income[0].total + data.income[1].total)) *
-        100
-      );
-    } catch (err) {
-      if (axios.isCancel(err)) {
-        console.log('cancelled');
-      } else {
-        // TODO: handle error
-        console.log(err);
-      }
-    }
-  };
-
-  useEffect(() => {
-    fetchIncome();
-  }, []);
-
   return (
     <Container>
       <FeaturedItem type='revenue' />
