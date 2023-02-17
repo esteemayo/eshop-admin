@@ -11,27 +11,25 @@ const FeaturedItem = ({ type }) => {
 
   let data;
 
-  const fetchIncome = async () => {
-    try {
-      const { token } = axios.CancelToken.source();
-      const { data } = await getIncome(token);
-      setIncome(data.income);
-      setPercentage(
-        (data.income[1].total / (data.income[0].total + data.income[1].total)) *
-        100
-      );
-    } catch (err) {
-      if (axios.isCancel(err)) {
-        console.log('cancelled');
-      } else {
-        // TODO: handle error
-        console.log(err);
-      }
-    }
-  };
-
   useEffect(() => {
-    fetchIncome();
+    (async () => {
+      try {
+        const { token } = axios.CancelToken.source();
+        const { data } = await getIncome(token);
+        setIncome(data.income);
+        setPercentage(
+          (data.income[1].total / (data.income[0].total + data.income[1].total)) *
+          100
+        );
+      } catch (err) {
+        if (axios.isCancel(err)) {
+          console.log('cancelled');
+        } else {
+          // TODO: handle error
+          console.log(err);
+        }
+      }
+    })();
   }, []);
 
   switch (type) {
