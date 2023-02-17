@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import Topbar from 'components/Topbar';
