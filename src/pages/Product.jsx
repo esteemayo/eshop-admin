@@ -13,7 +13,7 @@ import {
 } from 'firebase/storage';
 
 import { phone } from 'responsive';
-import Chart from 'components/Chart';
+import app from '../firebase';
 import { getIncomeStats } from 'services/orderService';
 import { editProduct, fetchProduct, reset } from 'redux/products/productSlice';
 
