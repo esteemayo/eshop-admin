@@ -12,7 +12,6 @@ import { getUserStats } from 'services/userService';
 
 const Home = () => {
   const [userStats, setUserStats] = useState([]);
-  const { currentUser } = useSelector((state) => state.user);
 
   const MONTHS = useMemo(
     () => [
