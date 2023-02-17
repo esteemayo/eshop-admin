@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Visibility } from '@material-ui/icons';
 
-import { phone } from 'responsive';
 import defaultAvatar from 'img/avatar.png';
 import { getUsers } from 'services/userService';
 
