@@ -1,5 +1,5 @@
-import axios from 'axios';
 import styled from 'styled-components';
+import axios from 'axios';
 import { useEffect, useMemo, useState } from 'react';
 
 import Chart from 'components/Chart';
