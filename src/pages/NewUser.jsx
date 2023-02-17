@@ -10,7 +10,6 @@ import {
   getDownloadURL,
 } from 'firebase/storage';
 
-import app from '../firebase';
 import { phone } from 'responsive';
 import { userInputs } from 'formData';
 import { registerUser, reset } from 'redux/user/userSlice';
