@@ -18,7 +18,7 @@ const FeaturedItem = ({ type }) => {
         const { data } = await getIncome(token);
         setIncome(data.income);
         setPercentage(
-          (data.income[1].total / (data.income[0].total + data.income[1].total)) *
+          (data.income[1]?.total / (data.income[0]?.total + data.income[1]?.total)) *
           100
         );
       } catch (err) {
