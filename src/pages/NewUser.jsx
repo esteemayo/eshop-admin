@@ -11,8 +11,6 @@ import {
 } from 'firebase/storage';
 
 import app from '../firebase';
-import app from '../firebase';
-import { userInputs } from 'formData';
 import { registerUser, reset } from 'redux/user/userSlice';
 import { userInputs } from 'formData';
 
