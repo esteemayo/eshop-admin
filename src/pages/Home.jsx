@@ -54,10 +54,6 @@ const Home = () => {
     }, [MONTHS])();
   }, [MONTHS]);
 
-  useEffect(() => {
-    fetchUserStats();
-  }, [fetchUserStats]);
-
   if (!currentUser) {
     return null;
   }
