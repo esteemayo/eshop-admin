@@ -96,13 +96,14 @@ const NewUser = () => {
             return (
               <FormGroup key={id}>
                 <FormInput
+                  id={id}
                   type={type}
                   name={name}
                   placeholder={placeholder}
                   required
                   onChange={handleChange}
                 />
-                <FormLabel>{label}</FormLabel>
+                <FormLabel htmlFor={id}>{label}</FormLabel>
               </FormGroup>
             );
           })}
