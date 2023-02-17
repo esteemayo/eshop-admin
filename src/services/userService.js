@@ -11,7 +11,8 @@ export const getUsers = (token) =>
 
 export const getUser = (userId) => http.get(userUrl(userId));
 
-export const getUserStats = () => http.get(`${apiEndpoint}/stats`);
+export const getUserStats = (token) =>
+  http.get(`${apiEndpoint}/stats`, { cancelToken: token });
 
 export const updateUser = (userId, user) =>
   http.patch(userUrl(userId), user);
