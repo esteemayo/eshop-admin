@@ -8,6 +8,7 @@ import WidgetSm from 'components/WidgetSm';
 import FeaturedInfo from 'components/FeaturedInfo';
 import WidgetLg from 'components/WidgetLg';
 import { getUserStats } from 'services/userService';
+import axios from 'axios';
 
 const Home = () => {
   const [userStats, setUserStats] = useState([]);
