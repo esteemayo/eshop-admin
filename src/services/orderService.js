@@ -8,5 +8,5 @@ export const getOrders = (token) =>
 export const getIncome = (token) =>
   http.get(`${apiEndpoint}/income`, { cancelToken: token });
 
-export const getIncomeStats = (productID, token) =>
-  http.get(`${apiEndpoint}/income?pid=${productID}`, { cancelToken: token });
+export const getIncomeStats = (productId, token) =>
+  http.get(`${apiEndpoint}/income?pid=${productId}`, { cancelToken: token });
