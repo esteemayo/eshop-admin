@@ -102,18 +102,12 @@ const FeaturedItem = ({ type }) => {
 
   return (
     <Container>
-      <Title>Sales</Title>
+      <Title>{data.title}</Title>
       <FeaturedMoneyContainer>
-        <FeaturedMoney>$4,415</FeaturedMoney>
+        <FeaturedMoney>${data.money}</FeaturedMoney>
         <FeaturedMoneyRate>
-          %-1.4{' '}
-          <ArrowDownward
-            style={{
-              fontSize: '1.4rem',
-              marginLeft: '0.5rem',
-              color: 'red',
-            }}
-          />{' '}
+          %{data.rate}{' '}
+          {data.icon}{' '}
         </FeaturedMoneyRate>
       </FeaturedMoneyContainer>
       <FeaturedSub>Compared to last month</FeaturedSub>
