@@ -1,5 +1,7 @@
+import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { format } from 'timeago.js';
 
 import { getOrders } from 'services/orderService';
 
