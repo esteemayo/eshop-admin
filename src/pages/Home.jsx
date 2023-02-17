@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import Chart from 'components/Chart';
 import { phone } from 'responsive';
