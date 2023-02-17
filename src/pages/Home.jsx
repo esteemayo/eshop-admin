@@ -32,24 +32,25 @@ const Home = () => {
     []
   );
 
-  const fetchUserStats = useCallback(async () => {
-    try {
-      const { token } = axios.CancelToken.source();
-      const { data } = await getUserStats(token);
-      data.stats.map((item) =>
-        setUserStats((prev) => [
-          ...prev,
-          { name: MONTHS[item._id - 1], 'Active User': item.total },
-        ])
-      );
-    } catch (err) {
-      if (axios.isCancel(err)) {
-        console.log('cancelled');
-      } else {
-        // TODO: handle error
-        console.log(err);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { token } = axios.CancelToken.source();
+        const { data } = await getUserStats(token);
+        data.stats.map((item) =>
+          setUserStats((prev) => [
+            ...prev,
+            { name: MONTHS[item._id - 1], 'Active User': item.total },
+          ])
+        );
+      } catch (err) {
+        if (axios.isCancel(err)) {
+          console.log('cancelled');
+        } else {
+          // TODO: handle error
+          console.log(err);
+        }
       }
-    }
   }, [MONTHS]);
 
   useEffect(() => {
