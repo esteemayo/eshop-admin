@@ -5,7 +5,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 
-import { phone } from 'responsive';
 import defaultAvatar from 'img/avatar.png';
 import { updateUserInputs } from 'formData';
 import { editUser, fetchUser, reset } from 'redux/user/userSlice';
