@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { phone } from 'responsive';
