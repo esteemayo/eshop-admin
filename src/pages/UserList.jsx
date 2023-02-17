@@ -35,7 +35,7 @@ const UserList = () => {
               <EditButton>Edit</EditButton>
             </Link>
             <DeleteOutline
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row._id)}
               style={{ fontSize: '2rem', cursor: 'pointer' }}
               className={darkMode ? 'delete__dark' : 'delete__light'}
             />
