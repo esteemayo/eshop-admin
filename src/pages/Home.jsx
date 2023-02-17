@@ -54,10 +54,6 @@ const Home = () => {
     })();
   }, [MONTHS]);
 
-  if (!currentUser) {
-    return null;
-  }
-
   return (
     <Container>
       <FeaturedInfo />
