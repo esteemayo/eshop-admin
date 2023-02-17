@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
 import FeaturedItem from './FeaturedItem';
-import { getIncome } from 'services/orderService';
 
 const FeaturedInfo = () => {
   return (
