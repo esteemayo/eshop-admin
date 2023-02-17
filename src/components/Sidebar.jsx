@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import {
   AttachMoney,
   BarChart,
