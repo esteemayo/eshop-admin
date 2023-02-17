@@ -51,6 +51,7 @@ const Home = () => {
           console.log(err);
         }
       }
+    }, [MONTHS])();
   }, [MONTHS]);
 
   useEffect(() => {
