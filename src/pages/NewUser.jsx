@@ -111,11 +111,11 @@ const NewUser = () => {
                   onChange={handleChange}
                 />
                 <FormLabel htmlFor={id}>{label}</FormLabel>
-                {name === 'username' && <FaceOutlinedIcon className='user__icon' />}
-                {name === 'name' && <PersonOutlinedIcon className='user__icon' />}
-                {name === 'email' && <EmailOutlinedIcon className='user__icon' />}
+                {name === 'username' && <FaceOutlinedIcon className='user__icon new__user-icon' />}
+                {name === 'name' && <PersonOutlinedIcon className='user__icon new__user-icon' />}
+                {name === 'email' && <EmailOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'password' && <Visibility className='user__icon' />}
-                {name === 'passwordConfirm' && <Visibility className='user__icon' />}
+                {name === 'passwordConfirm' && <Visibility className='user__icon new__user-icon' />}
               </FormGroup>
             );
           })}
@@ -131,7 +131,7 @@ const NewUser = () => {
                   onChange={(e) => setFile(e.target.files[0])}
                 />
                 <FormLabel htmlFor='img'>Image</FormLabel>
-                <FileUploadOutlinedIcon className='user__icon' />
+                <FileUploadOutlinedIcon className='user__icon new__user-icon' />
               </>
             )}
           </FormGroup>
