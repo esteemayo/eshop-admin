@@ -134,7 +134,9 @@ const NewUser = () => {
                 {name === 'username' && <FaceOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'name' && <PersonOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'email' && <EmailOutlinedIcon className='user__icon new__user-icon' />}
-                {name === 'password' && (
+                {name === 'password' && showPassword ? (
+                  <VisibilityOff className='user__icon new__userPassword-icon' />
+                ) : (
                   <Visibility className='user__icon new__userPassword-icon' />
                 )}
                 {name === 'passwordConfirm' && (
