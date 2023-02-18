@@ -147,16 +147,18 @@ const NewUser = () => {
                     />
                   )
                 )}
-                {name === 'passwordConfirm' && showPasswordConfirm ? (
-                  <VisibilityOff
-                    onClick={handleTogglePasswordConfirm}
-                    className='user__icon new__userPassword-icon'
-                  />
-                ) : (
-                  <Visibility
-                    onClick={handleTogglePasswordConfirm}
-                    className='user__icon new__userPassword-icon'
-                  />
+                {name === 'passwordConfirm' && (
+                  showPasswordConfirm ? (
+                    <VisibilityOff
+                      onClick={handleTogglePasswordConfirm}
+                      className='user__icon new__userPassword-icon'
+                    />
+                  ) : (
+                    <Visibility
+                      onClick={handleTogglePasswordConfirm}
+                      className='user__icon new__userPassword-icon'
+                    />
+                  )
                 )}
               </FormGroup>
             );
