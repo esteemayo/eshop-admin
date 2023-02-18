@@ -52,7 +52,7 @@ const NewUser = () => {
   };
 
   const handleTogglePasswordConfirm = () => {
-    setUser((prev) => ({ ...prev, showPassword: !prev.showPasswordConfirm }));
+    setUser((prev) => ({ ...prev, showPasswordConfirm: !prev.showPasswordConfirm }));
   };
 
   const uploadFile = (file) => {
