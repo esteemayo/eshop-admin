@@ -134,4 +134,5 @@ input[type='file'] {
 }
 
 .user__icon {
+  font-size: 2rem !important;
 }
