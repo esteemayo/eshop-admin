@@ -111,6 +111,11 @@ const NewUser = () => {
                   onChange={handleChange}
                 />
                 <FormLabel htmlFor={id}>{label}</FormLabel>
+                {name === 'username' && <FaceOutlinedIcon />}
+                {name === 'name' && <PersonOutlinedIcon />}
+                {name === 'email' && <EmailOutlinedIcon />}
+                {name === 'password' && <Visibility />}
+                {name === 'passwordConfirm' && <Visibility />}
               </FormGroup>
             );
           })}
