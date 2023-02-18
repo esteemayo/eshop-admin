@@ -8,6 +8,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import {
   getStorage,
   ref,
