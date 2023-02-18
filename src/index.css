@@ -117,6 +117,7 @@ input[type='file'] {
   stroke: rgb(228, 225, 225);
 }
 
+.new__user-icon,
 .username__icon {
   cursor: text;
 }
