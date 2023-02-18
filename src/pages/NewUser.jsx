@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Visibility from '@mui/icons-material/Visibility';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import {
   getStorage,
