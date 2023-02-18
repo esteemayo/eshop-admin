@@ -21,6 +21,16 @@ import app from '../firebase';
 import { registerUser, reset } from 'redux/user/userSlice';
 import { userInputs } from 'formData';
 
+const initialState = {
+  username: '',
+  name: '',
+  email: '',
+  password: '',
+  passwordConfirm: '',
+  showPassword: false,
+  showPasswordConfirm: false,
+};
+
 const NewUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
