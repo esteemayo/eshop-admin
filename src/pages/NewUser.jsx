@@ -145,7 +145,9 @@ const NewUser = () => {
                     className='user__icon new__userPassword-icon'
                   />
                 )}
-                {name === 'passwordConfirm' && (
+                {name === 'passwordConfirm' && showPasswordConfirm ? (
+                  <VisibilityOff className='user__icon new__userPassword-icon' />
+                ) : (
                   <Visibility className='user__icon new__userPassword-icon' />
                 )}
               </FormGroup>
