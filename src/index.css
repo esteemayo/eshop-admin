@@ -122,6 +122,7 @@ input[type='file'] {
   cursor: text;
 }
 
+.new__userPassword-icon,
 .password__icon {
   cursor: pointer;
 }
