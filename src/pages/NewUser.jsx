@@ -115,7 +115,7 @@ const NewUser = () => {
                 {name === 'name' && <PersonOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'email' && <EmailOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'password' && <Visibility className='user__icon' />}
-                {name === 'passwordConfirm' && <Visibility className='user__icon new__user-icon' />}
+                {name === 'passwordConfirm' && <Visibility className='user__icon' />}
               </FormGroup>
             );
           })}
