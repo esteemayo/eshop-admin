@@ -38,7 +38,6 @@ const NewUser = () => {
 
   const [perc, setPerc] = useState(0);
   const [user, setUser] = useState(initialState);
-  const [file, setFile] = useState(null);
 
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
