@@ -131,6 +131,7 @@ const NewUser = () => {
                   onChange={(e) => setFile(e.target.files[0])}
                 />
                 <FormLabel htmlFor='img'>Image</FormLabel>
+                <FileUploadOutlinedIcon />
               </>
             )}
           </FormGroup>
