@@ -37,6 +37,7 @@ const NewUser = () => {
   const { isError, isLoading } = useSelector((state) => state.user);
 
   const [perc, setPerc] = useState(0);
+  const [file, setFile] = useState(null);
   const [user, setUser] = useState(initialState);
 
   const handleChange = ({ target: input }) => {
