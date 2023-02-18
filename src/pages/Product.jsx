@@ -88,7 +88,7 @@ const Product = () => {
         setProductStats((prev) => [
           ...prev,
           { name: MONTHS[item._id - 1], Sales: item.total },
-        ])
+        ]),
       );
     } catch (err) {
       if (axios.isCancel(err)) {
