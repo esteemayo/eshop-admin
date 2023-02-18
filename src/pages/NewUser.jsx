@@ -135,9 +135,15 @@ const NewUser = () => {
                 {name === 'name' && <PersonOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'email' && <EmailOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'password' && showPassword ? (
-                  <VisibilityOff onClick={handleTogglePassword} className='user__icon new__userPassword-icon' />
+                  <VisibilityOff
+                    onClick={handleTogglePassword}
+                    className='user__icon new__userPassword-icon'
+                  />
                 ) : (
-                  <Visibility onClick={handleTogglePassword} className='user__icon new__userPassword-icon' />
+                  <Visibility
+                    onClick={handleTogglePassword}
+                    className='user__icon new__userPassword-icon'
+                  />
                 )}
                 {name === 'passwordConfirm' && (
                   <Visibility className='user__icon new__userPassword-icon' />
