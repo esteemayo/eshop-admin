@@ -150,7 +150,7 @@ const NewUser = () => {
                 {name === 'passwordConfirm' && (
                   showPassword ? (
                     <VisibilityOff
-                      onClick={handleTogglePasswordConfirm}
+                      onClick={handleTogglePassword}
                       className='user__icon new__userPassword-icon'
                     />
                   ) : (
