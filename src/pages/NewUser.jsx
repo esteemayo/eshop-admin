@@ -123,7 +123,7 @@ const NewUser = () => {
               <FormGroup key={id}>
                 <FormInput
                   id={id}
-                  type={name === 'password' && showPassword ? 'text' : type}
+                  type={showPassword ? 'text' : type}
                   name={name}
                   placeholder={placeholder}
                   required
