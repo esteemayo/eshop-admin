@@ -40,7 +40,7 @@ const NewUser = () => {
   const [file, setFile] = useState(null);
   const [user, setUser] = useState(initialState);
 
-  const { showPassword, showPasswordConfirm } = user;
+  const { showPassword } = user;
 
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
