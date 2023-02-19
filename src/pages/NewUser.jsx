@@ -28,7 +28,6 @@ const initialState = {
   password: '',
   passwordConfirm: '',
   showPassword: false,
-  showPasswordConfirm: false,
 };
 
 const NewUser = () => {
