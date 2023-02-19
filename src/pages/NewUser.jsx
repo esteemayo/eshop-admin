@@ -137,7 +137,7 @@ const NewUser = () => {
                     className='user__icon new__user-icon'
                     style={{ color: darkMode ? '#999999' : '#00008b' }} />
                 )}
-                {name === 'email' && <EmailOutlinedIcon className='user__icon new__user-icon' />}
+                {name === 'email' && <EmailOutlinedIcon className='user__icon new__user-icon' style={{ color: darkMode ? '#999999' : '#00008b' }} />}
                 {name === 'password' && (
                   showPassword ? (
                     <VisibilityOff
