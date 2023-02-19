@@ -51,10 +51,6 @@ const NewUser = () => {
     setUser((prev) => ({ ...prev, showPassword: !prev.showPassword }));
   };
 
-  const handleTogglePasswordConfirm = () => {
-    setUser((prev) => ({ ...prev, showPasswordConfirm: !prev.showPasswordConfirm }));
-  };
-
   const uploadFile = (file) => {
     const fileName = new Date().getTime() + file.name;
 
