@@ -127,7 +127,7 @@ const NewUser = () => {
                   onChange={handleChange}
                 />
                 <FormLabel htmlFor={id}>{label}</FormLabel>
-                {name === 'username' && <FaceOutlinedIcon className='user__icon new__user-icon' />}
+                {name === 'username' && <FaceOutlinedIcon className='user__icon new__user-icon' style={{ color: darkMode ? '#999999' : '#00008b' }} />}
                 {name === 'name' && <PersonOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'email' && <EmailOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'password' && (
