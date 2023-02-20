@@ -52,7 +52,12 @@ const WidgetLg = () => {
                 </TableDataUser>
                 <TableDataDate>{format(createdAt)}</TableDataDate>
                 <TableDataAmount>
-
+                  <NumericFormat
+                    value={amount}
+                    displayType={'text'}
+                    thousandSeparator={true}
+                    prefix={'$'}
+                  />
                 </TableDataAmount>
                 <TableDataStatus>
                   <Button type={status}>{status}</Button>
