@@ -103,7 +103,14 @@ const FeaturedItem = ({ type }) => {
     <Container>
       <Title>{data.title}</Title>
       <FeaturedMoneyContainer>
-        <FeaturedMoney>${data.money}</FeaturedMoney>
+        <FeaturedMoney>
+          <NumericFormat
+            value={data.money}
+            displayType={'text'}
+            thousandSeparator={true}
+            prefix={'$'}
+          />
+        </FeaturedMoney>
         <FeaturedMoneyRate>
           %{data.rate}{' '}
           {data.icon}{' '}
