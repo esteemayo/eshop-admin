@@ -385,6 +385,16 @@ export const productColumns = [
     field: 'price',
     headerName: 'Price',
     width: 160,
+    renderCell: (params) => {
+      return (
+        <NumericFormat
+          value={params.row.price}
+          displayType={'text'}
+          thousandSeparator={true}
+          prefix={'$'}
+        />
+      );
+    },
   },
 ];
 
