@@ -51,7 +51,9 @@ const WidgetLg = () => {
                   <UserName>{user?.username}</UserName>
                 </TableDataUser>
                 <TableDataDate>{format(createdAt)}</TableDataDate>
-                <TableDataAmount>${amount}</TableDataAmount>
+                <TableDataAmount>
+
+                </TableDataAmount>
                 <TableDataStatus>
                   <Button type={status}>{status}</Button>
                 </TableDataStatus>
