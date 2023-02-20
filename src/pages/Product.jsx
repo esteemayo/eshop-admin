@@ -212,7 +212,6 @@ const Product = () => {
                     value={'5123'}
                     displayType={'text'}
                     thousandSeparator={true}
-                    prefix={'$'}
                   />
                 </InfoValue>
               </InfoItem>
