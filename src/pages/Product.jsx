@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { NumericFormat } from 'react-number-format';
 import {
   getStorage,
   ref,
