@@ -108,7 +108,6 @@ const FeaturedItem = ({ type }) => {
             value={data.money}
             displayType={'text'}
             thousandSeparator={true}
-            prefix={'$'}
           />
         </FeaturedMoney>
         <FeaturedMoneyRate>
