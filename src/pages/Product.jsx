@@ -207,7 +207,14 @@ const Product = () => {
               </InfoItem>
               <InfoItem>
                 <InfoKey>sales:</InfoKey>
-                <InfoValue>5123</InfoValue>
+                <InfoValue>
+                  <NumericFormat
+                    value={'5123'}
+                    displayType={'text'}
+                    thousandSeparator={true}
+                    prefix={'$'}
+                  />
+                </InfoValue>
               </InfoItem>
               <InfoItem>
                 <InfoKey>in stock:</InfoKey>
