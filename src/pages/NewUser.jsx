@@ -295,7 +295,7 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.btnNew};
   color: ${({ theme }) => theme.textNew};
   border-radius: 1rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
   outline-color: ${({ theme }) => theme.text};
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
