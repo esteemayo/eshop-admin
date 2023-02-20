@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { ArrowDownward, ArrowUpward } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
+import { NumericFormat } from 'react-number-format';
 
 import { getIncome } from 'services/orderService';
 
