@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { format } from 'timeago.js';
+import { NumericFormat } from 'react-number-format';
 
 import { getOrders } from 'services/orderService';
 
