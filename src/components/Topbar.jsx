@@ -150,6 +150,10 @@ const Options = styled.div`
     border-left: 0.5rem solid transparent;
     border-right: 0.5rem solid transparent;
     border-bottom: 0.5rem solid ${({ theme }) => theme.bgOption};
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 
