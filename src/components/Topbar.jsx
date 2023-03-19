@@ -141,6 +141,11 @@ const Options = styled.div`
   background-color: ${({ theme }) => theme.bgOption};
   color: ${({ theme }) => theme.option};
   border-radius: 0.5rem;
+
+  &::before {
+    content: '';
+    display: block;
+  }
 `;
 
 const Profile = styled.div`
