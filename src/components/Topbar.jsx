@@ -147,6 +147,9 @@ const Options = styled.div`
     display: block;
     width: 0;
     height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid ${({ theme }) => theme.bgOption};
   }
 `;
 
