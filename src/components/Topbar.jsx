@@ -152,8 +152,8 @@ const Options = styled.div`
     border-bottom: 0.5rem solid ${({ theme }) => theme.bgOption};
     position: absolute;
     top: -0.5rem;
-    left: 30%;
-    transform: translateX(-30%);
+    left: 33%;
+    transform: translateX(-33%);
   }
 `;
 
