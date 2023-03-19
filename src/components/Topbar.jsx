@@ -145,6 +145,8 @@ const Options = styled.div`
   &::before {
     content: '';
     display: block;
+    width: 0;
+    height: 0;
   }
 `;
 
