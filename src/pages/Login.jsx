@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 
 import { loginUser, reset } from 'redux/user/userSlice';
+import Spinner from 'components/Spinner';
 
 const Login = () => {
   const dispatch = useDispatch();
