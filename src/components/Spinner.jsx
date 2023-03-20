@@ -17,6 +17,7 @@ const Container = styled.div`
   border-top-color: #979797;
   border-radius: 50%;
   margin: auto;
+  animation: rotate 0.6s linear infinite;
 
   @keyframes rotate {
     100% {
