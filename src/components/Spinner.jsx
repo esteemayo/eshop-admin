@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const Spinner = () => {
+const Spinner = ({ size }) => {
   return (
-    <Container>Spinner</Container>
+    <Container size={size}></Container>
   );
 };
 
