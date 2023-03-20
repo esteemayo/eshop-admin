@@ -36,7 +36,7 @@ export const lightTheme = {
   soft: '#f5f5f5',
   logo: '#00008b',
   option: 'var(--color-white)',
-  bgOption: '#0b0b0b',
+  bgOption: '#979797',
   toggleBtn: '#7451f8',
   box: '0 0 1.5rem -1rem rgba(0, 0, 0, 0.75)',
   bgApproved: '#e5faf1',
