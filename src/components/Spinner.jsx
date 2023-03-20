@@ -6,4 +6,8 @@ const Spinner = () => {
   );
 };
 
+const Container = styled.div`
+  
+`
+
 export default Spinner;
