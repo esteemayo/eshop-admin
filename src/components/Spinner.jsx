@@ -24,6 +24,6 @@ const Container = styled.div`
       transform: rotate(360deg);
     }
   }
-`
+`;
 
 export default Spinner;
