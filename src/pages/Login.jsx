@@ -93,7 +93,9 @@ const Login = () => {
           {isError && <ErrorMessage>{isError}</ErrorMessage>}
           <Button disabled={isLoading}>
             Login
-            <span>{isLoading && <Spinner size='sm' />}</span>
+            <span>
+              {isLoading && <Spinner size='sm' />}
+            </span>
           </Button>
         </Form>
       </Wrapper>
