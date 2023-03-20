@@ -9,7 +9,6 @@ import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 
 import Spinner from 'components/Spinner';
 import { loginUser, reset } from 'redux/user/userSlice';
-import Spinner from 'components/Spinner';
 
 const Login = () => {
   const dispatch = useDispatch();
