@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AuthRoute from 'utils/AuthRoute';
 import ProtectedRoute from 'utils/ProtectedRoute';
+import AuthRoute from 'utils/AuthRoute';
 import { darkTheme, lightTheme } from 'utils/Theme';
 import {
   Home,
