@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
