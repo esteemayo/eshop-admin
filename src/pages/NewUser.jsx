@@ -34,7 +34,6 @@ const initialState = {
 const NewUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { darkMode } = useSelector((state) => state.darkMode);
   const { isError, isLoading } = useSelector((state) => state.user);
 
   const [perc, setPerc] = useState(0);
