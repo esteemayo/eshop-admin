@@ -11,6 +11,7 @@ import {
 
 import app from '../firebase';
 import { addProduct, reset } from 'redux/products/productSlice';
+import Spinner from 'components/Spinner';
 
 const initialState = {
   title: '',
