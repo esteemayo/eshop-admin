@@ -172,10 +172,7 @@ const NewUser = () => {
                   onChange={(e) => setFile(e.target.files[0])}
                 />
                 <FormLabel htmlFor='img'>Image</FormLabel>
-                <FileUploadOutlinedIcon
-                  className='user__icon new__user-icon'
-                  style={{ color: darkMode ? '#999999' : '#00008b' }}
-                />
+                <FileUploadOutlinedIcon className='user__icon new__user-icon' />
               </>
             )}
           </FormGroup>
