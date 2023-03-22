@@ -132,9 +132,7 @@ const NewUser = () => {
                   <FaceOutlinedIcon className='user__icon new__user-icon' />
                 )}
                 {name === 'name' && (
-                  <PersonOutlinedIcon
-                    className='user__icon new__user-icon'
-                    style={{ color: darkMode ? '#999999' : '#00008b' }} />
+                  <PersonOutlinedIcon className='user__icon new__user-icon' />
                 )}
                 {name === 'email' && (
                   <EmailOutlinedIcon
