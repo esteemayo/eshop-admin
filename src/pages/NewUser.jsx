@@ -126,6 +126,7 @@ const NewUser = () => {
                   required
                   autoFocus={name === 'username' ? true : false}
                   onChange={handleChange}
+                  required
                 />
                 <FormLabel htmlFor={id}>{label}</FormLabel>
                 {name === 'username' && (
