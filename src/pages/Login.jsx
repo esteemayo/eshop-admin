@@ -77,7 +77,6 @@ const Login = () => {
               <VisibilityOff
                 onClick={() => setShowPassword(!showPassword)}
                 className='password__icon'
-                style={{ color: darkMode ? '#999999' : '#008080' }}
               />
             ) : (
               <Visibility
