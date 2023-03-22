@@ -8,6 +8,7 @@ import { MailOutline, PermIdentity, Publish } from '@material-ui/icons';
 import defaultAvatar from 'img/avatar.png';
 import { phone } from 'responsive';
 import { editUser, fetchUser, reset } from 'redux/user/userSlice';
+import Spinner from 'components/Spinner';
 import { updateUserInputs } from 'formData';
 import Spinner from 'components/Spinner';
 
