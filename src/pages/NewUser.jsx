@@ -155,7 +155,6 @@ const NewUser = () => {
                     <VisibilityOff
                       onClick={handleTogglePassword}
                       className='user__icon new__userPassword-icon'
-                      style={{ color: darkMode ? '#999999' : '#00008b' }}
                     />
                   ) : (
                     <Visibility
