@@ -129,9 +129,7 @@ const NewUser = () => {
                 />
                 <FormLabel htmlFor={id}>{label}</FormLabel>
                 {name === 'username' && (
-                  <FaceOutlinedIcon
-                    className='user__icon new__user-icon'
-                    style={{ color: darkMode ? '#999999' : '#00008b' }} />
+                  <FaceOutlinedIcon className='user__icon new__user-icon' />
                 )}
                 {name === 'name' && (
                   <PersonOutlinedIcon
