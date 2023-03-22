@@ -235,6 +235,10 @@ const FormGroup = styled.div`
 
     ${phone({ marginBottom: '0.5rem' })}
   }
+
+  svg {
+    color: ${({ theme }) => theme.colorIcon};
+  }
 `;
 
 const FormLabel = styled.label`
