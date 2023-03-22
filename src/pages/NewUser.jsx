@@ -20,6 +20,7 @@ import { phone } from 'responsive';
 import app from '../firebase';
 import { registerUser, reset } from 'redux/user/userSlice';
 import { userInputs } from 'formData';
+import Spinner from 'components/Spinner';
 
 const initialState = {
   username: '',
