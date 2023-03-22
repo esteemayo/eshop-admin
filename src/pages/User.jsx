@@ -9,6 +9,7 @@ import defaultAvatar from 'img/avatar.png';
 import { phone } from 'responsive';
 import { editUser, fetchUser, reset } from 'redux/user/userSlice';
 import { updateUserInputs } from 'formData';
+import Spinner from 'components/Spinner';
 
 const initialState = {
   name: '',
