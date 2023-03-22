@@ -14,7 +14,6 @@ const Login = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
-  const { darkMode } = useSelector((state) => state.darkMode);
   const { currentUser, isLoading, isSuccess, isError } =
     useSelector((state) => state.user);
 
