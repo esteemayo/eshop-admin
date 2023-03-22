@@ -304,7 +304,10 @@ const Option = styled.option``;
 
 const Button = styled.button`
   border: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
   padding: 1rem 2rem;
   text-transform: capitalize;
   background-color: ${({ theme }) => theme.btnNew};
