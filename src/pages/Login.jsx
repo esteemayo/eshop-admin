@@ -74,6 +74,7 @@ const Login = () => {
             <FormLabel>Password</FormLabel>
             {showPassword ? (
               <VisibilityOff
+                className='password__icon'
                 onClick={() => setShowPassword(!showPassword)}
                 className='password__icon'
               />
