@@ -360,7 +360,10 @@ const UpdateUserImage = styled.img`
 
 const FormButton = styled.button`
   border: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
   padding: 0.5rem;
   font-size: 1.4rem;
   font-weight: 600;
