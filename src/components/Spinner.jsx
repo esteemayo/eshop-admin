@@ -14,7 +14,6 @@ const Container = styled.div`
   border: 3px solid #f5f5f5;
   border-top-color: #979797;
   border-radius: 50%;
-  /* margin: auto; */
   animation: rotate 0.6s linear infinite;
 
   @keyframes rotate {
