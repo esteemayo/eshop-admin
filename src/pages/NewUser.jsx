@@ -123,7 +123,6 @@ const NewUser = () => {
                   type={showPassword ? 'text' : type}
                   name={name}
                   placeholder={placeholder}
-                  required
                   autoFocus={name === 'username' ? true : false}
                   onChange={handleChange}
                   required
