@@ -330,7 +330,7 @@ const Product = () => {
               />
             </FileUpload>
             <Button disabled={perc > 0 && perc < 100}>
-              Update
+              Update {isLoading && <Spinner />}
             </Button>
           </FormRight>
         </Form>
