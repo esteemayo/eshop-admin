@@ -128,9 +128,7 @@ const NewUser = () => {
                   required
                 />
                 <FormLabel htmlFor={id}>{label}</FormLabel>
-                {name === 'username' && (
-                  <FaceOutlinedIcon className='user__icon new__user-icon' />
-                )}
+                {name === 'username' && <FaceOutlinedIcon className='user__icon new__user-icon' />}
                 {name === 'name' && (
                   <PersonOutlinedIcon className='user__icon new__user-icon' />
                 )}
