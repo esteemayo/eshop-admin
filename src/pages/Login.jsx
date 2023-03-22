@@ -79,6 +79,7 @@ const Login = () => {
               />
             ) : (
               <Visibility
+                className='password__icon'
                 onClick={() => setShowPassword(!showPassword)}
                 className='password__icon'
               />
