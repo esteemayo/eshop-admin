@@ -26,6 +26,7 @@ export const darkTheme = {
   crInput: 'rgb(156, 156, 156)',
   btnNew: '#312d2d',
   textNew: 'rgb(156, 156, 156)',
+  colorIcon: '#999999',
 };
 
 export const lightTheme = {
@@ -56,4 +57,5 @@ export const lightTheme = {
   crInput: '#00008b',
   btnNew: '#00008b',
   textNew: 'var(--color-white)',
+  colorIcon: '#00008b',
 };
