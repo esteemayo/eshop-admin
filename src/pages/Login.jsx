@@ -76,7 +76,6 @@ const Login = () => {
               <VisibilityOff
                 className='password__icon'
                 onClick={() => setShowPassword(!showPassword)}
-                className='password__icon'
               />
             ) : (
               <Visibility
