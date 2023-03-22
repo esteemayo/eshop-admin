@@ -62,10 +62,7 @@ const Login = () => {
               required
             />
             <FormLabel>Username</FormLabel>
-            <FaceOutlinedIcon
-              className='username__icon'
-              style={{ color: darkMode ? '#999999' : '#008080' }}
-            />
+            <FaceOutlinedIcon className='username__icon' />
           </FormGroup>
           <FormGroup>
             <FormInput
