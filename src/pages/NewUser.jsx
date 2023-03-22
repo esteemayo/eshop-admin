@@ -198,7 +198,7 @@ const NewUser = () => {
           </FormGroup>
         </FormContainer>
         <Button disabled={isLoading || (perc > 0 && perc < 100)}>
-          Create
+          Create {isLoading && <Spinner />}
         </Button>
       </Form>
     </Container>
