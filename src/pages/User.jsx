@@ -10,7 +10,6 @@ import { phone } from 'responsive';
 import { editUser, fetchUser, reset } from 'redux/user/userSlice';
 import Spinner from 'components/Spinner';
 import { updateUserInputs } from 'formData';
-import Spinner from 'components/Spinner';
 
 const initialState = {
   name: '',
