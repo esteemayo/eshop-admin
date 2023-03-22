@@ -124,7 +124,9 @@ const User = () => {
                   style={{ display: 'none' }}
                 />
               </Upload>
-              <FormButton disabled={isLoading}>Update</FormButton>
+              <FormButton disabled={isLoading}>
+                Update {isLoading && <Spinner />}
+              </FormButton>
             </Right>
           </Form>
         </UpdateUser>
