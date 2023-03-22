@@ -32,7 +32,7 @@ const Product = () => {
   const navigate = useNavigate();
   const { id: productId } = useParams();
   const { darkMode } = useSelector((state) => state.darkMode);
-  const { product, isError } = useSelector((state) => state.product);
+  const { product, isError, isLoading } = useSelector((state) => state.product);
 
   const [perc, setPerc] = useState(0);
   const [size, setSize] = useState([]);
