@@ -92,7 +92,7 @@ const Login = () => {
           </FormGroup>
           {isError && <ErrorMessage>{isError}</ErrorMessage>}
           <Button disabled={isLoading}>
-            Login {isLoading && <Spinner size='sm' />}
+            Login {isLoading && <Spinner />}
           </Button>
         </Form>
       </Wrapper>
