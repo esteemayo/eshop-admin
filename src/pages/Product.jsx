@@ -79,6 +79,7 @@ const Product = () => {
 
   const fetchIncomeStats = useCallback(async () => {
     const { token } = axios.CancelToken.source();
+    try {
       const { data } = await getIncomeStats(productId, token);
 
       const list = data.income.sort((a, b) => {
