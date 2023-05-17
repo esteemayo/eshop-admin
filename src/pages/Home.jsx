@@ -31,8 +31,8 @@ const Home = () => {
   );
 
   useEffect(() => {
+    const { token, cancel } = axios.CancelToken.source();
     (async () => {
-      const { token, cancel } = axios.CancelToken.source();
       try {
         const { data } = await getUserStats(token);
         data.stats.map((item) =>
