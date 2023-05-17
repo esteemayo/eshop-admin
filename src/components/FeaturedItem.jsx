@@ -14,7 +14,8 @@ const FeaturedItem = ({ type }) => {
 
   useEffect(() => {
     (async () => {
-        const { token } = axios.CancelToken.source();
+      const { token, cancel } = axios.CancelToken.source();
+      try {
         const { data } = await getIncome(token);
         setIncome(data.income);
         setPercentage(
