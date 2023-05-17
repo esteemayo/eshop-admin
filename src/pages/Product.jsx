@@ -100,6 +100,8 @@ const Product = () => {
         console.log(err);
       }
     }
+
+    return () => cancel();
   }, [MONTHS, productId]);
 
   const uploadFile = (file) => {
