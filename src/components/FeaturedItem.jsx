@@ -30,6 +30,8 @@ const FeaturedItem = ({ type }) => {
           console.log(err);
         }
       }
+
+      return () => cancel();
     })();
   }, []);
 
