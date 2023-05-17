@@ -13,7 +13,6 @@ const WidgetSm = () => {
   const [users, setUsers] = useState();
 
   useEffect(() => {
-    (async () => {
       const { token, cancel } = axios.CancelToken.source();
       try {
         const {
