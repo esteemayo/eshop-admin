@@ -23,6 +23,7 @@ const WidgetLg = () => {
           console.log(err);
         }
       }
+    })();
 
       return () => cancel();
     })();
