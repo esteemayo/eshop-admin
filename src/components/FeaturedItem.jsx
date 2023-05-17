@@ -32,7 +32,6 @@ const FeaturedItem = ({ type }) => {
       }
 
       return () => cancel();
-    })();
   }, []);
 
   switch (type) {
