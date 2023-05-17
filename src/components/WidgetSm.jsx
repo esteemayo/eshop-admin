@@ -29,6 +29,8 @@ const WidgetSm = () => {
           console.log(err);
         }
       }
+
+      return () => cancel();
     })();
   }, []);
 
