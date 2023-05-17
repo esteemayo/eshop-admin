@@ -13,7 +13,7 @@ const FeaturedItem = ({ type }) => {
   let data;
 
   useEffect(() => {
-      const { token, cancel } = axios.CancelToken.source();
+    const { token, cancel } = axios.CancelToken.source();
       try {
         const { data } = await getIncome(token);
         setIncome(data.income);
