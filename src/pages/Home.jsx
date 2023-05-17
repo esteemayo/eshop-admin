@@ -50,6 +50,8 @@ const Home = () => {
         }
       }
     })();
+
+    return () => cancel();
   }, [MONTHS]);
 
   return (
