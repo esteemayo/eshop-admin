@@ -33,6 +33,7 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       const { token } = axios.CancelToken.source();
+      try {
         const { data } = await getUserStats(token);
         data.stats.map((item) =>
           setUserStats((prev) => [
