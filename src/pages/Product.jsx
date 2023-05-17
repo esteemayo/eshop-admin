@@ -78,7 +78,6 @@ const Product = () => {
   );
 
   const fetchIncomeStats = useCallback(async () => {
-    try {
       const { token } = axios.CancelToken.source();
       const { data } = await getIncomeStats(productId, token);
 
