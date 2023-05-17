@@ -10,7 +10,6 @@ const WidgetLg = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    (async () => {
     const { token, cancel } = axios.CancelToken.source();
     (async () => {
       try {
