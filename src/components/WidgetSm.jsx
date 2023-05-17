@@ -32,7 +32,6 @@ const WidgetSm = () => {
     })();
 
       return () => cancel();
-    })();
   }, []);
 
   return (
