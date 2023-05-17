@@ -26,7 +26,6 @@ const WidgetLg = () => {
     })();
 
       return () => cancel();
-    })();
   }, []);
 
   return (
