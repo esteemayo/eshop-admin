@@ -32,7 +32,6 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      try {
         const { token } = axios.CancelToken.source();
         const { data } = await getUserStats(token);
         data.stats.map((item) =>
